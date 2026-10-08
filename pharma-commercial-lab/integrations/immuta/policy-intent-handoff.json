@@ -1,0 +1,356 @@
+{
+  "evaluator_boundary": "private_evaluator is never a builder or analyst data source",
+  "format": "pharma-vendor-neutral-handoff-v1",
+  "policies": [
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:iqvia_like/affiliation",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_iqvia_like_affiliation"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:iqvia_like/organisation",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_iqvia_like_organisation"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:iqvia_like/product",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_iqvia_like_product"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:iqvia_like/provider",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_iqvia_like_provider"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:iqvia_like/rx_weekly",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_iqvia_like_rx_weekly"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:manual/territory_mapping",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_manual_territory_mapping"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:salesforce_like/campaign",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_salesforce_like_campaign"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:salesforce_like/campaign_member",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_salesforce_like_campaign_member"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:salesforce_like/consent",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_salesforce_like_consent"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:salesforce_like/contact",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_salesforce_like_contact"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:veeva_like/activity",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_veeva_like_activity"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:veeva_like/activity_product",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_veeva_like_activity_product"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:veeva_like/customer",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_veeva_like_customer"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:veeva_like/staff",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_veeva_like_staff"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:source:veeva_like/territory",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "raw_veeva_like_territory"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:organisation",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_organisation"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:affiliation",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_affiliation"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:representative",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_representative"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:customer",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_customer"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:product_interval",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_product_interval"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:territory",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_territory"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:interaction_version",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_interaction_version"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:interaction_product",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_interaction_product"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:consent_event",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_consent_event"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:customer_territory",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_customer_territory"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:campaign",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_campaign"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:campaign_member",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_campaign_member"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:canonical:rx_version",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "canonical_rx_version"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:pipeline:s01_engagement",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "pipeline_s01_engagement"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:pipeline:s02_product_activity",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "pipeline_s02_product_activity"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:pipeline:s03_customer_territory",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "pipeline_s03_customer_territory"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:pipeline:s04_interaction",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "pipeline_s04_interaction"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:pipeline:s05_campaign",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "pipeline_s05_campaign"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:pipeline:exceptions",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "pipeline_exceptions"
+    },
+    {
+      "allowed_role": "PHARMA_BUILDER",
+      "asset_id": "urn:pharma:pipeline:dq",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "pipeline_dq"
+    },
+    {
+      "allowed_role": "PHARMA_ANALYST",
+      "asset_id": "urn:pharma:consumption:s01_engagement",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "consumption_s01_engagement_current"
+    },
+    {
+      "allowed_role": "PHARMA_ANALYST",
+      "asset_id": "urn:pharma:consumption:s02_product_activity",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "consumption_s02_product_activity_current"
+    },
+    {
+      "allowed_role": "PHARMA_ANALYST",
+      "asset_id": "urn:pharma:consumption:s03_customer_territory",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "consumption_s03_customer_territory_current"
+    },
+    {
+      "allowed_role": "PHARMA_ANALYST",
+      "asset_id": "urn:pharma:consumption:s04_interaction",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "consumption_s04_interaction_current"
+    },
+    {
+      "allowed_role": "PHARMA_ANALYST",
+      "asset_id": "urn:pharma:consumption:s05_campaign",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "consumption_s05_campaign_current"
+    },
+    {
+      "allowed_role": "PHARMA_ANALYST",
+      "asset_id": "urn:pharma:consumption:exceptions",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "consumption_exceptions_current"
+    },
+    {
+      "allowed_role": "PHARMA_ANALYST",
+      "asset_id": "urn:pharma:consumption:dq",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "consumption_dq_current"
+    },
+    {
+      "allowed_role": "PHARMA_ANALYST",
+      "asset_id": "urn:pharma:visualization:scenario_scorecard",
+      "classification": "synthetic",
+      "implementation_status": "tenant binding and enforcement acceptance required",
+      "purpose": "commercial synthetic investigation",
+      "view": "visualization_scenario_scorecard"
+    }
+  ],
+  "requires": [
+    "Snowflake/Immuta integration",
+    "real groups and attributes",
+    "tenant-specific policies",
+    "positive and negative access tests"
+  ]
+}

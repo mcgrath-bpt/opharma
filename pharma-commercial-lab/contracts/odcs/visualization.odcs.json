@@ -1,0 +1,237 @@
+{
+  "apiVersion": "v3.1.0",
+  "customProperties": [
+    {
+      "property": "layer",
+      "value": "visualization"
+    },
+    {
+      "property": "dependsOn",
+      "value": [
+        "pharma.commercial.consumption"
+      ]
+    },
+    {
+      "property": "runtime",
+      "value": {
+        "engine": "python-sqlite",
+        "majorVersionRequiredForBreakingChanges": true,
+        "qualityGate": "fail structural or reconciliation errors; record percentage alerts",
+        "schemaGate": "src/odcs.py",
+        "target": "snowflake-sql-python",
+        "timezone": "UTC"
+      }
+    },
+    {
+      "property": "tmdl",
+      "value": {
+        "aggregation": "DIVIDE(SUM(numerator), SUM(denominator)) within one snapshot/scenario/scope; never average rates",
+        "defaultView": "latest complete daily snapshots; S5 latest Monday; history requires a single snapshot",
+        "localSource": "typed modeled CSV exports",
+        "meaning": "Tabular Model Definition Language for Power BI and Analysis Services",
+        "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition",
+        "status": "generated definitions; requires Microsoft TOM parsing, DAX compilation and refresh acceptance",
+        "targetSource": "Snowflake published views; Import mode",
+        "thresholdUnits": "fraction; 0.02 displays as 2%"
+      }
+    }
+  ],
+  "dataProduct": "synthetic-pharma-commercial-lab",
+  "description": {
+    "limitations": "Synthetic data only. Vendor integrations require tenant configuration and acceptance.",
+    "purpose": "Power BI and Analysis Services TMDL semantic model handoff. Visualization must preserve customer/product/date grain and ratios of summed counts.",
+    "usage": "Local recurring investigations and Snowflake migration validation."
+  },
+  "domain": "pharma-commercial",
+  "id": "pharma.commercial.visualization",
+  "kind": "DataContract",
+  "name": "Pharma commercial visualization",
+  "roles": [
+    {
+      "access": "read public source; write isolated pipeline schemas",
+      "role": "PHARMA_BUILDER"
+    },
+    {
+      "access": "read consumption and visualization only",
+      "role": "PHARMA_ANALYST"
+    },
+    {
+      "access": "read private oracle; never grant to builder",
+      "role": "PHARMA_EVALUATOR"
+    }
+  ],
+  "schema": [
+    {
+      "dataGranularityDescription": "one scenario/scope scorecard per logical checkpoint; ratio counts retained",
+      "description": "one scenario/scope scorecard per logical checkpoint; ratio counts retained",
+      "logicalType": "object",
+      "name": "scenario_scorecard",
+      "physicalName": "visualization_scenario_scorecard",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "scenario",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scenario",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "scope",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scope",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "output rows",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "output_rows",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "exception rows",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "exception_rows",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "numerator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "numerator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "denominator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "denominator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "threshold",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "number",
+          "name": "threshold",
+          "physicalType": "NUMBER(18,6)",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "scheduled",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "scheduled",
+          "physicalType": "BOOLEAN",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"scenario\",\"scope\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"scenario\",\"scope\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "environment": "dev",
+      "format": "sqlite",
+      "path": "data/operations/model-v02.sqlite",
+      "server": "local",
+      "type": "local"
+    },
+    {
+      "account": "CONFIGURE_ACCOUNT",
+      "database": "PHARMA_LAB",
+      "environment": "target",
+      "schema": "PHARMA_MODEL",
+      "server": "snowflakeTarget",
+      "type": "snowflake"
+    }
+  ],
+  "slaProperties": [
+    {
+      "description": "Daily source availability and cutoffs are checked at the logical run time.",
+      "driver": "operational",
+      "property": "freshness",
+      "unit": "hours",
+      "value": 24
+    },
+    {
+      "property": "schedule",
+      "schedule": "0 6 * * *",
+      "scheduler": "airflow",
+      "value": "06:00 UTC daily"
+    }
+  ],
+  "status": "proposed",
+  "tags": [
+    "synthetic",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "visualization"
+  ],
+  "team": {
+    "description": "Proposed accountable product owner; name the real steward before production approval.",
+    "name": "Pharma commercial data product"
+  },
+  "version": "0.2.1"
+}

@@ -1,0 +1,2585 @@
+{
+  "delivery_calendar": "2026-10-01/2026-10-14",
+  "distribution": "opharma pull request; generated runtime database excluded and rebuilt from fixture",
+  "files": [
+    {
+      "bytes": 5139,
+      "path": ".gitignore",
+      "sha256": "24f6f23ac73264919e5c70506ef4c323ad07802de3a5df63d8fdd39e286cab68"
+    },
+    {
+      "bytes": 925,
+      "path": "Jenkinsfile",
+      "sha256": "9c0814832f8c86fea2ed5b2f882b2d52083f39318945ef17e751affb48f41a58"
+    },
+    {
+      "bytes": 584,
+      "path": "Makefile",
+      "sha256": "8872a2adb0994260be1afb5bd13608470081496b3006bbfdd08adb2304d743ba"
+    },
+    {
+      "bytes": 7570,
+      "path": "README.md",
+      "sha256": "2f04f822dc8498428ffb321e15ff02857667b4ac16ac0a107a28f797048713f9"
+    },
+    {
+      "bytes": 8628,
+      "path": "TODO.md",
+      "sha256": "e474bf2605cdbf09812cd2c0b5bc166e4ae96c51bce8a90c768e11cfd504c010"
+    },
+    {
+      "bytes": 24894,
+      "path": "build/acceptance/evidence/operations-report.json",
+      "sha256": "19f017412c8fa26fd90a1a10e6bfa67111d0770378cd38b707b963dd84811f25"
+    },
+    {
+      "bytes": 13630,
+      "path": "build/snowflake/00_setup_odcs.sql",
+      "sha256": "5ba5c998114c1ae69351481dfbd9755224a23ed609543010bf320faabfa7120a"
+    },
+    {
+      "bytes": 25133,
+      "path": "build/snowflake/01_load_b001.sql",
+      "sha256": "00beef13a63685bba02502a75819f90d9dcd29f01b5685fceb87c7bb510916bd"
+    },
+    {
+      "bytes": 13909,
+      "path": "build/snowflake/01_load_b002.sql",
+      "sha256": "ed2218d822516db34bb536c65e287d5dc4db04b1e8ec5bdf97c8b642866f3c15"
+    },
+    {
+      "bytes": 12229,
+      "path": "build/snowflake/01_load_b003.sql",
+      "sha256": "2d200ad1b8b61c0f8d69ddafd8beb8ba6972a38d5173fedd929789d3657cdbc1"
+    },
+    {
+      "bytes": 14530,
+      "path": "build/snowflake/01_load_b004.sql",
+      "sha256": "b09ea848c28a1f94cb38b254aa68ef9f34ba8da5040e31429e6737dd434ad026"
+    },
+    {
+      "bytes": 17126,
+      "path": "build/snowflake/01_load_b005.sql",
+      "sha256": "f6a080bf1f3f58520a4d3e2cd3dbe9e9ee74ff78853f115df4004448c81ecf93"
+    },
+    {
+      "bytes": 15507,
+      "path": "build/snowflake/01_load_b006.sql",
+      "sha256": "12b565ed19b3191a1bdf00588f24bdb9b56e7be98ed61d676a493b97b6553f20"
+    },
+    {
+      "bytes": 17795,
+      "path": "build/snowflake/01_load_b007.sql",
+      "sha256": "ccaf9c7b6f9afa879457b0e39e2bb51f076754833eacdb9bf54f335b5981e4a8"
+    },
+    {
+      "bytes": 18908,
+      "path": "build/snowflake/01_load_b008.sql",
+      "sha256": "ada496d3ddf7b04d8af1da754ff10f686f5e55cff3dfb343b1b246ac5b648382"
+    },
+    {
+      "bytes": 19931,
+      "path": "build/snowflake/01_load_b009.sql",
+      "sha256": "b07c9a940c6c087f49cf94d80bbb0fb68d93d514e91180867833591970cb251c"
+    },
+    {
+      "bytes": 19525,
+      "path": "build/snowflake/01_load_b010.sql",
+      "sha256": "35559f91896ba1f72a5d4fdbd9ec53d3091638518b24461462c2f0c711fe0592"
+    },
+    {
+      "bytes": 20257,
+      "path": "build/snowflake/01_load_b011.sql",
+      "sha256": "cc8e4f4a0d3c08d2a966e4d59248beeeae62691a7ea8784d984d2743267ccfee"
+    },
+    {
+      "bytes": 22562,
+      "path": "build/snowflake/01_load_b012.sql",
+      "sha256": "41a73203711d864bf41c1e00bd1db5fd3f308781ac3c61858c8413d7098359d9"
+    },
+    {
+      "bytes": 22081,
+      "path": "build/snowflake/01_load_b013.sql",
+      "sha256": "cb581baefde21c3d108e28239cbddca9bf47ac193099440b4ddc531406448284"
+    },
+    {
+      "bytes": 22813,
+      "path": "build/snowflake/01_load_b014.sql",
+      "sha256": "c1a82b0f077b91cf0f92c040b9c999be3402d4ab0b636deb21346c418a431d92"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b001.sql",
+      "sha256": "8ae2843a968386e31367ee5e38507943d13ed7d6170417d6a905530ca6397315"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b002.sql",
+      "sha256": "775009863c8096eeb18440addb2d339a85dccd6e6669f8ed67cb52fcc63adb10"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b003.sql",
+      "sha256": "9176c28cce6c1436e1266a28e8464569f001289fe7d800a2ef3e0962ad41b1ee"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b004.sql",
+      "sha256": "fa5cf9fcf785c3250a578e979052e47323008ec5bec7b177463bd6a8b8447de3"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b005.sql",
+      "sha256": "7d725fb127fa558cb5c202b566162617535c3a35473b59f1dccc11f09a9df57c"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b006.sql",
+      "sha256": "7952cfb08fa92e4154ca2f0648eb10d75ac90f126eb81d30bd56ec3d16f5a7e3"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b007.sql",
+      "sha256": "f3ac593d1d1a8e063b0ee9089bd5afd076afc03ff49373ddda437da55c540668"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b008.sql",
+      "sha256": "654edf30e8ae854a563315125a354de42a7670c1a4cc8a4fde50147a748c65d9"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b009.sql",
+      "sha256": "3082c6cc9585430abcb326fa5721e2637f328ef892cc5b7020fa5c3cec780e07"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b010.sql",
+      "sha256": "a3e1e5b4e7bbcf7ccb64483a8d37efce1ea5a9fb204608fc85d03cfdb26992b6"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b011.sql",
+      "sha256": "d7a774029844fd10f647d6d0d4b565efb4a3e802669ca2bb8e439d218c4aeb9b"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b012.sql",
+      "sha256": "10ace412323cd17f249e1f23a9ae993752e2bc792f418c7112e168767560ab18"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b013.sql",
+      "sha256": "3d5dbcd7b19e8bb1e46cfe9f93267bb70ab9940584b46853a85f0746c078ab82"
+    },
+    {
+      "bytes": 39232,
+      "path": "build/snowflake/02_gold_b014.sql",
+      "sha256": "741d7276577061811fcd87f3a7633a6c2d52afb9707ed19f1e3ba0566e73e1a6"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b001.sql",
+      "sha256": "8fdcf0955c27ed08c582a1149d4d2f7468bafddf1dc77c18f57101ebb5708729"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b002.sql",
+      "sha256": "a48292e48f7a63cb4540212b5a810ed1ff051956a69c2864c1cf79826f21dfbb"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b003.sql",
+      "sha256": "a37e60c17a20a6a6942d53e7d280448988bbcf4e2ce8799be1e66cf85a369bed"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b004.sql",
+      "sha256": "7c99a09680fe457d8144cce1fec5381ac6b6924377026bc409e70737c836eaf2"
+    },
+    {
+      "bytes": 24813,
+      "path": "build/snowflake/03_publish_b005.sql",
+      "sha256": "1c8c5b49652caa13e3abbd2cf8376dbb08ccc953048e193609d10de84a8da4ac"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b006.sql",
+      "sha256": "13df58098750d36f17db25b9c5a5b766967bfa65bf1fc6d0b62a2a4d0e6f4043"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b007.sql",
+      "sha256": "ad518177e2621868319926cbeaf8d71e5475f7ea1f2292c4f10281bb44b51b27"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b008.sql",
+      "sha256": "c128b140f3333ee953c1ed310e42e2e59d77b4b893bf5eff91a133e53cad0c61"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b009.sql",
+      "sha256": "b456e6ec6fe677081aafb1f900d5094610195c1214f1cbf586d81977ecac76e2"
+    },
+    {
+      "bytes": 24625,
+      "path": "build/snowflake/03_publish_b010.sql",
+      "sha256": "4c7c32315eb80647442015ee74df42622f6941ebbc55a16d2b807f6032d5ff8b"
+    },
+    {
+      "bytes": 24626,
+      "path": "build/snowflake/03_publish_b011.sql",
+      "sha256": "5d18b944e24aec36fbacd448c54351568d6134a76d620744987a7fb65f55e415"
+    },
+    {
+      "bytes": 24814,
+      "path": "build/snowflake/03_publish_b012.sql",
+      "sha256": "c1f45298b62120db1204640730512cd6c3b3d798ee706621cc2a4e3fef07f70a"
+    },
+    {
+      "bytes": 24626,
+      "path": "build/snowflake/03_publish_b013.sql",
+      "sha256": "8177cbf0000b0f29249d59984fe54c2f962ca3060fcb0591b3ccf44dc8b8b543"
+    },
+    {
+      "bytes": 24626,
+      "path": "build/snowflake/03_publish_b014.sql",
+      "sha256": "06811b2ef5b325235deb8c4de102c181c71a7ba1955b613eae0c240200d60867"
+    },
+    {
+      "bytes": 551,
+      "path": "build/snowflake/render-manifest.json",
+      "sha256": "449e71046b652348099871ac898bb9dc0209faa4ee26c100aa1e8445a7f4e472"
+    },
+    {
+      "bytes": 737,
+      "path": "config/crawl.json",
+      "sha256": "3c5799879576d878f3e8c5b902308dd3b3266d4193ae1268df4f19b19e885b2f"
+    },
+    {
+      "bytes": 231,
+      "path": "config/operations.json",
+      "sha256": "26a7d479e6a3eb77cb8437b61ad30b965879335c6f67c6882660c0c8bdf0c7e8"
+    },
+    {
+      "bytes": 1408,
+      "path": "contracts/anomaly-catalogue.json",
+      "sha256": "043f4f40fb092301a5030735228211c8d39a40083ace5ed89f5afa3e6a05a699"
+    },
+    {
+      "bytes": 12421,
+      "path": "contracts/canonical-model.json",
+      "sha256": "2f6952e3abcc2fc7803d505af8018c83f3d9adf7db244616608048f07343c792"
+    },
+    {
+      "bytes": 3032,
+      "path": "contracts/delivery-manifest.schema.json",
+      "sha256": "99d92b6a7b19941fba2e3715ec238ee8dc3732f2183230019607caecbf073b91"
+    },
+    {
+      "bytes": 47514,
+      "path": "contracts/odcs/canonical.odcs.json",
+      "sha256": "9e510020d92e15b30dae69cf11235d26130c3ff1bc0b22be5706a72c94a160cd"
+    },
+    {
+      "bytes": 22605,
+      "path": "contracts/odcs/consumption.odcs.json",
+      "sha256": "a16e5e5bc30fa43badba21a6f68b4804d65e4df6a3e6fcdb3395ee73676431da"
+    },
+    {
+      "bytes": 23436,
+      "path": "contracts/odcs/pipeline.odcs.json",
+      "sha256": "f3dd01cb3a27cabdaa00d77d665fc5fe34583de283042dd4c8f38b9a84d94e71"
+    },
+    {
+      "bytes": 46058,
+      "path": "contracts/odcs/source.odcs.json",
+      "sha256": "1c1f3f017a723fc6422ae0f31f0823936911096824bc4de362fd35ba98c0fda5"
+    },
+    {
+      "bytes": 7396,
+      "path": "contracts/odcs/visualization.odcs.json",
+      "sha256": "6b193328b33f11a5161ba6fa942f13528f7ff37c1d91e654586ddd4cf08fc34d"
+    },
+    {
+      "bytes": 846,
+      "path": "contracts/output-columns.json",
+      "sha256": "391a35e73bbb68640402df53ab84f1b9169d99ae9a679aefaac32426597c48f1"
+    },
+    {
+      "bytes": 3126,
+      "path": "contracts/scenarios.json",
+      "sha256": "1d07ea3cc08a212df50493ffc350d80471c43604f8c4b34d5edc7f1b6eb06f4e"
+    },
+    {
+      "bytes": 14227,
+      "path": "contracts/source-projections.json",
+      "sha256": "3d065aeec48fa71e8d795deb777f9a7b990488719b9d1d0c6e959339b84c2d35"
+    },
+    {
+      "bytes": 11358,
+      "path": "contracts/vendor/ODCS-LICENSE",
+      "sha256": "c95bae1d1ce0235ecccd3560b772ec1efb97f348a79f0fbe0a634f0c2ccefe2c"
+    },
+    {
+      "bytes": 505,
+      "path": "contracts/vendor/ODCS-PROVENANCE.json",
+      "sha256": "d2ba2319dc320c7a86ec7d8e200a9c021294949228240683af68aee1b7bc417e"
+    },
+    {
+      "bytes": 86559,
+      "path": "contracts/vendor/odcs-json-schema-v3.1.0.json",
+      "sha256": "e38eb769baccdded5a4e4e82be754b5dd3bd8dd2fa0bd627d616f8fd04c5754a"
+    },
+    {
+      "bytes": 251,
+      "path": "data/operations-release/evidence/actual/b001/dq.csv",
+      "sha256": "61c2deb00777e67edbc06844ca87d230ca97b0aa514f3d0f31b5bab75ccf914e"
+    },
+    {
+      "bytes": 1109,
+      "path": "data/operations-release/evidence/actual/b001/exceptions.csv",
+      "sha256": "fcdab12523cf4b9ec2c0e84e6e6a7b691d7ad8484d99464632c0da9c91fe16ad"
+    },
+    {
+      "bytes": 15510,
+      "path": "data/operations-release/evidence/actual/b001/s01_engagement.csv",
+      "sha256": "65bc82bda29df55cd2a0e294057f3be17f374b557a0c29583b08049e3588ad07"
+    },
+    {
+      "bytes": 23693,
+      "path": "data/operations-release/evidence/actual/b001/s02_product_activity.csv",
+      "sha256": "5be2c142a910dec460f0a8948062795910871c777c7d5888a74923768b00ab1a"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b001/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 25903,
+      "path": "data/operations-release/evidence/actual/b001/s04_interaction.csv",
+      "sha256": "d2bae867b0566a2c1c1a4e21ef4f8fb7c9dc862dd3b27037af4977e650a29ce1"
+    },
+    {
+      "bytes": 4956,
+      "path": "data/operations-release/evidence/actual/b001/s05_campaign.csv",
+      "sha256": "530301d892316d875cb79cb48f5e28e327f7f02231f0e8a009d63e07cc614b41"
+    },
+    {
+      "bytes": 251,
+      "path": "data/operations-release/evidence/actual/b002/dq.csv",
+      "sha256": "cc52925bc3be707beb4a4c664463c56e73ea9eec6341d1dd82695ee172a71a36"
+    },
+    {
+      "bytes": 1342,
+      "path": "data/operations-release/evidence/actual/b002/exceptions.csv",
+      "sha256": "f23c7cac507be27beb544ecf64996617d31b49624b04cea1b562f161a159ee7d"
+    },
+    {
+      "bytes": 15400,
+      "path": "data/operations-release/evidence/actual/b002/s01_engagement.csv",
+      "sha256": "a04ddaa6ae871e1201ebb180a5642814078515b453fcbf4d50b0a34cfbb828b5"
+    },
+    {
+      "bytes": 24364,
+      "path": "data/operations-release/evidence/actual/b002/s02_product_activity.csv",
+      "sha256": "ce9a5d2376d16260ce236710112993d859ff9366b57eae9b1f5844ef43bf489c"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b002/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 25989,
+      "path": "data/operations-release/evidence/actual/b002/s04_interaction.csv",
+      "sha256": "730ee3a48161f3b5432f53d72339229d99eab8dccd50dd7842b2e4f72bfa2354"
+    },
+    {
+      "bytes": 4956,
+      "path": "data/operations-release/evidence/actual/b002/s05_campaign.csv",
+      "sha256": "81737ba972d8889b263adc09464f81023de0cf641e29a74a570feade5425462d"
+    },
+    {
+      "bytes": 251,
+      "path": "data/operations-release/evidence/actual/b003/dq.csv",
+      "sha256": "b77954daabefa24bedd6d78aa4253ee4dfeced7e6ebf5dd777f627804fde6bb0"
+    },
+    {
+      "bytes": 1342,
+      "path": "data/operations-release/evidence/actual/b003/exceptions.csv",
+      "sha256": "f23c7cac507be27beb544ecf64996617d31b49624b04cea1b562f161a159ee7d"
+    },
+    {
+      "bytes": 16720,
+      "path": "data/operations-release/evidence/actual/b003/s01_engagement.csv",
+      "sha256": "c25f32476d24bf6ca9d1e4eeb999ddaf3e434258415e40d16afc1be34a33247c"
+    },
+    {
+      "bytes": 26308,
+      "path": "data/operations-release/evidence/actual/b003/s02_product_activity.csv",
+      "sha256": "0e55828c7430c93230b1605d5aee6dca0a8afad016ff6e9b75992f89a3916e78"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b003/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 28053,
+      "path": "data/operations-release/evidence/actual/b003/s04_interaction.csv",
+      "sha256": "d12ec834107165b1d11705b29a4552347a675a7c8f14c417434059ea4d38b782"
+    },
+    {
+      "bytes": 4956,
+      "path": "data/operations-release/evidence/actual/b003/s05_campaign.csv",
+      "sha256": "81737ba972d8889b263adc09464f81023de0cf641e29a74a570feade5425462d"
+    },
+    {
+      "bytes": 251,
+      "path": "data/operations-release/evidence/actual/b004/dq.csv",
+      "sha256": "43097e2f11bbe8775c0f706d05eb7973544497cc8b77fef1f60ed561f64c2d27"
+    },
+    {
+      "bytes": 1495,
+      "path": "data/operations-release/evidence/actual/b004/exceptions.csv",
+      "sha256": "9b7b9edcd7fc9e11f5830536ce0e938191150958859c6c14d101e507a2b03e5e"
+    },
+    {
+      "bytes": 17875,
+      "path": "data/operations-release/evidence/actual/b004/s01_engagement.csv",
+      "sha256": "62e1cb52aa3217eac5cb6c1d9143a3763f122dc0622066c59dd0504a0d715642"
+    },
+    {
+      "bytes": 28252,
+      "path": "data/operations-release/evidence/actual/b004/s02_product_activity.csv",
+      "sha256": "e0c64980533ff6fe30c9fffb55384c07ec7fccf2a29b3a763b92a755431d583f"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b004/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 30117,
+      "path": "data/operations-release/evidence/actual/b004/s04_interaction.csv",
+      "sha256": "c390b07efb6afa6777d98bb6fa4df02251f33f0ea25351a8fc784476c27c873d"
+    },
+    {
+      "bytes": 4956,
+      "path": "data/operations-release/evidence/actual/b004/s05_campaign.csv",
+      "sha256": "81737ba972d8889b263adc09464f81023de0cf641e29a74a570feade5425462d"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b005/dq.csv",
+      "sha256": "7275936ac3287dbfb6d734c3fb3394c0dedb63c8d650b242a783f38f0b049665"
+    },
+    {
+      "bytes": 1881,
+      "path": "data/operations-release/evidence/actual/b005/exceptions.csv",
+      "sha256": "766069b6e083f34cf36752228787460e5b83a6cc49a091fef1723ca7bef87d7c"
+    },
+    {
+      "bytes": 18810,
+      "path": "data/operations-release/evidence/actual/b005/s01_engagement.csv",
+      "sha256": "088528d4077dd09a705c2d8752b9fb35997ce56945f2e48c17b3dd3ac1c2a254"
+    },
+    {
+      "bytes": 29872,
+      "path": "data/operations-release/evidence/actual/b005/s02_product_activity.csv",
+      "sha256": "465405cbf911a90510ab746d37b2481978dba6cebff0f6e01b9512f3f781593c"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b005/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 32095,
+      "path": "data/operations-release/evidence/actual/b005/s04_interaction.csv",
+      "sha256": "d73b8d51e88d9ab685d87b5b8f08be3e0b0c827e119c3c480318384747b83d6f"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/evidence/actual/b005/s05_campaign.csv",
+      "sha256": "346057334aba8150fd5b63279e6ca3c8c3c66360bc69cd0890730fa7aa3481f9"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b006/dq.csv",
+      "sha256": "c4100b2dc0ede1f1208b41b5786d27d72cf65fe27eeec8ae764bdfa801231ed1"
+    },
+    {
+      "bytes": 1881,
+      "path": "data/operations-release/evidence/actual/b006/exceptions.csv",
+      "sha256": "766069b6e083f34cf36752228787460e5b83a6cc49a091fef1723ca7bef87d7c"
+    },
+    {
+      "bytes": 20130,
+      "path": "data/operations-release/evidence/actual/b006/s01_engagement.csv",
+      "sha256": "5f2d7eb4f428c1fba2038829d86e2b63f4f6781ddf2412566398b076c456d3b1"
+    },
+    {
+      "bytes": 31816,
+      "path": "data/operations-release/evidence/actual/b006/s02_product_activity.csv",
+      "sha256": "2776e23aa5c599938dc57729ff1d92e57386e10a5057bc29b2b0e52801ce7e13"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b006/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 34159,
+      "path": "data/operations-release/evidence/actual/b006/s04_interaction.csv",
+      "sha256": "f18782cc35c8fd10efff5a53c236a573ae4009b377ca2192b90cece62effceb9"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/evidence/actual/b006/s05_campaign.csv",
+      "sha256": "346057334aba8150fd5b63279e6ca3c8c3c66360bc69cd0890730fa7aa3481f9"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b007/dq.csv",
+      "sha256": "50d4ba88602c20e50c899ad5a69c5c50949b9dc6c7760d7b44c7c88997348bc4"
+    },
+    {
+      "bytes": 1881,
+      "path": "data/operations-release/evidence/actual/b007/exceptions.csv",
+      "sha256": "766069b6e083f34cf36752228787460e5b83a6cc49a091fef1723ca7bef87d7c"
+    },
+    {
+      "bytes": 21450,
+      "path": "data/operations-release/evidence/actual/b007/s01_engagement.csv",
+      "sha256": "783643b4cb5996fe6f5e07ec204adc06e2db3cac2bf6ec8f166a69fd8abae326"
+    },
+    {
+      "bytes": 33760,
+      "path": "data/operations-release/evidence/actual/b007/s02_product_activity.csv",
+      "sha256": "c475299f61376492d316161646e18711007589f19d9f2ee2d0ba11733cddbdee"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b007/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 36223,
+      "path": "data/operations-release/evidence/actual/b007/s04_interaction.csv",
+      "sha256": "0713e6aa974c115078f6d4ef73e1351548a81b8c29ff72c5dd39f017e69d83ff"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/evidence/actual/b007/s05_campaign.csv",
+      "sha256": "346057334aba8150fd5b63279e6ca3c8c3c66360bc69cd0890730fa7aa3481f9"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b008/dq.csv",
+      "sha256": "5bcbfe687f35ac1b869d9fc5179913c2bff900b60c3131f770b55efc21c91d6b"
+    },
+    {
+      "bytes": 1677,
+      "path": "data/operations-release/evidence/actual/b008/exceptions.csv",
+      "sha256": "3ca5c83db15a08b58d0d7b5176ae7cde40fada6b437530ddc0832caef5392e63"
+    },
+    {
+      "bytes": 22990,
+      "path": "data/operations-release/evidence/actual/b008/s01_engagement.csv",
+      "sha256": "c9a9a16165dcf7dafa2a1532b15e069a376ec47ec2e8f0e0f3af37f272a71a6e"
+    },
+    {
+      "bytes": 35704,
+      "path": "data/operations-release/evidence/actual/b008/s02_product_activity.csv",
+      "sha256": "d5976b57ed18a6daf5011c3b58ec576d4135b502135e44904b02cb5fd3ed32f3"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b008/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 38287,
+      "path": "data/operations-release/evidence/actual/b008/s04_interaction.csv",
+      "sha256": "36c8be891ee6f612cd4c7a9d65bf95d1b4bb66368041554fa35e2acde5e6d8bb"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/evidence/actual/b008/s05_campaign.csv",
+      "sha256": "346057334aba8150fd5b63279e6ca3c8c3c66360bc69cd0890730fa7aa3481f9"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b009/dq.csv",
+      "sha256": "4fd9762dc104743d2c776fba83f6c58a6db685cd1457c56ca18972a4922f132b"
+    },
+    {
+      "bytes": 2053,
+      "path": "data/operations-release/evidence/actual/b009/exceptions.csv",
+      "sha256": "f831d15c8f0027e12a5c9dad0e11de504931ac1bd7e3019b65ca427d13d9435d"
+    },
+    {
+      "bytes": 23980,
+      "path": "data/operations-release/evidence/actual/b009/s01_engagement.csv",
+      "sha256": "2dd8e8926f7d6529c4c7a15ed97cb90cb57588c63e18e7937c4939ec92a7f04d"
+    },
+    {
+      "bytes": 37666,
+      "path": "data/operations-release/evidence/actual/b009/s02_product_activity.csv",
+      "sha256": "6f5e403d0ff2b61cdb71fa781afe205bc512e9376c904f20f4c2ef1ee87d322b"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b009/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 40265,
+      "path": "data/operations-release/evidence/actual/b009/s04_interaction.csv",
+      "sha256": "eab7f2a31751cf0dc2813b902ebe539d0609cdb7acf08791cc57edb295fe9e83"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/evidence/actual/b009/s05_campaign.csv",
+      "sha256": "b030b53bd84d82c98a2f11ed330265c1ac81ae31c8a3f19530a66df0736cfa69"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b010/dq.csv",
+      "sha256": "c55902f7c12aa1e8d6deff8273cdcef895d22ce1afc3711704638b749924fa8d"
+    },
+    {
+      "bytes": 2127,
+      "path": "data/operations-release/evidence/actual/b010/exceptions.csv",
+      "sha256": "6a90b8f0b834ea9dbc91994203badf91d632ea0a79f78b9d455381e35ffee079"
+    },
+    {
+      "bytes": 25300,
+      "path": "data/operations-release/evidence/actual/b010/s01_engagement.csv",
+      "sha256": "98364d0762577f7cbddab55a29549aaa388bc7b6f5ae22240404a0b4cdbdf714"
+    },
+    {
+      "bytes": 39617,
+      "path": "data/operations-release/evidence/actual/b010/s02_product_activity.csv",
+      "sha256": "c561f4162e691df0e7b44100560a3feb1ce5364b3dcde0e5c2db4a64e99d271c"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b010/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 42329,
+      "path": "data/operations-release/evidence/actual/b010/s04_interaction.csv",
+      "sha256": "e49395ee4f681ae41580d2726cf2ba5f08fec7b4bb774a525a3a8ff78df01148"
+    },
+    {
+      "bytes": 4950,
+      "path": "data/operations-release/evidence/actual/b010/s05_campaign.csv",
+      "sha256": "c9d28bd5f2d43bec5a5d1e40a192704593418e7565fc3260f949e8f8c1c1d1b4"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b011/dq.csv",
+      "sha256": "51acabffdcd5432daec06be3c08aa096dd2e6e2e22a7938cf57289d5d8491ac1"
+    },
+    {
+      "bytes": 2127,
+      "path": "data/operations-release/evidence/actual/b011/exceptions.csv",
+      "sha256": "6a90b8f0b834ea9dbc91994203badf91d632ea0a79f78b9d455381e35ffee079"
+    },
+    {
+      "bytes": 26620,
+      "path": "data/operations-release/evidence/actual/b011/s01_engagement.csv",
+      "sha256": "da178b9177d862615aa3cfae57669ab4cd16487cda63266eb266016b2b5d746d"
+    },
+    {
+      "bytes": 41579,
+      "path": "data/operations-release/evidence/actual/b011/s02_product_activity.csv",
+      "sha256": "d0c9895e8a26827198fdc919ef768ca80c5e36ad629a4e7ef92f1892e2f2fc8b"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b011/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 44393,
+      "path": "data/operations-release/evidence/actual/b011/s04_interaction.csv",
+      "sha256": "b9f20eef6f0442a56e36468e37065ca5a33b82519f3d9467d4dffe8781a93d5c"
+    },
+    {
+      "bytes": 4950,
+      "path": "data/operations-release/evidence/actual/b011/s05_campaign.csv",
+      "sha256": "c9d28bd5f2d43bec5a5d1e40a192704593418e7565fc3260f949e8f8c1c1d1b4"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b012/dq.csv",
+      "sha256": "2c54984b453bee9be7e2c87ab7721fe2f71c56c12d3297d8d81a3161d7b6d552"
+    },
+    {
+      "bytes": 2127,
+      "path": "data/operations-release/evidence/actual/b012/exceptions.csv",
+      "sha256": "6a90b8f0b834ea9dbc91994203badf91d632ea0a79f78b9d455381e35ffee079"
+    },
+    {
+      "bytes": 27940,
+      "path": "data/operations-release/evidence/actual/b012/s01_engagement.csv",
+      "sha256": "2d8dd9f44de689f4b210dacafaed7e054c0559a644efcba9a5ff29baa7dfd44f"
+    },
+    {
+      "bytes": 43541,
+      "path": "data/operations-release/evidence/actual/b012/s02_product_activity.csv",
+      "sha256": "91070d67394ef1ffb527a0aad6faf5f7bccb70ab83733f6c8be65ffe6d8335ba"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b012/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 46457,
+      "path": "data/operations-release/evidence/actual/b012/s04_interaction.csv",
+      "sha256": "254f479ab3b57bed3f9cebae383ac64cd7640cbd7898d44d1a93836f905777c9"
+    },
+    {
+      "bytes": 4950,
+      "path": "data/operations-release/evidence/actual/b012/s05_campaign.csv",
+      "sha256": "c9d28bd5f2d43bec5a5d1e40a192704593418e7565fc3260f949e8f8c1c1d1b4"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b013/dq.csv",
+      "sha256": "89e600c1fe6713534a54e6f09ef1ca3001ca42e8006259c358d12e5c436e8798"
+    },
+    {
+      "bytes": 2462,
+      "path": "data/operations-release/evidence/actual/b013/exceptions.csv",
+      "sha256": "810e31c29e770af62ddc5de9f37d2d11f086e255dfc21aa1c39ccde2a4b8b51a"
+    },
+    {
+      "bytes": 28930,
+      "path": "data/operations-release/evidence/actual/b013/s01_engagement.csv",
+      "sha256": "ebe006ecd892b8ce7fbbff51210c3649d84dcb85970d8aeebdbf9b39d21e3f11"
+    },
+    {
+      "bytes": 45176,
+      "path": "data/operations-release/evidence/actual/b013/s02_product_activity.csv",
+      "sha256": "40bd30e53e92ee34514a6bd81159cced0bb4ea024c6a2f4128fd93d7887077a7"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b013/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 48435,
+      "path": "data/operations-release/evidence/actual/b013/s04_interaction.csv",
+      "sha256": "5835c5bd1566c3b0a3bc439f2c4c649114d6659025ca802a50bf556813c07f31"
+    },
+    {
+      "bytes": 4950,
+      "path": "data/operations-release/evidence/actual/b013/s05_campaign.csv",
+      "sha256": "f3e15d2012126b092e21ad7f5fd270f04ebe65a93cd8b64428c91296d26c1432"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/evidence/actual/b014/dq.csv",
+      "sha256": "12917b2e069d897e2b272d0bdf40d55a66d1a9c646451aa5dd33aa79a5ceb2a3"
+    },
+    {
+      "bytes": 2462,
+      "path": "data/operations-release/evidence/actual/b014/exceptions.csv",
+      "sha256": "810e31c29e770af62ddc5de9f37d2d11f086e255dfc21aa1c39ccde2a4b8b51a"
+    },
+    {
+      "bytes": 30250,
+      "path": "data/operations-release/evidence/actual/b014/s01_engagement.csv",
+      "sha256": "d4f1c5b1f118b3f0f889957f955f8e9a039ccdf94fc85ef87f392b8690a6d9e3"
+    },
+    {
+      "bytes": 47127,
+      "path": "data/operations-release/evidence/actual/b014/s02_product_activity.csv",
+      "sha256": "6798dabfdee90fb04907cd12b3e0a913ce360554574fde19b1e56461d07cf134"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/evidence/actual/b014/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 50499,
+      "path": "data/operations-release/evidence/actual/b014/s04_interaction.csv",
+      "sha256": "f5d5adbd7fb8ad3ae34a8083988f48f351eb543c62385396218218a28448de70"
+    },
+    {
+      "bytes": 4949,
+      "path": "data/operations-release/evidence/actual/b014/s05_campaign.csv",
+      "sha256": "2be70ece89f886d80d0fb23c9c8f9423d0fcb3358a2d4b5ae1a859d92f85dcc0"
+    },
+    {
+      "bytes": 24885,
+      "path": "data/operations-release/evidence/operations-report.json",
+      "sha256": "ca0e04f12445eb086c232511d1279d2abfa6fe13f5656f113b28493f3498cf9e"
+    },
+    {
+      "bytes": 880,
+      "path": "data/operations-release/generator-input.json",
+      "sha256": "c5a556e2327f2d370e9477eced0d04dd6e4a258ac0df9630ea85419f206789ed"
+    },
+    {
+      "bytes": 8315,
+      "path": "data/operations-release/model_export/b012/canonical_affiliation.csv",
+      "sha256": "f79eea36d06d3ac5ca4a8b5c5f7ee238458d6a14925c0181834c23c489b269d1"
+    },
+    {
+      "bytes": 428,
+      "path": "data/operations-release/model_export/b012/canonical_campaign.csv",
+      "sha256": "6201b57780a1b56ff12d084215a3ab53c11f1b1754f24598303ac557b159c7c9"
+    },
+    {
+      "bytes": 7806,
+      "path": "data/operations-release/model_export/b012/canonical_campaign_member.csv",
+      "sha256": "c4477d6bf818ed55973f4ef841108b39d62b95ff000687a32b56cf298e586cbc"
+    },
+    {
+      "bytes": 11300,
+      "path": "data/operations-release/model_export/b012/canonical_consent_event.csv",
+      "sha256": "ab74a73a16e91890417e60ed8a90515a02a069ef0fdad065e03ef63873af7d7f"
+    },
+    {
+      "bytes": 7606,
+      "path": "data/operations-release/model_export/b012/canonical_customer.csv",
+      "sha256": "791396ab64edc8e47e5dda2e7b17556bb5227cc65388ed043c1ebce1e43d8abb"
+    },
+    {
+      "bytes": 6916,
+      "path": "data/operations-release/model_export/b012/canonical_customer_territory.csv",
+      "sha256": "c9020bc19d981d1da88ce9e3f1afd9578619031e135b174c98c36f7186c0dc77"
+    },
+    {
+      "bytes": 24567,
+      "path": "data/operations-release/model_export/b012/canonical_interaction_product.csv",
+      "sha256": "75a3c680dcb791d8460e4187ac793d6a3512d57d99ce76d6325182004de24035"
+    },
+    {
+      "bytes": 93352,
+      "path": "data/operations-release/model_export/b012/canonical_interaction_version.csv",
+      "sha256": "902cc8df0ac9a4f11a4a931c6e1d1fe54f97d4d67adb8fbaa5f51fe195e0dfbd"
+    },
+    {
+      "bytes": 691,
+      "path": "data/operations-release/model_export/b012/canonical_organisation.csv",
+      "sha256": "fe2ea8ed904bdbfe67f2ab463891d8c08a59f7c8f019c6480119e6baeadcebcb"
+    },
+    {
+      "bytes": 525,
+      "path": "data/operations-release/model_export/b012/canonical_product_interval.csv",
+      "sha256": "5e609c74be645ebd7411464eb7ae97877313bf2dded89e75b9c65ba9bb72fa02"
+    },
+    {
+      "bytes": 345,
+      "path": "data/operations-release/model_export/b012/canonical_representative.csv",
+      "sha256": "f75bc5c423dea65dd58a8a8fa578af183568d722ed4a139ff02fa08cda5997d3"
+    },
+    {
+      "bytes": 291672,
+      "path": "data/operations-release/model_export/b012/canonical_rx_version.csv",
+      "sha256": "b35db65b8ec5d0e0bd2cd2cb155feb9e0de988e4d10c5a60a4df2222fae5be56"
+    },
+    {
+      "bytes": 222,
+      "path": "data/operations-release/model_export/b012/canonical_territory.csv",
+      "sha256": "746b452fa9fdabb3f7e6f0f2cb8bc5cd294e1598adda830d73eae3779fbdddef"
+    },
+    {
+      "bytes": 426,
+      "path": "data/operations-release/model_export/b012/consumption_dq.csv",
+      "sha256": "d6af9f38b8fdcbb50b0879e5bb84a5949266d9c6531b7ba982bbef813d3eb4a2"
+    },
+    {
+      "bytes": 3445,
+      "path": "data/operations-release/model_export/b012/consumption_exceptions.csv",
+      "sha256": "870103202cc0fbd9dfbcb18832eb0bf9fd3f7433498ce907b88df392503d7c2b"
+    },
+    {
+      "bytes": 41140,
+      "path": "data/operations-release/model_export/b012/consumption_s01_engagement.csv",
+      "sha256": "5c36f7212246dea2e989e7bc250f5bcfd9244f8455793a24d5a0782dda4399e3"
+    },
+    {
+      "bytes": 57391,
+      "path": "data/operations-release/model_export/b012/consumption_s02_product_activity.csv",
+      "sha256": "e1d534ea856315f6eba29635a7257b5adfb8f990c11fb0ad5642da73b0eda274"
+    },
+    {
+      "bytes": 7075,
+      "path": "data/operations-release/model_export/b012/consumption_s03_customer_territory.csv",
+      "sha256": "2ba06e32323c2030190d4204378928b2c728cede06aebaed248001c9a7e0b31d"
+    },
+    {
+      "bytes": 60489,
+      "path": "data/operations-release/model_export/b012/consumption_s04_interaction.csv",
+      "sha256": "9755f6248446d01804d7a0bf5a22130958c6c24a08eb493e7f4674e2d65c1c64"
+    },
+    {
+      "bytes": 7022,
+      "path": "data/operations-release/model_export/b012/consumption_s05_campaign.csv",
+      "sha256": "855ddcf869349e9d6201874e9ddd1ad58bd3459672304a5b8899f84045fc5f08"
+    },
+    {
+      "bytes": 8847,
+      "path": "data/operations-release/model_export/b012/model-export-manifest.json",
+      "sha256": "b5debdee3c6472e1cda19764e00e2aa6ad01e11e78759eaba564af69046899cb"
+    },
+    {
+      "bytes": 426,
+      "path": "data/operations-release/model_export/b012/pipeline_dq.csv",
+      "sha256": "d6af9f38b8fdcbb50b0879e5bb84a5949266d9c6531b7ba982bbef813d3eb4a2"
+    },
+    {
+      "bytes": 3445,
+      "path": "data/operations-release/model_export/b012/pipeline_exceptions.csv",
+      "sha256": "870103202cc0fbd9dfbcb18832eb0bf9fd3f7433498ce907b88df392503d7c2b"
+    },
+    {
+      "bytes": 41140,
+      "path": "data/operations-release/model_export/b012/pipeline_s01_engagement.csv",
+      "sha256": "5c36f7212246dea2e989e7bc250f5bcfd9244f8455793a24d5a0782dda4399e3"
+    },
+    {
+      "bytes": 57391,
+      "path": "data/operations-release/model_export/b012/pipeline_s02_product_activity.csv",
+      "sha256": "e1d534ea856315f6eba29635a7257b5adfb8f990c11fb0ad5642da73b0eda274"
+    },
+    {
+      "bytes": 7075,
+      "path": "data/operations-release/model_export/b012/pipeline_s03_customer_territory.csv",
+      "sha256": "2ba06e32323c2030190d4204378928b2c728cede06aebaed248001c9a7e0b31d"
+    },
+    {
+      "bytes": 60489,
+      "path": "data/operations-release/model_export/b012/pipeline_s04_interaction.csv",
+      "sha256": "9755f6248446d01804d7a0bf5a22130958c6c24a08eb493e7f4674e2d65c1c64"
+    },
+    {
+      "bytes": 7022,
+      "path": "data/operations-release/model_export/b012/pipeline_s05_campaign.csv",
+      "sha256": "855ddcf869349e9d6201874e9ddd1ad58bd3459672304a5b8899f84045fc5f08"
+    },
+    {
+      "bytes": 654,
+      "path": "data/operations-release/model_export/b012/visualization_scenario_scorecard.csv",
+      "sha256": "7db5fe9d7d0c0b8e1227d1b5e4f07a6212b3552de67af42d2181d93ff2a612d0"
+    },
+    {
+      "bytes": 8315,
+      "path": "data/operations-release/model_export/b014/canonical_affiliation.csv",
+      "sha256": "87516d80843f17426ccd8e5d5ce948ef3d93838fa9c78ea1b52011a00ffb6592"
+    },
+    {
+      "bytes": 428,
+      "path": "data/operations-release/model_export/b014/canonical_campaign.csv",
+      "sha256": "dafe40e550da5de7af6ebbd3f8d7b9478ce089ccc5e6f3ba6e71da89548f41a8"
+    },
+    {
+      "bytes": 7806,
+      "path": "data/operations-release/model_export/b014/canonical_campaign_member.csv",
+      "sha256": "3c8673ca59fdd04a135e94e8f7d8dd3212d0375ceeef4a1d6ee45f0ef8d4a8c3"
+    },
+    {
+      "bytes": 11300,
+      "path": "data/operations-release/model_export/b014/canonical_consent_event.csv",
+      "sha256": "54a45268d9f77d5fbc500be5564fddbcff9d242ce8f99cac071e1026739df1e7"
+    },
+    {
+      "bytes": 7606,
+      "path": "data/operations-release/model_export/b014/canonical_customer.csv",
+      "sha256": "2e30c29a8586331861cd0f4c49fb55ea5f53ca67f836be6c71bf430ca4f022d0"
+    },
+    {
+      "bytes": 6916,
+      "path": "data/operations-release/model_export/b014/canonical_customer_territory.csv",
+      "sha256": "2fd9391fb93de7000ab1267f2c7aec97e3c401cce471a02b981bc50f04ee9a62"
+    },
+    {
+      "bytes": 26717,
+      "path": "data/operations-release/model_export/b014/canonical_interaction_product.csv",
+      "sha256": "1ee4d1c5be7e41518d121ccc4366ebc83f7dae4bf0d966bb0150d94d51b6b0a5"
+    },
+    {
+      "bytes": 101751,
+      "path": "data/operations-release/model_export/b014/canonical_interaction_version.csv",
+      "sha256": "80988c1264c0d04ad9bace2e3ad3c068c8b7066c254c2548d43320aeadb35657"
+    },
+    {
+      "bytes": 691,
+      "path": "data/operations-release/model_export/b014/canonical_organisation.csv",
+      "sha256": "4cf3bda46d970255b0de04dd9c3fe8acfc6e50f1419e6d0943fdf34b986b01fd"
+    },
+    {
+      "bytes": 525,
+      "path": "data/operations-release/model_export/b014/canonical_product_interval.csv",
+      "sha256": "3ba99ac3a160230d90f5a22fe7c216ea64379af8e8c388b1d986e3aa19a2a5f6"
+    },
+    {
+      "bytes": 345,
+      "path": "data/operations-release/model_export/b014/canonical_representative.csv",
+      "sha256": "626758719b64950bc853770b57f80908700b4a486b758033ab38ba7fb96aa683"
+    },
+    {
+      "bytes": 291672,
+      "path": "data/operations-release/model_export/b014/canonical_rx_version.csv",
+      "sha256": "d012c1208e2a7723013fe2512a0fb26800b237dda59d038b6f0820034d36c952"
+    },
+    {
+      "bytes": 222,
+      "path": "data/operations-release/model_export/b014/canonical_territory.csv",
+      "sha256": "e28ccd651c2b1263dd18f910269b5f3a4315b1b57fd17e065afb8b67b86f092a"
+    },
+    {
+      "bytes": 426,
+      "path": "data/operations-release/model_export/b014/consumption_dq.csv",
+      "sha256": "b60f584c8447640f5dd1bd3c911ae03367730a6a672210ca4555376eff863763"
+    },
+    {
+      "bytes": 3988,
+      "path": "data/operations-release/model_export/b014/consumption_exceptions.csv",
+      "sha256": "01715984edc9d93bf5cf0002e1ab5f448b1fd4f60bbf3799ed655ae0520b56c2"
+    },
+    {
+      "bytes": 44542,
+      "path": "data/operations-release/model_export/b014/consumption_s01_engagement.csv",
+      "sha256": "9ca37f85cd6478e61b1a016fb447e7b1b4c273142089d03ce341fbd2be99a213"
+    },
+    {
+      "bytes": 62121,
+      "path": "data/operations-release/model_export/b014/consumption_s02_product_activity.csv",
+      "sha256": "38935db00d5c04b8078e39132dd27e2f62489193a4eeb49f0354916ac1d1b83d"
+    },
+    {
+      "bytes": 7075,
+      "path": "data/operations-release/model_export/b014/consumption_s03_customer_territory.csv",
+      "sha256": "b8bca40df1346c3488dc029a16a05d3046992327c2f1638ed429c64b4e763e6d"
+    },
+    {
+      "bytes": 65753,
+      "path": "data/operations-release/model_export/b014/consumption_s04_interaction.csv",
+      "sha256": "2106718d8b9327bf77fbd0cf72c46f787f35751d23958d8c571f6af5cc98e13a"
+    },
+    {
+      "bytes": 91,
+      "path": "data/operations-release/model_export/b014/consumption_s05_campaign.csv",
+      "sha256": "07a3c529d6a772876729d4d145db08f21aa1ca443a9806f5dc53edad9e083be5"
+    },
+    {
+      "bytes": 8846,
+      "path": "data/operations-release/model_export/b014/model-export-manifest.json",
+      "sha256": "310987f2f362f2da803b533cb3dad2fa0b09119907d853b1b52aabaecf51dae1"
+    },
+    {
+      "bytes": 426,
+      "path": "data/operations-release/model_export/b014/pipeline_dq.csv",
+      "sha256": "b60f584c8447640f5dd1bd3c911ae03367730a6a672210ca4555376eff863763"
+    },
+    {
+      "bytes": 3988,
+      "path": "data/operations-release/model_export/b014/pipeline_exceptions.csv",
+      "sha256": "01715984edc9d93bf5cf0002e1ab5f448b1fd4f60bbf3799ed655ae0520b56c2"
+    },
+    {
+      "bytes": 44542,
+      "path": "data/operations-release/model_export/b014/pipeline_s01_engagement.csv",
+      "sha256": "9ca37f85cd6478e61b1a016fb447e7b1b4c273142089d03ce341fbd2be99a213"
+    },
+    {
+      "bytes": 62121,
+      "path": "data/operations-release/model_export/b014/pipeline_s02_product_activity.csv",
+      "sha256": "38935db00d5c04b8078e39132dd27e2f62489193a4eeb49f0354916ac1d1b83d"
+    },
+    {
+      "bytes": 7075,
+      "path": "data/operations-release/model_export/b014/pipeline_s03_customer_territory.csv",
+      "sha256": "b8bca40df1346c3488dc029a16a05d3046992327c2f1638ed429c64b4e763e6d"
+    },
+    {
+      "bytes": 65753,
+      "path": "data/operations-release/model_export/b014/pipeline_s04_interaction.csv",
+      "sha256": "2106718d8b9327bf77fbd0cf72c46f787f35751d23958d8c571f6af5cc98e13a"
+    },
+    {
+      "bytes": 7021,
+      "path": "data/operations-release/model_export/b014/pipeline_s05_campaign.csv",
+      "sha256": "4539ede002757c983045c970f7512e2045762eea6ba7756a4a49e436e29f113b"
+    },
+    {
+      "bytes": 658,
+      "path": "data/operations-release/model_export/b014/visualization_scenario_scorecard.csv",
+      "sha256": "c26830b55f75388a999d4b4415d46190bfe9338ff7a1278483edba07b0108a5f"
+    },
+    {
+      "bytes": 559,
+      "path": "data/operations-release/model_export/history/model-export-manifest.json",
+      "sha256": "6a3024466fee315864b18fa49a657af8ecddfc5798308325a32614a48ee5e3bb"
+    },
+    {
+      "bytes": 7783,
+      "path": "data/operations-release/model_export/history/visualization_scenario_scorecard.csv",
+      "sha256": "0d93ec06597719dfbdd70e9dff7905c3f2e7b6b1a6179455e8be55a5018d90ea"
+    },
+    {
+      "bytes": 231,
+      "path": "data/operations-release/operations-input.json",
+      "sha256": "dd3ed0a6374f25d20b0719d2500fdda0afcbd2d0913254e327ec612535387675"
+    },
+    {
+      "bytes": 6386,
+      "path": "data/operations-release/private_evaluator/canonical/affiliation.csv",
+      "sha256": "349c8346106094d706fbe26d0721c1b7b27cf41421cca0c640b04449a2fc7535"
+    },
+    {
+      "bytes": 363,
+      "path": "data/operations-release/private_evaluator/canonical/campaign.csv",
+      "sha256": "bc7da26ff12bd0440c5c0e066777f68895d2186765dab6264afbe255bfa491c3"
+    },
+    {
+      "bytes": 4576,
+      "path": "data/operations-release/private_evaluator/canonical/campaign_member.csv",
+      "sha256": "307b65f6c609e414515405f521a5b34a3017919cac5f23dc8f0ba0ede10f27f7"
+    },
+    {
+      "bytes": 8210,
+      "path": "data/operations-release/private_evaluator/canonical/consent_event.csv",
+      "sha256": "96ba4e3940bca98c357ef955fd5ba39553ca2382913ba7418c949c64e6f92c3e"
+    },
+    {
+      "bytes": 525,
+      "path": "data/operations-release/private_evaluator/canonical/hco.csv",
+      "sha256": "8a6900daeb6855f5c6b60236e9c5e0d6db3531a06919cb75eba25bc8d8f58aa2"
+    },
+    {
+      "bytes": 6395,
+      "path": "data/operations-release/private_evaluator/canonical/hcp.csv",
+      "sha256": "c2f678b3d3afeb34f1a7fc7096890f1adff163d48ee596b75168aff3a19e27a9"
+    },
+    {
+      "bytes": 5569,
+      "path": "data/operations-release/private_evaluator/canonical/hcp_territory.csv",
+      "sha256": "a61dd8555f5fbfe2876843c621696ed74f1d1e5ac5550d297c3247f19343205c"
+    },
+    {
+      "bytes": 85849,
+      "path": "data/operations-release/private_evaluator/canonical/interaction.csv",
+      "sha256": "8185615d63cc3c418f743d50c5a35ba76501db02f105a28b063c896a79c108d6"
+    },
+    {
+      "bytes": 23799,
+      "path": "data/operations-release/private_evaluator/canonical/interaction_product.csv",
+      "sha256": "a7317f297e839b1db0171139f01a73a8ec35c76f7fdd614fd690ba90e30303de"
+    },
+    {
+      "bytes": 191,
+      "path": "data/operations-release/private_evaluator/canonical/product.csv",
+      "sha256": "49a60d79dda16e3e47c84663580613f59d055532d8e0e19c8accd1e13d6c5119"
+    },
+    {
+      "bytes": 434,
+      "path": "data/operations-release/private_evaluator/canonical/product_hierarchy.csv",
+      "sha256": "bdd10bdf69790f0fb80e2707be1834746cfeb9be1aa7cf7f9392c3f566bae85d"
+    },
+    {
+      "bytes": 456,
+      "path": "data/operations-release/private_evaluator/canonical/rep_territory.csv",
+      "sha256": "398f20944141886adf94c817f6e5d6715266336a5648599aa3d8481fc2b3951d"
+    },
+    {
+      "bytes": 320,
+      "path": "data/operations-release/private_evaluator/canonical/representative.csv",
+      "sha256": "8e9125521341170d4820e4c17b730fa32d77cde53c59fe69b9a17ca2e1e2d067"
+    },
+    {
+      "bytes": 231606,
+      "path": "data/operations-release/private_evaluator/canonical/rx_sales.csv",
+      "sha256": "b3c3e3daa8fb6b8b1373eccf0ac2533d9dba4ad50dd40775c28ef4fdbe1a6e02"
+    },
+    {
+      "bytes": 66084,
+      "path": "data/operations-release/private_evaluator/canonical/source_identity.csv",
+      "sha256": "f1814d0d1dffef81a2a50429708496ec40e6a120209e6d585695a0009877489f"
+    },
+    {
+      "bytes": 184,
+      "path": "data/operations-release/private_evaluator/canonical/territory.csv",
+      "sha256": "4e6bb31552275b6479f00969808e0d77b605db9e8f191aafdfb33c8f7d823057"
+    },
+    {
+      "bytes": 5503,
+      "path": "data/operations-release/private_evaluator/canonical-manifest.json",
+      "sha256": "333e47afae90b6e4f3fd70a81f2debe1d637ad45bd4da57c3dd763f8a51f7dc0"
+    },
+    {
+      "bytes": 251,
+      "path": "data/operations-release/private_evaluator/expected/b001/dq.csv",
+      "sha256": "61c2deb00777e67edbc06844ca87d230ca97b0aa514f3d0f31b5bab75ccf914e"
+    },
+    {
+      "bytes": 1109,
+      "path": "data/operations-release/private_evaluator/expected/b001/exceptions.csv",
+      "sha256": "fcdab12523cf4b9ec2c0e84e6e6a7b691d7ad8484d99464632c0da9c91fe16ad"
+    },
+    {
+      "bytes": 15510,
+      "path": "data/operations-release/private_evaluator/expected/b001/s01_engagement.csv",
+      "sha256": "65bc82bda29df55cd2a0e294057f3be17f374b557a0c29583b08049e3588ad07"
+    },
+    {
+      "bytes": 23693,
+      "path": "data/operations-release/private_evaluator/expected/b001/s02_product_activity.csv",
+      "sha256": "5be2c142a910dec460f0a8948062795910871c777c7d5888a74923768b00ab1a"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b001/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 25903,
+      "path": "data/operations-release/private_evaluator/expected/b001/s04_interaction.csv",
+      "sha256": "d2bae867b0566a2c1c1a4e21ef4f8fb7c9dc862dd3b27037af4977e650a29ce1"
+    },
+    {
+      "bytes": 4956,
+      "path": "data/operations-release/private_evaluator/expected/b001/s05_campaign.csv",
+      "sha256": "530301d892316d875cb79cb48f5e28e327f7f02231f0e8a009d63e07cc614b41"
+    },
+    {
+      "bytes": 251,
+      "path": "data/operations-release/private_evaluator/expected/b002/dq.csv",
+      "sha256": "cc52925bc3be707beb4a4c664463c56e73ea9eec6341d1dd82695ee172a71a36"
+    },
+    {
+      "bytes": 1342,
+      "path": "data/operations-release/private_evaluator/expected/b002/exceptions.csv",
+      "sha256": "f23c7cac507be27beb544ecf64996617d31b49624b04cea1b562f161a159ee7d"
+    },
+    {
+      "bytes": 15400,
+      "path": "data/operations-release/private_evaluator/expected/b002/s01_engagement.csv",
+      "sha256": "a04ddaa6ae871e1201ebb180a5642814078515b453fcbf4d50b0a34cfbb828b5"
+    },
+    {
+      "bytes": 24364,
+      "path": "data/operations-release/private_evaluator/expected/b002/s02_product_activity.csv",
+      "sha256": "ce9a5d2376d16260ce236710112993d859ff9366b57eae9b1f5844ef43bf489c"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b002/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 25989,
+      "path": "data/operations-release/private_evaluator/expected/b002/s04_interaction.csv",
+      "sha256": "730ee3a48161f3b5432f53d72339229d99eab8dccd50dd7842b2e4f72bfa2354"
+    },
+    {
+      "bytes": 4956,
+      "path": "data/operations-release/private_evaluator/expected/b002/s05_campaign.csv",
+      "sha256": "81737ba972d8889b263adc09464f81023de0cf641e29a74a570feade5425462d"
+    },
+    {
+      "bytes": 251,
+      "path": "data/operations-release/private_evaluator/expected/b003/dq.csv",
+      "sha256": "b77954daabefa24bedd6d78aa4253ee4dfeced7e6ebf5dd777f627804fde6bb0"
+    },
+    {
+      "bytes": 1342,
+      "path": "data/operations-release/private_evaluator/expected/b003/exceptions.csv",
+      "sha256": "f23c7cac507be27beb544ecf64996617d31b49624b04cea1b562f161a159ee7d"
+    },
+    {
+      "bytes": 16720,
+      "path": "data/operations-release/private_evaluator/expected/b003/s01_engagement.csv",
+      "sha256": "c25f32476d24bf6ca9d1e4eeb999ddaf3e434258415e40d16afc1be34a33247c"
+    },
+    {
+      "bytes": 26308,
+      "path": "data/operations-release/private_evaluator/expected/b003/s02_product_activity.csv",
+      "sha256": "0e55828c7430c93230b1605d5aee6dca0a8afad016ff6e9b75992f89a3916e78"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b003/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 28053,
+      "path": "data/operations-release/private_evaluator/expected/b003/s04_interaction.csv",
+      "sha256": "d12ec834107165b1d11705b29a4552347a675a7c8f14c417434059ea4d38b782"
+    },
+    {
+      "bytes": 4956,
+      "path": "data/operations-release/private_evaluator/expected/b003/s05_campaign.csv",
+      "sha256": "81737ba972d8889b263adc09464f81023de0cf641e29a74a570feade5425462d"
+    },
+    {
+      "bytes": 251,
+      "path": "data/operations-release/private_evaluator/expected/b004/dq.csv",
+      "sha256": "43097e2f11bbe8775c0f706d05eb7973544497cc8b77fef1f60ed561f64c2d27"
+    },
+    {
+      "bytes": 1495,
+      "path": "data/operations-release/private_evaluator/expected/b004/exceptions.csv",
+      "sha256": "9b7b9edcd7fc9e11f5830536ce0e938191150958859c6c14d101e507a2b03e5e"
+    },
+    {
+      "bytes": 17875,
+      "path": "data/operations-release/private_evaluator/expected/b004/s01_engagement.csv",
+      "sha256": "62e1cb52aa3217eac5cb6c1d9143a3763f122dc0622066c59dd0504a0d715642"
+    },
+    {
+      "bytes": 28252,
+      "path": "data/operations-release/private_evaluator/expected/b004/s02_product_activity.csv",
+      "sha256": "e0c64980533ff6fe30c9fffb55384c07ec7fccf2a29b3a763b92a755431d583f"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b004/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 30117,
+      "path": "data/operations-release/private_evaluator/expected/b004/s04_interaction.csv",
+      "sha256": "c390b07efb6afa6777d98bb6fa4df02251f33f0ea25351a8fc784476c27c873d"
+    },
+    {
+      "bytes": 4956,
+      "path": "data/operations-release/private_evaluator/expected/b004/s05_campaign.csv",
+      "sha256": "81737ba972d8889b263adc09464f81023de0cf641e29a74a570feade5425462d"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b005/dq.csv",
+      "sha256": "7275936ac3287dbfb6d734c3fb3394c0dedb63c8d650b242a783f38f0b049665"
+    },
+    {
+      "bytes": 1881,
+      "path": "data/operations-release/private_evaluator/expected/b005/exceptions.csv",
+      "sha256": "766069b6e083f34cf36752228787460e5b83a6cc49a091fef1723ca7bef87d7c"
+    },
+    {
+      "bytes": 18810,
+      "path": "data/operations-release/private_evaluator/expected/b005/s01_engagement.csv",
+      "sha256": "088528d4077dd09a705c2d8752b9fb35997ce56945f2e48c17b3dd3ac1c2a254"
+    },
+    {
+      "bytes": 29872,
+      "path": "data/operations-release/private_evaluator/expected/b005/s02_product_activity.csv",
+      "sha256": "465405cbf911a90510ab746d37b2481978dba6cebff0f6e01b9512f3f781593c"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b005/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 32095,
+      "path": "data/operations-release/private_evaluator/expected/b005/s04_interaction.csv",
+      "sha256": "d73b8d51e88d9ab685d87b5b8f08be3e0b0c827e119c3c480318384747b83d6f"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/private_evaluator/expected/b005/s05_campaign.csv",
+      "sha256": "346057334aba8150fd5b63279e6ca3c8c3c66360bc69cd0890730fa7aa3481f9"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b006/dq.csv",
+      "sha256": "c4100b2dc0ede1f1208b41b5786d27d72cf65fe27eeec8ae764bdfa801231ed1"
+    },
+    {
+      "bytes": 1881,
+      "path": "data/operations-release/private_evaluator/expected/b006/exceptions.csv",
+      "sha256": "766069b6e083f34cf36752228787460e5b83a6cc49a091fef1723ca7bef87d7c"
+    },
+    {
+      "bytes": 20130,
+      "path": "data/operations-release/private_evaluator/expected/b006/s01_engagement.csv",
+      "sha256": "5f2d7eb4f428c1fba2038829d86e2b63f4f6781ddf2412566398b076c456d3b1"
+    },
+    {
+      "bytes": 31816,
+      "path": "data/operations-release/private_evaluator/expected/b006/s02_product_activity.csv",
+      "sha256": "2776e23aa5c599938dc57729ff1d92e57386e10a5057bc29b2b0e52801ce7e13"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b006/s03_customer_territory.csv",
+      "sha256": "7f767dd3a264080b1ef6786145efe7e1d8c8275505c67322d5f2bcbfe34c2b0d"
+    },
+    {
+      "bytes": 34159,
+      "path": "data/operations-release/private_evaluator/expected/b006/s04_interaction.csv",
+      "sha256": "f18782cc35c8fd10efff5a53c236a573ae4009b377ca2192b90cece62effceb9"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/private_evaluator/expected/b006/s05_campaign.csv",
+      "sha256": "346057334aba8150fd5b63279e6ca3c8c3c66360bc69cd0890730fa7aa3481f9"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b007/dq.csv",
+      "sha256": "50d4ba88602c20e50c899ad5a69c5c50949b9dc6c7760d7b44c7c88997348bc4"
+    },
+    {
+      "bytes": 1881,
+      "path": "data/operations-release/private_evaluator/expected/b007/exceptions.csv",
+      "sha256": "766069b6e083f34cf36752228787460e5b83a6cc49a091fef1723ca7bef87d7c"
+    },
+    {
+      "bytes": 21450,
+      "path": "data/operations-release/private_evaluator/expected/b007/s01_engagement.csv",
+      "sha256": "783643b4cb5996fe6f5e07ec204adc06e2db3cac2bf6ec8f166a69fd8abae326"
+    },
+    {
+      "bytes": 33760,
+      "path": "data/operations-release/private_evaluator/expected/b007/s02_product_activity.csv",
+      "sha256": "c475299f61376492d316161646e18711007589f19d9f2ee2d0ba11733cddbdee"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b007/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 36223,
+      "path": "data/operations-release/private_evaluator/expected/b007/s04_interaction.csv",
+      "sha256": "0713e6aa974c115078f6d4ef73e1351548a81b8c29ff72c5dd39f017e69d83ff"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/private_evaluator/expected/b007/s05_campaign.csv",
+      "sha256": "346057334aba8150fd5b63279e6ca3c8c3c66360bc69cd0890730fa7aa3481f9"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b008/dq.csv",
+      "sha256": "5bcbfe687f35ac1b869d9fc5179913c2bff900b60c3131f770b55efc21c91d6b"
+    },
+    {
+      "bytes": 1677,
+      "path": "data/operations-release/private_evaluator/expected/b008/exceptions.csv",
+      "sha256": "3ca5c83db15a08b58d0d7b5176ae7cde40fada6b437530ddc0832caef5392e63"
+    },
+    {
+      "bytes": 22990,
+      "path": "data/operations-release/private_evaluator/expected/b008/s01_engagement.csv",
+      "sha256": "c9a9a16165dcf7dafa2a1532b15e069a376ec47ec2e8f0e0f3af37f272a71a6e"
+    },
+    {
+      "bytes": 35704,
+      "path": "data/operations-release/private_evaluator/expected/b008/s02_product_activity.csv",
+      "sha256": "d5976b57ed18a6daf5011c3b58ec576d4135b502135e44904b02cb5fd3ed32f3"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b008/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 38287,
+      "path": "data/operations-release/private_evaluator/expected/b008/s04_interaction.csv",
+      "sha256": "36c8be891ee6f612cd4c7a9d65bf95d1b4bb66368041554fa35e2acde5e6d8bb"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/private_evaluator/expected/b008/s05_campaign.csv",
+      "sha256": "346057334aba8150fd5b63279e6ca3c8c3c66360bc69cd0890730fa7aa3481f9"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b009/dq.csv",
+      "sha256": "4fd9762dc104743d2c776fba83f6c58a6db685cd1457c56ca18972a4922f132b"
+    },
+    {
+      "bytes": 2053,
+      "path": "data/operations-release/private_evaluator/expected/b009/exceptions.csv",
+      "sha256": "f831d15c8f0027e12a5c9dad0e11de504931ac1bd7e3019b65ca427d13d9435d"
+    },
+    {
+      "bytes": 23980,
+      "path": "data/operations-release/private_evaluator/expected/b009/s01_engagement.csv",
+      "sha256": "2dd8e8926f7d6529c4c7a15ed97cb90cb57588c63e18e7937c4939ec92a7f04d"
+    },
+    {
+      "bytes": 37666,
+      "path": "data/operations-release/private_evaluator/expected/b009/s02_product_activity.csv",
+      "sha256": "6f5e403d0ff2b61cdb71fa781afe205bc512e9376c904f20f4c2ef1ee87d322b"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b009/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 40265,
+      "path": "data/operations-release/private_evaluator/expected/b009/s04_interaction.csv",
+      "sha256": "eab7f2a31751cf0dc2813b902ebe539d0609cdb7acf08791cc57edb295fe9e83"
+    },
+    {
+      "bytes": 4951,
+      "path": "data/operations-release/private_evaluator/expected/b009/s05_campaign.csv",
+      "sha256": "b030b53bd84d82c98a2f11ed330265c1ac81ae31c8a3f19530a66df0736cfa69"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b010/dq.csv",
+      "sha256": "c55902f7c12aa1e8d6deff8273cdcef895d22ce1afc3711704638b749924fa8d"
+    },
+    {
+      "bytes": 2127,
+      "path": "data/operations-release/private_evaluator/expected/b010/exceptions.csv",
+      "sha256": "6a90b8f0b834ea9dbc91994203badf91d632ea0a79f78b9d455381e35ffee079"
+    },
+    {
+      "bytes": 25300,
+      "path": "data/operations-release/private_evaluator/expected/b010/s01_engagement.csv",
+      "sha256": "98364d0762577f7cbddab55a29549aaa388bc7b6f5ae22240404a0b4cdbdf714"
+    },
+    {
+      "bytes": 39617,
+      "path": "data/operations-release/private_evaluator/expected/b010/s02_product_activity.csv",
+      "sha256": "c561f4162e691df0e7b44100560a3feb1ce5364b3dcde0e5c2db4a64e99d271c"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b010/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 42329,
+      "path": "data/operations-release/private_evaluator/expected/b010/s04_interaction.csv",
+      "sha256": "e49395ee4f681ae41580d2726cf2ba5f08fec7b4bb774a525a3a8ff78df01148"
+    },
+    {
+      "bytes": 4950,
+      "path": "data/operations-release/private_evaluator/expected/b010/s05_campaign.csv",
+      "sha256": "c9d28bd5f2d43bec5a5d1e40a192704593418e7565fc3260f949e8f8c1c1d1b4"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b011/dq.csv",
+      "sha256": "51acabffdcd5432daec06be3c08aa096dd2e6e2e22a7938cf57289d5d8491ac1"
+    },
+    {
+      "bytes": 2127,
+      "path": "data/operations-release/private_evaluator/expected/b011/exceptions.csv",
+      "sha256": "6a90b8f0b834ea9dbc91994203badf91d632ea0a79f78b9d455381e35ffee079"
+    },
+    {
+      "bytes": 26620,
+      "path": "data/operations-release/private_evaluator/expected/b011/s01_engagement.csv",
+      "sha256": "da178b9177d862615aa3cfae57669ab4cd16487cda63266eb266016b2b5d746d"
+    },
+    {
+      "bytes": 41579,
+      "path": "data/operations-release/private_evaluator/expected/b011/s02_product_activity.csv",
+      "sha256": "d0c9895e8a26827198fdc919ef768ca80c5e36ad629a4e7ef92f1892e2f2fc8b"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b011/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 44393,
+      "path": "data/operations-release/private_evaluator/expected/b011/s04_interaction.csv",
+      "sha256": "b9f20eef6f0442a56e36468e37065ca5a33b82519f3d9467d4dffe8781a93d5c"
+    },
+    {
+      "bytes": 4950,
+      "path": "data/operations-release/private_evaluator/expected/b011/s05_campaign.csv",
+      "sha256": "c9d28bd5f2d43bec5a5d1e40a192704593418e7565fc3260f949e8f8c1c1d1b4"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b012/dq.csv",
+      "sha256": "2c54984b453bee9be7e2c87ab7721fe2f71c56c12d3297d8d81a3161d7b6d552"
+    },
+    {
+      "bytes": 2127,
+      "path": "data/operations-release/private_evaluator/expected/b012/exceptions.csv",
+      "sha256": "6a90b8f0b834ea9dbc91994203badf91d632ea0a79f78b9d455381e35ffee079"
+    },
+    {
+      "bytes": 27940,
+      "path": "data/operations-release/private_evaluator/expected/b012/s01_engagement.csv",
+      "sha256": "2d8dd9f44de689f4b210dacafaed7e054c0559a644efcba9a5ff29baa7dfd44f"
+    },
+    {
+      "bytes": 43541,
+      "path": "data/operations-release/private_evaluator/expected/b012/s02_product_activity.csv",
+      "sha256": "91070d67394ef1ffb527a0aad6faf5f7bccb70ab83733f6c8be65ffe6d8335ba"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b012/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 46457,
+      "path": "data/operations-release/private_evaluator/expected/b012/s04_interaction.csv",
+      "sha256": "254f479ab3b57bed3f9cebae383ac64cd7640cbd7898d44d1a93836f905777c9"
+    },
+    {
+      "bytes": 4950,
+      "path": "data/operations-release/private_evaluator/expected/b012/s05_campaign.csv",
+      "sha256": "c9d28bd5f2d43bec5a5d1e40a192704593418e7565fc3260f949e8f8c1c1d1b4"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b013/dq.csv",
+      "sha256": "89e600c1fe6713534a54e6f09ef1ca3001ca42e8006259c358d12e5c436e8798"
+    },
+    {
+      "bytes": 2462,
+      "path": "data/operations-release/private_evaluator/expected/b013/exceptions.csv",
+      "sha256": "810e31c29e770af62ddc5de9f37d2d11f086e255dfc21aa1c39ccde2a4b8b51a"
+    },
+    {
+      "bytes": 28930,
+      "path": "data/operations-release/private_evaluator/expected/b013/s01_engagement.csv",
+      "sha256": "ebe006ecd892b8ce7fbbff51210c3649d84dcb85970d8aeebdbf9b39d21e3f11"
+    },
+    {
+      "bytes": 45176,
+      "path": "data/operations-release/private_evaluator/expected/b013/s02_product_activity.csv",
+      "sha256": "40bd30e53e92ee34514a6bd81159cced0bb4ea024c6a2f4128fd93d7887077a7"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b013/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 48435,
+      "path": "data/operations-release/private_evaluator/expected/b013/s04_interaction.csv",
+      "sha256": "5835c5bd1566c3b0a3bc439f2c4c649114d6659025ca802a50bf556813c07f31"
+    },
+    {
+      "bytes": 4950,
+      "path": "data/operations-release/private_evaluator/expected/b013/s05_campaign.csv",
+      "sha256": "f3e15d2012126b092e21ad7f5fd270f04ebe65a93cd8b64428c91296d26c1432"
+    },
+    {
+      "bytes": 252,
+      "path": "data/operations-release/private_evaluator/expected/b014/dq.csv",
+      "sha256": "12917b2e069d897e2b272d0bdf40d55a66d1a9c646451aa5dd33aa79a5ceb2a3"
+    },
+    {
+      "bytes": 2462,
+      "path": "data/operations-release/private_evaluator/expected/b014/exceptions.csv",
+      "sha256": "810e31c29e770af62ddc5de9f37d2d11f086e255dfc21aa1c39ccde2a4b8b51a"
+    },
+    {
+      "bytes": 30250,
+      "path": "data/operations-release/private_evaluator/expected/b014/s01_engagement.csv",
+      "sha256": "d4f1c5b1f118b3f0f889957f955f8e9a039ccdf94fc85ef87f392b8690a6d9e3"
+    },
+    {
+      "bytes": 47127,
+      "path": "data/operations-release/private_evaluator/expected/b014/s02_product_activity.csv",
+      "sha256": "6798dabfdee90fb04907cd12b3e0a913ce360554574fde19b1e56461d07cf134"
+    },
+    {
+      "bytes": 4483,
+      "path": "data/operations-release/private_evaluator/expected/b014/s03_customer_territory.csv",
+      "sha256": "749cbaec2a8bf98caecc8bd187f92f92c8e1ddf3788a5af705b739085c5f1976"
+    },
+    {
+      "bytes": 50499,
+      "path": "data/operations-release/private_evaluator/expected/b014/s04_interaction.csv",
+      "sha256": "f5d5adbd7fb8ad3ae34a8083988f48f351eb543c62385396218218a28448de70"
+    },
+    {
+      "bytes": 4949,
+      "path": "data/operations-release/private_evaluator/expected/b014/s05_campaign.csv",
+      "sha256": "2be70ece89f886d80d0fb23c9c8f9423d0fcb3358a2d4b5ae1a859d92f85dcc0"
+    },
+    {
+      "bytes": 26149,
+      "path": "data/operations-release/private_evaluator/projection-ledger.json",
+      "sha256": "fee814a0dd02f272f24dfb54e0f6a4a5dfe9e05f40df7ad646a90693b2f7c5e3"
+    },
+    {
+      "bytes": 1633487,
+      "path": "data/operations-release/private_evaluator/world.json",
+      "sha256": "71e8b2259519b712bab91ead4833b7d2679e14638e334626c1c5f7fb6be3f20e"
+    },
+    {
+      "bytes": 32329,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/business_files/territory/territory_mapping_202610.xlsx",
+      "sha256": "e50c6e6217f297c10eebfeec5c4daae3f0fdcf7ab0472097bf8dabdc3d2d02c1"
+    },
+    {
+      "bytes": 9017,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b001.manifest.json",
+      "sha256": "63d6b60b4b6b13fea4cc3464baba711481f780a23806d0966cb32eced186df31"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b001.ready.json",
+      "sha256": "b3b7e5fcdda5a505678caa32e7d1f50bca4b711704711118e55cddc86a4d10fb"
+    },
+    {
+      "bytes": 2888,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b002.manifest.json",
+      "sha256": "0a0fb1010e467e5efa3014abb27794463512bf391e89c2706f6d89e656cdc18e"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b002.ready.json",
+      "sha256": "bba987606708d8f56a02683afdd2ac66a9dfbb5e59b43e100d133e80f3387670"
+    },
+    {
+      "bytes": 1651,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b003.manifest.json",
+      "sha256": "762e0811bee35a069ee72643ab6e1fa2bcb6d07904c196e6d706f1ac70b6f2f7"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b003.ready.json",
+      "sha256": "d5c564220c385c6bf68147f38fd2dcf5aa88cec1580c3f55b32838fd8bebd8aa"
+    },
+    {
+      "bytes": 2258,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b004.manifest.json",
+      "sha256": "7fb123e71687f4b04529edb30afa07e49c841f89f91c416100179dc123b60cd5"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b004.ready.json",
+      "sha256": "cbc5087936c7fc0fab45d94523aab2ed690020a0f053ff713d756f79cffd9642"
+    },
+    {
+      "bytes": 2850,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b005.manifest.json",
+      "sha256": "ee8fd8af07bfe583dfb6febcfdc3412b05dfe702e71023b9f1c27d801f844786"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b005.ready.json",
+      "sha256": "ab10a4a1cf5be4ba75924189ef4bd27667f1c3b1b165a70131f0c1effa5225d8"
+    },
+    {
+      "bytes": 1651,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b006.manifest.json",
+      "sha256": "4b8fbc50f653c9889aac1ecb0df0c63999e41a51947098c412dafaaf5a58b6ba"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b006.ready.json",
+      "sha256": "81ada7894200e3b0cc1101a5d2fffdbc69e278506ee6cbc18f7f90209116b267"
+    },
+    {
+      "bytes": 2234,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b007.manifest.json",
+      "sha256": "8141071baa6758c771ea51dd8d17652c0403ec4e83962a79737023f66ad87cfb"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b007.ready.json",
+      "sha256": "8b6563106fa384c36652ff3daaebe2274e4086986bc028c8c68a8eb4be8ee901"
+    },
+    {
+      "bytes": 2258,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b008.manifest.json",
+      "sha256": "b06bad72b0b51a97850f424dd7b76e33e3aa8d460b4d5170e8f34e49e191c40d"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b008.ready.json",
+      "sha256": "8a62fb9855608f9abddcf65cf029402f44b493cf3d508f84f9154ed79415aefa"
+    },
+    {
+      "bytes": 2216,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b009.manifest.json",
+      "sha256": "374f86a6b28a50a0979da9eef893bdd9c641709d6d4a897d4f2ea4d1f3c8b3ba"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b009.ready.json",
+      "sha256": "21953f6a5ce92677cc75a768488af60867db762e375a66691644b2754cab328e"
+    },
+    {
+      "bytes": 1651,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b010.manifest.json",
+      "sha256": "bf614f51d130f17d8d5c049e993026e08381096eb6e35b9a8c5dbc40f2b33d94"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b010.ready.json",
+      "sha256": "383c404b6d9c2adcb20c305e79cad8794040381e406594875b667f54cc616f6d"
+    },
+    {
+      "bytes": 1651,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b011.manifest.json",
+      "sha256": "272bbb1faf95c102c5f6b309835c8434630bd011541f25f7040badd7506b2c7c"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b011.ready.json",
+      "sha256": "ef0b14e022c920182e327187b756f5f966655b0eb083805b07a70ceeb4ad2d83"
+    },
+    {
+      "bytes": 2285,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b012.manifest.json",
+      "sha256": "23cecb1554d22704307ad7f3573be1e225aab9c328b82dadc2e266a5a5fab13d"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b012.ready.json",
+      "sha256": "25f01a063b9eb2d3e0c0ee9d8c92cda61605821d01251307c6928e829efd788d"
+    },
+    {
+      "bytes": 1651,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b013.manifest.json",
+      "sha256": "562f2194f9dc41c461730e6d55a3847c1958e8533b2b36cd2f03caa5fbafecb6"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b013.ready.json",
+      "sha256": "f4f6d0eadfe5ee76aa22041c00bc6520da5185f1e722206943fe68cdd5dcd6d6"
+    },
+    {
+      "bytes": 1651,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b014.manifest.json",
+      "sha256": "49a0564fe7110d1abf9b6206faadef7d4857ea3ff3c5abc8dd090a7e3bac888f"
+    },
+    {
+      "bytes": 114,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/b014.ready.json",
+      "sha256": "f429f97d3a60494baea9e9a457c84037f663bb8303877a812c27be24edee14ff"
+    },
+    {
+      "bytes": 8520,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/source-contracts.json",
+      "sha256": "cef78204007810c7e0e3bfd9eb94c02004e166c9e47f19957405440258e25f34"
+    },
+    {
+      "bytes": 592,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/control/territory-adapter.receipt.json",
+      "sha256": "fd4a72940c0757b45f2804af68d5dc9cb808b9736a2187945fc18ec3565dde1b"
+    },
+    {
+      "bytes": 7803,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/affiliation/batch=b001/part-00001.csv",
+      "sha256": "6181503338b954176ba4cfe8c51729f4caf02c7d5f1a95df983e15eb273933ff"
+    },
+    {
+      "bytes": 619,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/organisation/batch=b001/part-00001.csv",
+      "sha256": "05736ce6e81d263ca8be27e296f2dbf6bd369bd07acdda6bbeb8b2ed77e7f448"
+    },
+    {
+      "bytes": 407,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/product/batch=b001/part-00001.csv",
+      "sha256": "6ac5bcb967f9b547e59b96d35d3b5abfa4d77a20b3103f7c7b4d930c05f813e0"
+    },
+    {
+      "bytes": 119,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/product/batch=b005/part-00001.csv",
+      "sha256": "c624b48fcb2173d052aea4370de2c7feaac22a9789a58c4f22ef25f104883c8f"
+    },
+    {
+      "bytes": 130,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/product/batch=b009/part-00001.csv",
+      "sha256": "604be9f5b99a7239e8dac6d9d04b1d6b261ab71e861d26c2b528bca1161e28c9"
+    },
+    {
+      "bytes": 9205,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/provider/batch=b001/part-00001.csv",
+      "sha256": "094bbcee12fd5211b4fab28187969891a4afbdd6dec9539e50c94f281649f452"
+    },
+    {
+      "bytes": 271438,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/rx_weekly/batch=b001/part-00001.csv",
+      "sha256": "0b2ecf06538f8be32f3d417d181668c42d5e7a10039298c36c825d3950bb68ff"
+    },
+    {
+      "bytes": 166,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/rx_weekly/batch=b002/part-00001.csv",
+      "sha256": "eedcbcbc2921c24aa55b4ff105ba5fd93522c3497c2e1c46c5bc6a1e68cfb07f"
+    },
+    {
+      "bytes": 166,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/rx_weekly/batch=b005/part-00001.csv",
+      "sha256": "54489d20fe21ee211cb7f26a0e0d3905cba217773d192de7e292aed5a5e89dbd"
+    },
+    {
+      "bytes": 166,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/iqvia_like/rx_weekly/batch=b012/part-00001.csv",
+      "sha256": "83125102ba4493c938d7b1a684267ccbadd998fcac67baba45e9d67cbfe5f216"
+    },
+    {
+      "bytes": 6334,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/manual/territory_mapping/batch=b001/part-00001.csv",
+      "sha256": "018f05cf432e2109bbe408ca4bb8611445fa61387bb283acb1caeebbdbdc605a"
+    },
+    {
+      "bytes": 131,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/manual/territory_mapping/batch=b007/part-00001.csv",
+      "sha256": "bed6d9eb80eb05d9f93fd5fb9e26ead017effd9874cac8c65bcb1cc789d427ad"
+    },
+    {
+      "bytes": 391,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/salesforce_like/campaign/batch=b001/part-00001.csv",
+      "sha256": "5af830405322b8017005eb1e7782726dc1fd12b01f7e2fd5fef577c64e4d689d"
+    },
+    {
+      "bytes": 5492,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/salesforce_like/campaign_member/batch=b001/part-00001.csv",
+      "sha256": "d0d8bbf2384b9990655e296fb8aa89a7c7c57bb2fa442d369aa15adf0c253500"
+    },
+    {
+      "bytes": 8094,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/salesforce_like/consent/batch=b001/part-00001.csv",
+      "sha256": "09602b848af60d421d41a0d154a35ddca830c43fd6a43643caf35eb47970eac9"
+    },
+    {
+      "bytes": 229,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/salesforce_like/consent/batch=b002/part-00001.csv",
+      "sha256": "bffbdbb1fae6ac67ac40966ca70a929990faab8ec30787dc11915b3f8cd456f5"
+    },
+    {
+      "bytes": 157,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/salesforce_like/consent/batch=b004/part-00001.csv",
+      "sha256": "14a81af9ead25667ea15f7eca5f7b03d3c32aa45357441deb318ca6161a49264"
+    },
+    {
+      "bytes": 155,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/salesforce_like/consent/batch=b008/part-00001.csv",
+      "sha256": "3b17ca12a322a6c68f0a7103cee49882842a72993c9682a5b290f39369a47638"
+    },
+    {
+      "bytes": 5917,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/salesforce_like/contact/batch=b001/part-00001.csv",
+      "sha256": "60c40db1f58fcf0cbd0994e0ae1bd2848184a8009464bc03772fcd4b50da340b"
+    },
+    {
+      "bytes": 42564,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b001/part-00001.csv",
+      "sha256": "8bcc263c472e01f79e5c7124d640475fe5414b62ff53c553e5bd8e51ec36172b"
+    },
+    {
+      "bytes": 966,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b002/part-00001.csv",
+      "sha256": "9a312342d9ee5081daec35251baf4153988511a1dd0358aacb0b8728478b9296"
+    },
+    {
+      "bytes": 3524,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b003/part-00001.csv",
+      "sha256": "2ad365c4b888ee9342e5ca83676b8a23fe5867f4f137389c95e38dafdc597f80"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b004/part-00001.csv",
+      "sha256": "efa71652a3ec21b901999ad56429c6e80c296ca2fecacc884b80dac68808c5c5"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b005/part-00001.csv",
+      "sha256": "095d83a40b369f422d886f7c3f14612973f94eb67cb7e264e9df1bb3a8b49c2b"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b006/part-00001.csv",
+      "sha256": "15f44796087380e5871b13376afeeaa78bbfe817f8f2777cf3bb25bc9f7c720c"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b007/part-00001.csv",
+      "sha256": "1ee05e7e2c2f1c0b04ffc030c7b5335764cc034c2017bc0650316a8cd1653d28"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b008/part-00001.csv",
+      "sha256": "2a6cd86245c8779dc419389a058d429b0b9b8f2d3b451825cc0bed32455a2a21"
+    },
+    {
+      "bytes": 3806,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b009/part-00001.csv",
+      "sha256": "67ba90fcf79d616bb8f9c2628124c0d1df6c2d3c3f88f68f8cbc1de6948253fc"
+    },
+    {
+      "bytes": 3933,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b010/part-00001.csv",
+      "sha256": "fc9ca3393b0567f7f93edf4bb9cec991b4c13e42900d38c582f4a60385758014"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b011/part-00001.csv",
+      "sha256": "e03f25cf5aadda2f6efdf407993c027225b1f2956a5709409da86e586b6b2465"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b012/part-00001.csv",
+      "sha256": "8c2630d9cbb3438893c952f42f8c966edcbf7b5cbcf091c295a72fae62b23c83"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b013/part-00001.csv",
+      "sha256": "4b8fb56bcd17f416d4bc3e2b06ab48a84639358df04f07d5a7aa9327a6aa42fe"
+    },
+    {
+      "bytes": 3665,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity/batch=b014/part-00001.csv",
+      "sha256": "609dd7d3a04d98eee5386577fcefd2f38fa34895445edbefdd422a4d938237f1"
+    },
+    {
+      "bytes": 12737,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b001/part-00001.csv",
+      "sha256": "e585c0237d3abbae947832aea4918b0efef8b0378a51c460eb2cd9052baf260e"
+    },
+    {
+      "bytes": 293,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b002/part-00001.csv",
+      "sha256": "12f232598aad0783c332620bb2972032174a7b2db6316d0be0e639f9ab055624"
+    },
+    {
+      "bytes": 1013,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b003/part-00001.csv",
+      "sha256": "93456e392a8a6e69fa9f35ea410e5cbdcf6f550ebf622987f45b0c3daee412b5"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b004/part-00001.csv",
+      "sha256": "079a607351bd091e1602dcefa132aeb55b1bcbfdc8ba5ec30a401a1330e88cb7"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b005/part-00001.csv",
+      "sha256": "8ffc445233d1af19ee7706ea2fefa5c5a941eed5d6e29f4662522d16e337ddd2"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b006/part-00001.csv",
+      "sha256": "57c2549921cf1f195d7a406cb26e96433317c3c009795738fb8fc70a1442222a"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b007/part-00001.csv",
+      "sha256": "0a7bcd57b3a7a299cc7bb0f3008df2e01d61ff5901d808550b0da5d7c117b056"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b008/part-00001.csv",
+      "sha256": "cf316edd7433917616988dd45c21816d9abcc6bc89879f9dc0feb4ca65986a88"
+    },
+    {
+      "bytes": 1093,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b009/part-00001.csv",
+      "sha256": "695ed921ae19b2b331ba98d1ec7a5f38a5c597710d10abd7238cd988d1cae116"
+    },
+    {
+      "bytes": 1133,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b010/part-00001.csv",
+      "sha256": "3b7a1b8bc4f00924686653625bc4f27b20ebf0784a3c4cf7d5a314e5f8ec7927"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b011/part-00001.csv",
+      "sha256": "afcafd31c52036dc4cea035a689831750bc4bb69ad8030e9e9232c87df8dfdcb"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b012/part-00001.csv",
+      "sha256": "eafa26ab803a1423451e4da9cb6131d2147227d38040523f73eeb733d9f73db0"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b013/part-00001.csv",
+      "sha256": "7c3a39c2650ec26b723f353deaba0dd6087dd26c325b77edb08d3a8e02ba993b"
+    },
+    {
+      "bytes": 1053,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/activity_product/batch=b014/part-00001.csv",
+      "sha256": "e8be0c1825d2350aaef5ca00897101da1287fe70a94626c39f4f5b9ba8ebf85a"
+    },
+    {
+      "bytes": 7206,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/customer/batch=b001/part-00001.csv",
+      "sha256": "97f1ded36fde6769ae0e34b7b0bef5beef3a555760f9ff569fcc017807ade81c"
+    },
+    {
+      "bytes": 293,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/staff/batch=b001/part-00001.csv",
+      "sha256": "b3893804f54f201f8d7732db3ba9b4c4bd624d45dba5d913119af92fa588627f"
+    },
+    {
+      "bytes": 190,
+      "path": "data/operations-release/public_s3/synthetic/pharma/pharma-lab-0.2.0/sources/veeva_like/territory/batch=b001/part-00001.csv",
+      "sha256": "1e169292a09f5706a732f448eef4b78d41b14f13b1434cf155a6ffb0b97259b8"
+    },
+    {
+      "bytes": 1666,
+      "path": "data/operations-release/scenario-events.json",
+      "sha256": "efe74f639a963c2501674ebe245af126ee4e2b4d77e54c37d0f0df4f08fcf67d"
+    },
+    {
+      "bytes": 24950,
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "ec0bf960164fdd285613683aa229d40fb93c2c9af9e9a7f3a7fc758e71d6a53a"
+    },
+    {
+      "bytes": 11678,
+      "path": "docs/DESIGN.md",
+      "sha256": "e5828f82293b309bd8437cc609ecc959e0020fa2f2003d57f02eb957d1898764"
+    },
+    {
+      "bytes": 15920,
+      "path": "docs/MODEL.md",
+      "sha256": "0105d7457b8d78fe9c5096c49a7596db41f53e7a3ae062d7e13b93aea7fe0fc7"
+    },
+    {
+      "bytes": 21849,
+      "path": "docs/ODCS_OPERATIONS.md",
+      "sha256": "11983bf0b77895725feeed59119f7d701f65e41212b2ef46cf86b0c291b04d9c"
+    },
+    {
+      "bytes": 8042,
+      "path": "docs/PUBLIC_ACCEPTANCE.md",
+      "sha256": "25a8e4ff364084f2471cf0e276626db1d6cba93107853097588258bbb9c8ede3"
+    },
+    {
+      "bytes": 6813,
+      "path": "docs/RUNBOOK.md",
+      "sha256": "7beb13aa237b658337067ae04972f66e05c8a222c33fba2166dc2ec42c878b69"
+    },
+    {
+      "bytes": 3107,
+      "path": "docs/S3_LAYOUT.md",
+      "sha256": "69b4bcac58f208ad7c1072b06ba92cde0bfef2980172006f95be3697b7bf1497"
+    },
+    {
+      "bytes": 9224,
+      "path": "docs/SCENARIOS.md",
+      "sha256": "c0936b73b7657fc555946805a31886390b2a2a8497bc2e1c40d2ad077283637b"
+    },
+    {
+      "bytes": 3802,
+      "path": "docs/VALIDATION.md",
+      "sha256": "41416ebb17ca397a03f7f31bdbd532b690c758e8aee84edbae5dfd4a75b2b68b"
+    },
+    {
+      "bytes": 20683,
+      "path": "docs/releases/release-manifest-v0.1.0.json",
+      "sha256": "f50573b1ee8867693610bb747adaeef3bab830a4254351ded8f4a7bc99f9bbd2"
+    },
+    {
+      "bytes": 214,
+      "path": "evidence/local_actual/b001/dq.csv",
+      "sha256": "e04dbce5edfafe10dced789c0b3d768f95e1ed590cc4c94d57b4f5a36f8beab2"
+    },
+    {
+      "bytes": 1052,
+      "path": "evidence/local_actual/b001/exceptions.csv",
+      "sha256": "d02276f6c2191a2e1d18b46adfe1e8753843f98d79b8f82799155e0ef10cae8c"
+    },
+    {
+      "bytes": 15510,
+      "path": "evidence/local_actual/b001/s01_engagement.csv",
+      "sha256": "5fe6bda9fa662eeb037960421927e799c7cad8b5f756601a5ef9ee37dd43ab5a"
+    },
+    {
+      "bytes": 23614,
+      "path": "evidence/local_actual/b001/s02_product_activity.csv",
+      "sha256": "5422eb198da636075c2cd03966be2d009b9a0811e85c921af6a4b94efa36476f"
+    },
+    {
+      "bytes": 4483,
+      "path": "evidence/local_actual/b001/s03_customer_territory.csv",
+      "sha256": "78eae128b88eabc7f284f9c6282c7fceb3e778d4aeb3db819f62a0089a76aede"
+    },
+    {
+      "bytes": 25903,
+      "path": "evidence/local_actual/b001/s04_interaction.csv",
+      "sha256": "40b557f76ca480c222b8cc0aa141d1d9918df4dbf900d2b6424419df1e3344c4"
+    },
+    {
+      "bytes": 3722,
+      "path": "evidence/local_actual/b001/s05_campaign.csv",
+      "sha256": "5994c7c273b859e852aee6d9b11eed28b020f17b50561a7f03b486ea291c8139"
+    },
+    {
+      "bytes": 214,
+      "path": "evidence/local_actual/b002/dq.csv",
+      "sha256": "aa0175e8a122b618f6cc60a48cccf8551d283941cf69786bc4398d7420fb3424"
+    },
+    {
+      "bytes": 1285,
+      "path": "evidence/local_actual/b002/exceptions.csv",
+      "sha256": "2a43729be5ebf98a987dc3e9034ca27dcf6db43f9fd44444d367ff0fb02f8246"
+    },
+    {
+      "bytes": 15400,
+      "path": "evidence/local_actual/b002/s01_engagement.csv",
+      "sha256": "600f333d7f34907bf2b5e48ff85cfa0fa4963c2fbc4e0704d856035e7fec71aa"
+    },
+    {
+      "bytes": 24277,
+      "path": "evidence/local_actual/b002/s02_product_activity.csv",
+      "sha256": "3df88510c261745dbefd8e1549b7fa3288bf00d7d3d4090871ab1a2b7067fb7b"
+    },
+    {
+      "bytes": 4483,
+      "path": "evidence/local_actual/b002/s03_customer_territory.csv",
+      "sha256": "78eae128b88eabc7f284f9c6282c7fceb3e778d4aeb3db819f62a0089a76aede"
+    },
+    {
+      "bytes": 25989,
+      "path": "evidence/local_actual/b002/s04_interaction.csv",
+      "sha256": "7d552aaa6f29d18783d749571e5dd961ceb8d40e3480eee794b0119f6b86db6a"
+    },
+    {
+      "bytes": 3722,
+      "path": "evidence/local_actual/b002/s05_campaign.csv",
+      "sha256": "5994c7c273b859e852aee6d9b11eed28b020f17b50561a7f03b486ea291c8139"
+    },
+    {
+      "bytes": 2461,
+      "path": "evidence/odcs-operations-verification.json",
+      "sha256": "2732b4b0beeb37f35adc0ca95dcedd6df2d75c26ca3288924811233f926e787b"
+    },
+    {
+      "bytes": 4908,
+      "path": "evidence/operations-tests.txt",
+      "sha256": "db5a8e251715ca9c736f81f15426052947f8429cf947f6eda80b22cd102e47d8"
+    },
+    {
+      "bytes": 16235,
+      "path": "evidence/operations-upload-dry-run.txt",
+      "sha256": "d906b3abe1d3ab048c5df4918a8f6c6312e372057e379badfc66dcda357e30c6"
+    },
+    {
+      "bytes": 2007,
+      "path": "evidence/tests.txt",
+      "sha256": "b5154ee17f466918b985092fcb04b1f9c60b7499958c105ee11ee4c59b3078cb"
+    },
+    {
+      "bytes": 2608,
+      "path": "evidence/validation-report.json",
+      "sha256": "7cbc751f072894ac94b356e51b685b2cca2b1a1bc0ecdca55c7c12e99aa9cdfc"
+    },
+    {
+      "bytes": 34306,
+      "path": "integrations/ataccama/quality-rule-handoff.json",
+      "sha256": "61e5c315bb1117ba9ee64787459b97df9eb23c0e416c45f405012a7a28862b4e"
+    },
+    {
+      "bytes": 113318,
+      "path": "integrations/collibra/asset-lineage-handoff.json",
+      "sha256": "8b6631d6e9017ad4353be517e86ddee88a0b0d492a04629feda7daf9b4c9968e"
+    },
+    {
+      "bytes": 10160,
+      "path": "integrations/collibra/assets.csv",
+      "sha256": "3ccc3c88f9106add7bf20a5a7f355d8b814eb9d37937dbc867338c7891e2b15e"
+    },
+    {
+      "bytes": 14581,
+      "path": "integrations/immuta/policy-intent-handoff.json",
+      "sha256": "420e96348b50035f0ad6bbf914b88de9a9f9da674e2d34fbe8e7d5fec6ffc112"
+    },
+    {
+      "bytes": 52,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/database.tmdl",
+      "sha256": "4299aecfa51b1176a45b7c99f644aca5269f01308d89c21001b10f5ac151f7f4"
+    },
+    {
+      "bytes": 1096,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/expressions.tmdl",
+      "sha256": "c92bf253e8601a2ae25fc64cf1ec004a96a12333d1e649760dd4a8f718a9fa4d"
+    },
+    {
+      "bytes": 419,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/model.tmdl",
+      "sha256": "23762425fa8dfd6acb0da600c77dbd1724fe6c8580fd6f164c621bacc5a27ff5"
+    },
+    {
+      "bytes": 2918,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/tables/S1 Engagement.tmdl",
+      "sha256": "ff42cbf72cbe55ce71f92caf1b486f1da505365337bf7a3238aff0d9618155c6"
+    },
+    {
+      "bytes": 3321,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/tables/S2 Product Activity.tmdl",
+      "sha256": "5a90714b628b2488d7510ec5ea05f6789a0014914212175f44423b2b5ff3b6f8"
+    },
+    {
+      "bytes": 2737,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/tables/S3 Customer Territory.tmdl",
+      "sha256": "e600ab499d06f8f0cae190dff4ef8eb0fb29414acf83ebdf93059fb2dc17e124"
+    },
+    {
+      "bytes": 3685,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/tables/S4 Interaction.tmdl",
+      "sha256": "3498356f4df031d584d45d87d918f4d44fdafb2d23ab90813dd240980c2f4c56"
+    },
+    {
+      "bytes": 3628,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/tables/S5 Campaign.tmdl",
+      "sha256": "911154aa61b37c1aec9fff857ad80108ec229f22cc247dfec91d0bff4e37da54"
+    },
+    {
+      "bytes": 5184,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/tables/Scenario Scorecard History.tmdl",
+      "sha256": "abe7d4ff813e6f8eb6243d003e88b7e7e26fdb2a0d2eaafb06c6f0571233a06c"
+    },
+    {
+      "bytes": 5050,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition/tables/Scenario Scorecard.tmdl",
+      "sha256": "003d6384c39516a9f576c28bf3e42748e49033607b30399f700c05340573ae1a"
+    },
+    {
+      "bytes": 68,
+      "path": "integrations/powerbi/PharmaCommercial.SemanticModel/definition.pbism",
+      "sha256": "fae9d5c5c14d66a44ea98637e439fb8b02bd13f06ed448cbf7bf83b84616f57f"
+    },
+    {
+      "bytes": 9701,
+      "path": "integrations/powerbi/visualization-plan.json",
+      "sha256": "df381c6647efac3ab6266420da2c8bd3b264b778d62ad3cc50c552bdb05ec966"
+    },
+    {
+      "bytes": 2061,
+      "path": "orchestration/dags/pharma_odcs_daily.py",
+      "sha256": "253369783d35e69d0ae548662d78eed6fe15c82c6ce3c7439b982e0a4c537b40"
+    },
+    {
+      "bytes": 19,
+      "path": "requirements-dev.txt",
+      "sha256": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6"
+    },
+    {
+      "bytes": 60,
+      "path": "requirements-snowflake.txt",
+      "sha256": "55a3867f48dde3ef9c95f84323c98609cc681773213afd524e28cc3dc5467b35"
+    },
+    {
+      "bytes": 5028,
+      "path": "sql/00_canonical_private.sql",
+      "sha256": "685c82f6a80e89d20f2913849bf981bf305f78b1c83f7496e00d6dc186aa3da0"
+    },
+    {
+      "bytes": 11943,
+      "path": "sql/02_reference_gold.sql",
+      "sha256": "6250a50926973038458ea9900ca32005592e1ce63564828c4d6f51703928d3ef"
+    },
+    {
+      "bytes": 25030,
+      "path": "sql/generated/01_load_b001.sql",
+      "sha256": "069321e55bdd189b1a82cbe0064ccc0cc6a04ad31450d7535e67d5b8e21a4952"
+    },
+    {
+      "bytes": 13863,
+      "path": "sql/generated/01_load_b002.sql",
+      "sha256": "34573a7016da82c3853f3fe52a2cfe64974b76e297f432c442fc38fda0fe584f"
+    },
+    {
+      "bytes": 4147,
+      "path": "sql/local/canonical.sql",
+      "sha256": "82b034dd14a150879226d47a1e4367c88362ce739d30a1f918f55475440bbec1"
+    },
+    {
+      "bytes": 2289,
+      "path": "sql/local/consumption.sql",
+      "sha256": "9403ebea6f65a7d408d78fddbb015051791065143baeee1b4d5c1aec5cc1f4e4"
+    },
+    {
+      "bytes": 2268,
+      "path": "sql/local/pipeline.sql",
+      "sha256": "19946fa592d02b6f583e7240b8150e109f6ac4fe861c733d0a27712bb4871d9b"
+    },
+    {
+      "bytes": 449,
+      "path": "sql/local/visualization.sql",
+      "sha256": "7aab4adf1f37f3af596f55ff53398773109f0d9f04568e771c1294ec4c01cc7c"
+    },
+    {
+      "bytes": 4406,
+      "path": "sql/odcs/canonical.sql",
+      "sha256": "4be9203a4c86838c5a9d18457e421f3e65bf186d4c1f4b2fa8be9a03605eeb58"
+    },
+    {
+      "bytes": 2489,
+      "path": "sql/odcs/consumption.sql",
+      "sha256": "86668a870c1ac3385043b5e293b5468feb43e1c4a0ac8abfdf972d82d8449cf1"
+    },
+    {
+      "bytes": 2468,
+      "path": "sql/odcs/pipeline.sql",
+      "sha256": "dabeae088938623d2d63ede47d0081ee588d32bcc3d32705ababc5ba6eb1a4b9"
+    },
+    {
+      "bytes": 498,
+      "path": "sql/odcs/visualization.sql",
+      "sha256": "3589bd2357276c496aeedb36d3c681aa4483df39104186ad98da775fa57c7dd4"
+    },
+    {
+      "bytes": 14057,
+      "path": "src/build_contracts.py",
+      "sha256": "4d15cdefaf2d37cca3ad0c5307f130bcfb42659f9b651f591bb2d8ebc0dd258e"
+    },
+    {
+      "bytes": 1220,
+      "path": "src/check_contract_changes.py",
+      "sha256": "e61f7ca8e620f76072474955db29d357bba113ea06575d8f387d68abe4f7fdb6"
+    },
+    {
+      "bytes": 1017,
+      "path": "src/ci_acceptance.py",
+      "sha256": "dc45d51b4e335fd24433c65297b3af3b51262b1e94de9da676cfb6718a44a1b9"
+    },
+    {
+      "bytes": 2017,
+      "path": "src/common.py",
+      "sha256": "710b7faf7fe2093b230f80759df6df60e3ae80d8a62fef0f242725adc999bf50"
+    },
+    {
+      "bytes": 4630,
+      "path": "src/export_integrations.py",
+      "sha256": "d8e230dca6805e375e9cc42f6f1279591879ef84894ef34b9be005dedac105df"
+    },
+    {
+      "bytes": 3996,
+      "path": "src/export_model.py",
+      "sha256": "7cf5164829fea72f78f5ab13218788df9e494ef50cf5c129ee37763fffc7f4ce"
+    },
+    {
+      "bytes": 9827,
+      "path": "src/export_powerbi.py",
+      "sha256": "bae13a79ba33887326e127c344dc9760272a2a56600cd23c47c9ffdd6b75197b"
+    },
+    {
+      "bytes": 16674,
+      "path": "src/generate.py",
+      "sha256": "eb304ce38f81dd4cba1a4d904bfe4c915a9029914ec18a7ee137564da5d3d8cd"
+    },
+    {
+      "bytes": 15122,
+      "path": "src/generate_operations.py",
+      "sha256": "90da07599451a78f061a3fe9af525df8babfc601ad846ce5e41e2bc661e97336"
+    },
+    {
+      "bytes": 18379,
+      "path": "src/hydrate_operations.py",
+      "sha256": "cd13cd1ff240ae2b3b7e75ed5756130cf75154bae3d2c6691f2fefe50278fd15"
+    },
+    {
+      "bytes": 2458,
+      "path": "src/hydrate_truth.py",
+      "sha256": "f305dd2960a187c613063e15183220bca98c1382a33c815c4d51a33d64656934"
+    },
+    {
+      "bytes": 5629,
+      "path": "src/model.py",
+      "sha256": "5ce119aec244586640fb3f7399369ef6a404e971ff349ea2d73286f3293dd318"
+    },
+    {
+      "bytes": 9563,
+      "path": "src/odcs.py",
+      "sha256": "750d54eed0c387ae226088ab1543f96b6ff4f9ca65805b4276567c39b184d137"
+    },
+    {
+      "bytes": 1261,
+      "path": "src/operate_date.py",
+      "sha256": "a473ff4a71a352a676b6afeef099eef3ea8743fdd99cd63aa11e7bb47707aa53"
+    },
+    {
+      "bytes": 6298,
+      "path": "src/oracle.py",
+      "sha256": "4821e8e842a63fa3798cabba718c641d26f1f43ead578cf9f92b92c1dab38290"
+    },
+    {
+      "bytes": 10513,
+      "path": "src/reference.py",
+      "sha256": "3e0b3bc542cdb9cd1a3b43e9c357ed04a26b5978f942004287170aa99e377f26"
+    },
+    {
+      "bytes": 13508,
+      "path": "src/render_operations_sql.py",
+      "sha256": "d850f7e971e58a1b4fea36cf36a9a9e4e9d0e78bb75d7b89d8b427fbc7ee2125"
+    },
+    {
+      "bytes": 4547,
+      "path": "src/render_sql.py",
+      "sha256": "ca441996bac1dd398abc2d9b2d8feb0cbbb73c593ae240d5ac61300de6ad1467"
+    },
+    {
+      "bytes": 1719,
+      "path": "src/run_local.py",
+      "sha256": "8708c0eda62449ea4e6902e07d973a62cf26934ab003572e2fe07027f02c0896"
+    },
+    {
+      "bytes": 1751,
+      "path": "src/run_operations.py",
+      "sha256": "016936db7c3b11650a47f36c0e8321d40e9f2a4fa88d5c49927ea0447abe3251"
+    },
+    {
+      "bytes": 3845,
+      "path": "src/run_operations_snowflake.py",
+      "sha256": "23622ec91c71ca77e668c417b60015809f6ec10bff833aa824591fa9558c5c2e"
+    },
+    {
+      "bytes": 2999,
+      "path": "src/run_snowflake.py",
+      "sha256": "25e4463d78cf3f3f7cbe80441d0ac135d9088fe695cfe8ead73f26944c97b7fa"
+    },
+    {
+      "bytes": 2452,
+      "path": "src/territory_workbook.py",
+      "sha256": "01cf27c03e782bead0ee616cac7ea56286486ac140c5464f6fae622550b5e99f"
+    },
+    {
+      "bytes": 3999,
+      "path": "src/upload_public.py",
+      "sha256": "cf7a11e83004b29f8e70e95f2a600e6915a34203caa3ca0522725dee1d848f5c"
+    },
+    {
+      "bytes": 4707,
+      "path": "src/validate.py",
+      "sha256": "8d299f40a477abee92b8f0cb9052cea1e7c49fcd6d7676d1825895e0b58ea734"
+    },
+    {
+      "bytes": 3904,
+      "path": "src/xlsx_to_csv.py",
+      "sha256": "db6d472eaff0cb9bf4d75e240c49d96352620a775a6d4dae21c0d9a0530150ed"
+    },
+    {
+      "bytes": 10117,
+      "path": "tests/test_lab.py",
+      "sha256": "df62984f297a1e85d949e27360a6147711cc5296dee8cb462e21c3af20f30d04"
+    },
+    {
+      "bytes": 15868,
+      "path": "tests/test_operations.py",
+      "sha256": "72c5db8cce7a3759f2ad1760a305a4199fef855fd4a86c1e669db0ed7f7e4711"
+    }
+  ],
+  "guide": "docs/ODCS_OPERATIONS.md",
+  "local_verification": "evidence/odcs-operations-verification.json",
+  "odcs_version": "3.1.0",
+  "package_version": "0.2.1",
+  "registry_sha256": "27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe",
+  "release_id": "pharma-lab-0.2.0",
+  "source_base_commit": "912713205f7d738dff330db5d00c04121b099af1",
+  "status": "LOCAL_VALIDATED_TARGET_ACCEPTANCE_PENDING",
+  "visualization_language": "TMDL (Tabular Model Definition Language)"
+}

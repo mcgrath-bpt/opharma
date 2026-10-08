@@ -1,0 +1,12 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	annotation ODCSRegistrySHA256 = 27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe
+	ref table 'S1 Engagement'
+	ref table 'S2 Product Activity'
+	ref table 'S3 Customer Territory'
+	ref table 'S4 Interaction'
+	ref table 'S5 Campaign'
+	ref table 'Scenario Scorecard'
+	ref table 'Scenario Scorecard History'

@@ -1,0 +1,1568 @@
+{
+  "apiVersion": "v3.1.0",
+  "customProperties": [
+    {
+      "property": "layer",
+      "value": "source"
+    },
+    {
+      "property": "dependsOn",
+      "value": []
+    },
+    {
+      "property": "runtime",
+      "value": {
+        "engine": "python-sqlite",
+        "majorVersionRequiredForBreakingChanges": true,
+        "qualityGate": "fail structural or reconciliation errors; record percentage alerts",
+        "schemaGate": "src/odcs.py",
+        "target": "snowflake-sql-python",
+        "timezone": "UTC"
+      }
+    },
+    {
+      "property": "deliverySemantics",
+      "value": {
+        "activity": "daily versioned append; raw invalid fields retained for quarantine",
+        "files": "immutable exact keys; SHA256 verified",
+        "readyMarker": "manifest SHA256; visibility committed only after all gates pass",
+        "reference": "initial snapshots plus explicit intervals/events",
+        "rx": "weekly replacement versions",
+        "territory": "monthly plus explicit realignment deliveries"
+      }
+    }
+  ],
+  "dataProduct": "synthetic-pharma-commercial-lab",
+  "description": {
+    "limitations": "Synthetic data only. Vendor integrations require tenant configuration and acceptance.",
+    "purpose": "Immutable CSV deliveries, exact manifest fingerprints, public identity evidence and completion markers.",
+    "usage": "Local recurring investigations and Snowflake migration validation."
+  },
+  "domain": "pharma-commercial",
+  "id": "pharma.commercial.source",
+  "kind": "DataContract",
+  "name": "Pharma commercial source",
+  "roles": [
+    {
+      "access": "read public source; write isolated pipeline schemas",
+      "role": "PHARMA_BUILDER"
+    },
+    {
+      "access": "read consumption and visualization only",
+      "role": "PHARMA_ANALYST"
+    },
+    {
+      "access": "read private oracle; never grant to builder",
+      "role": "PHARMA_EVALUATOR"
+    }
+  ],
+  "schema": [
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "affiliation_key": "TEXT",
+            "effective_from": "DATE",
+            "effective_to": "DATE",
+            "is_primary": "BOOLEAN",
+            "organisation_key": "TEXT",
+            "provider_key": "TEXT",
+            "relationship_type": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "affiliation_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "iqvia_like/affiliation",
+      "physicalName": "raw_iqvia_like_affiliation",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "affiliation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "affiliation_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "provider key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "provider_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "organisation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "organisation_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "relationship type",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "relationship_type",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "is primary",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "is_primary",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_from",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_to",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "country": "TEXT",
+            "organisation_key": "TEXT",
+            "organisation_name": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "organisation_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "iqvia_like/organisation",
+      "physicalName": "raw_iqvia_like_organisation",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "organisation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "organisation_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "organisation name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "organisation_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "country",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "country",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "active": "BOOLEAN",
+            "brand": "TEXT",
+            "product_code": "TEXT",
+            "therapy": "TEXT",
+            "valid_from": "DATE",
+            "valid_to": "DATE"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "product_code",
+            "valid_from"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "iqvia_like/product",
+      "physicalName": "raw_iqvia_like_product",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "brand",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "brand",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "therapy",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "therapy",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "valid from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "valid_from",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "valid to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "valid_to",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "active",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "active": "BOOLEAN",
+            "country": "TEXT",
+            "label": "TEXT",
+            "link_token": "TEXT",
+            "postal_sector": "TEXT",
+            "provider_key": "TEXT",
+            "speciality": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "provider_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "iqvia_like/provider",
+      "physicalName": "raw_iqvia_like_provider",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "provider key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "provider_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "link token",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "link_token",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "label",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "label",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "speciality",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "speciality",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "active",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "country",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "country",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "postal sector",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "postal_sector",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "nrx_count": "INTEGER",
+            "observation_key": "TEXT",
+            "product_code": "TEXT",
+            "provider_key": "TEXT",
+            "sales_units": "INTEGER",
+            "trx_count": "INTEGER",
+            "version_no": "INTEGER",
+            "week_ending": "DATE"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "observation_key",
+            "version_no"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "versioned append",
+      "description": "versioned append",
+      "logicalType": "object",
+      "name": "iqvia_like/rx_weekly",
+      "physicalName": "raw_iqvia_like_rx_weekly",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "observation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "observation_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "provider key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "provider_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "week ending",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "week_ending",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "trx count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "trx_count",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "nrx count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "nrx_count",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "sales units",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "sales_units",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "version no",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "version_no",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "assignment_key": "TEXT",
+            "effective_from": "DATE",
+            "effective_to": "DATE",
+            "provider_key": "TEXT",
+            "territory_code": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "assignment_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "manual/territory_mapping",
+      "physicalName": "raw_manual_territory_mapping",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "assignment key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "assignment_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "provider key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "provider_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_from",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_to",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "campaign_key": "TEXT",
+            "end_date_exclusive": "DATE",
+            "product_code": "TEXT",
+            "start_date": "DATE",
+            "status": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "campaign_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "salesforce_like/campaign",
+      "physicalName": "raw_salesforce_like_campaign",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "start date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "start_date",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "end date exclusive",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "end_date_exclusive",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "campaign_key": "TEXT",
+            "contact_key": "TEXT",
+            "member_status": "TEXT",
+            "membership_key": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "membership_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "salesforce_like/campaign_member",
+      "physicalName": "raw_salesforce_like_campaign_member",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "membership key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "membership_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "member status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "member_status",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "channel": "TEXT",
+            "contact_key": "TEXT",
+            "effective_at": "TIMESTAMP_UTC",
+            "preference_key": "TEXT",
+            "purpose": "TEXT",
+            "sequence_no": "INTEGER",
+            "status": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "preference_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "salesforce_like/consent",
+      "physicalName": "raw_salesforce_like_consent",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "preference key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "preference_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "purpose",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "purpose",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_at",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "sequence no",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "sequence_no",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "contact_key": "TEXT",
+            "display_name": "TEXT",
+            "match_token": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "contact_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "salesforce_like/contact",
+      "physicalName": "raw_salesforce_like_contact",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "match token",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "match_token",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "display name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "display_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "2.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "activity_key": "TEXT",
+            "approval": "TEXT",
+            "channel": "TEXT",
+            "customer_key": "TEXT",
+            "duration_minutes": "INTEGER",
+            "modified_at": "TIMESTAMP_UTC",
+            "occurred_at": "TIMESTAMP_UTC",
+            "operation": "TEXT",
+            "primary_product_code": "TEXT",
+            "source_version": "INTEGER",
+            "staff_key": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "activity_key",
+            "source_version"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "quarantine"
+        }
+      ],
+      "dataGranularityDescription": "versioned append",
+      "description": "versioned append",
+      "logicalType": "object",
+      "name": "veeva_like/activity",
+      "physicalName": "raw_veeva_like_activity",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "primary product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "primary_product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "occurred at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "occurred_at",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "approval",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "approval",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "duration minutes",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "duration_minutes",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "source_version",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "modified at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "modified_at",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "operation",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "operation",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "staff key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "staff_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "activity_key": "TEXT",
+            "detail_rank": "INTEGER",
+            "product_code": "TEXT",
+            "source_version": "INTEGER"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "activity_key",
+            "source_version",
+            "product_code"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "quarantine"
+        }
+      ],
+      "dataGranularityDescription": "versioned append",
+      "description": "versioned append",
+      "logicalType": "object",
+      "name": "veeva_like/activity_product",
+      "physicalName": "raw_veeva_like_activity_product",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "source_version",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "detail rank",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "detail_rank",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "active": "BOOLEAN",
+            "customer_key": "TEXT",
+            "display_name": "TEXT",
+            "match_token": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "customer_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "veeva_like/customer",
+      "physicalName": "raw_veeva_like_customer",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "match token",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "match_token",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "display name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "display_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "active",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "staff_key": "TEXT",
+            "staff_name": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "staff_key"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "veeva_like/staff",
+      "physicalName": "raw_veeva_like_staff",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "staff key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "staff_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "staff name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "staff_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    },
+    {
+      "customProperties": [
+        {
+          "property": "sourceSchemaVersion",
+          "value": "1.0"
+        },
+        {
+          "property": "semanticTypes",
+          "value": {
+            "territory_code": "TEXT",
+            "territory_name": "TEXT"
+          }
+        },
+        {
+          "property": "businessKeys",
+          "value": [
+            "territory_code"
+          ]
+        },
+        {
+          "property": "invalidTypeHandling",
+          "value": "fail batch"
+        }
+      ],
+      "dataGranularityDescription": "initial snapshot plus explicit event/interval history",
+      "description": "initial snapshot plus explicit event/interval history",
+      "logicalType": "object",
+      "name": "veeva_like/territory",
+      "physicalName": "raw_veeva_like_territory",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "territory name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "conformity",
+          "engine": "pharma-local",
+          "implementation": {
+            "binding": "src/odcs.py:validate_binding",
+            "manifest": "src/validate.py:validate_public",
+            "types": "src/hydrate_operations.py:raw_semantic_gate"
+          },
+          "name": "manifestAndSemanticGate",
+          "severity": "error",
+          "type": "custom"
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "environment": "dev",
+      "format": "sqlite",
+      "path": "data/operations/model-v02.sqlite",
+      "server": "local",
+      "type": "local"
+    },
+    {
+      "account": "CONFIGURE_ACCOUNT",
+      "database": "PHARMA_LAB",
+      "environment": "target",
+      "schema": "PHARMA_MODEL",
+      "server": "snowflakeTarget",
+      "type": "snowflake"
+    }
+  ],
+  "slaProperties": [
+    {
+      "description": "Daily source availability and cutoffs are checked at the logical run time.",
+      "driver": "operational",
+      "property": "freshness",
+      "unit": "hours",
+      "value": 24
+    },
+    {
+      "property": "schedule",
+      "schedule": "0 6 * * *",
+      "scheduler": "airflow",
+      "value": "06:00 UTC daily"
+    }
+  ],
+  "status": "proposed",
+  "tags": [
+    "synthetic",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "source"
+  ],
+  "team": {
+    "description": "Proposed accountable product owner; name the real steward before production approval.",
+    "name": "Pharma commercial data product"
+  },
+  "version": "0.2.0"
+}

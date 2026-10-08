@@ -1,0 +1,920 @@
+{
+  "checkpoints": {
+    "b001": {
+      "hydration": {
+        "as_of": "2026-10-01T06:00:00Z",
+        "batch": "b001",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 26,
+          "s01_engagement": 281,
+          "s02_product_activity": 299,
+          "s03_customer_territory": 99,
+          "s04_interaction": 300,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 26,
+            "expected_rows": 26,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 281,
+            "expected_rows": 281,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 299,
+            "expected_rows": 299,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 300,
+            "expected_rows": 300,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b002": {
+      "hydration": {
+        "as_of": "2026-10-02T06:00:00Z",
+        "batch": "b002",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 31,
+          "s01_engagement": 279,
+          "s02_product_activity": 300,
+          "s03_customer_territory": 99,
+          "s04_interaction": 301,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 31,
+            "expected_rows": 31,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 279,
+            "expected_rows": 279,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 300,
+            "expected_rows": 300,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 301,
+            "expected_rows": 301,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b003": {
+      "hydration": {
+        "as_of": "2026-10-03T06:00:00Z",
+        "batch": "b003",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 31,
+          "s01_engagement": 303,
+          "s02_product_activity": 324,
+          "s03_customer_territory": 99,
+          "s04_interaction": 325,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 31,
+            "expected_rows": 31,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 303,
+            "expected_rows": 303,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 324,
+            "expected_rows": 324,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 325,
+            "expected_rows": 325,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b004": {
+      "hydration": {
+        "as_of": "2026-10-04T06:00:00Z",
+        "batch": "b004",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 34,
+          "s01_engagement": 324,
+          "s02_product_activity": 348,
+          "s03_customer_territory": 99,
+          "s04_interaction": 349,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 34,
+            "expected_rows": 34,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 324,
+            "expected_rows": 324,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 348,
+            "expected_rows": 348,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 349,
+            "expected_rows": 349,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b005": {
+      "hydration": {
+        "as_of": "2026-10-05T06:00:00Z",
+        "batch": "b005",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 43,
+          "s01_engagement": 341,
+          "s02_product_activity": 368,
+          "s03_customer_territory": 99,
+          "s04_interaction": 372,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": true,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 43,
+            "expected_rows": 43,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 341,
+            "expected_rows": 341,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 368,
+            "expected_rows": 368,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 372,
+            "expected_rows": 372,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b006": {
+      "hydration": {
+        "as_of": "2026-10-06T06:00:00Z",
+        "batch": "b006",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 43,
+          "s01_engagement": 365,
+          "s02_product_activity": 392,
+          "s03_customer_territory": 99,
+          "s04_interaction": 396,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 43,
+            "expected_rows": 43,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 365,
+            "expected_rows": 365,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 392,
+            "expected_rows": 392,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 396,
+            "expected_rows": 396,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b007": {
+      "hydration": {
+        "as_of": "2026-10-07T06:00:00Z",
+        "batch": "b007",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 43,
+          "s01_engagement": 389,
+          "s02_product_activity": 416,
+          "s03_customer_territory": 99,
+          "s04_interaction": 420,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 43,
+            "expected_rows": 43,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 389,
+            "expected_rows": 389,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 416,
+            "expected_rows": 416,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 420,
+            "expected_rows": 420,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b008": {
+      "hydration": {
+        "as_of": "2026-10-08T06:00:00Z",
+        "batch": "b008",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 39,
+          "s01_engagement": 417,
+          "s02_product_activity": 440,
+          "s03_customer_territory": 99,
+          "s04_interaction": 444,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 39,
+            "expected_rows": 39,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 417,
+            "expected_rows": 417,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 440,
+            "expected_rows": 440,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 444,
+            "expected_rows": 444,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b009": {
+      "hydration": {
+        "as_of": "2026-10-09T06:00:00Z",
+        "batch": "b009",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 48,
+          "s01_engagement": 435,
+          "s02_product_activity": 460,
+          "s03_customer_territory": 99,
+          "s04_interaction": 467,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 48,
+            "expected_rows": 48,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 435,
+            "expected_rows": 435,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 460,
+            "expected_rows": 460,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 467,
+            "expected_rows": 467,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b010": {
+      "hydration": {
+        "as_of": "2026-10-10T06:00:00Z",
+        "batch": "b010",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 50,
+          "s01_engagement": 459,
+          "s02_product_activity": 484,
+          "s03_customer_territory": 99,
+          "s04_interaction": 491,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 50,
+            "expected_rows": 50,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 459,
+            "expected_rows": 459,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 484,
+            "expected_rows": 484,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 491,
+            "expected_rows": 491,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b011": {
+      "hydration": {
+        "as_of": "2026-10-11T06:00:00Z",
+        "batch": "b011",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 50,
+          "s01_engagement": 483,
+          "s02_product_activity": 508,
+          "s03_customer_territory": 99,
+          "s04_interaction": 515,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 50,
+            "expected_rows": 50,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 483,
+            "expected_rows": 483,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 508,
+            "expected_rows": 508,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 515,
+            "expected_rows": 515,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b012": {
+      "hydration": {
+        "as_of": "2026-10-12T06:00:00Z",
+        "batch": "b012",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 50,
+          "s01_engagement": 507,
+          "s02_product_activity": 532,
+          "s03_customer_territory": 99,
+          "s04_interaction": 539,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": true,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 50,
+            "expected_rows": 50,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 507,
+            "expected_rows": 507,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 532,
+            "expected_rows": 532,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 539,
+            "expected_rows": 539,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b013": {
+      "hydration": {
+        "as_of": "2026-10-13T06:00:00Z",
+        "batch": "b013",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 58,
+          "s01_engagement": 525,
+          "s02_product_activity": 552,
+          "s03_customer_territory": 99,
+          "s04_interaction": 562,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 58,
+            "expected_rows": 58,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 525,
+            "expected_rows": 525,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 552,
+            "expected_rows": 552,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 562,
+            "expected_rows": 562,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    },
+    "b014": {
+      "hydration": {
+        "as_of": "2026-10-14T06:00:00Z",
+        "batch": "b014",
+        "output_rows": {
+          "dq": 6,
+          "exceptions": 58,
+          "s01_engagement": 549,
+          "s02_product_activity": 576,
+          "s03_customer_territory": 99,
+          "s04_interaction": 586,
+          "s05_campaign": 79
+        },
+        "quality_rules": 54,
+        "s5_weekly_consumption": false,
+        "status": "PUBLISHED"
+      },
+      "reconciliation": {
+        "passed": true,
+        "tables": {
+          "dq": {
+            "actual_rows": 6,
+            "expected_rows": 6,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "exceptions": {
+            "actual_rows": 58,
+            "expected_rows": 58,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s01_engagement": {
+            "actual_rows": 549,
+            "expected_rows": 549,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s02_product_activity": {
+            "actual_rows": 576,
+            "expected_rows": 576,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s03_customer_territory": {
+            "actual_rows": 99,
+            "expected_rows": 99,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s04_interaction": {
+            "actual_rows": 586,
+            "expected_rows": 586,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          },
+          "s05_campaign": {
+            "actual_rows": 79,
+            "expected_rows": 79,
+            "missing_rows": 0,
+            "unexpected_rows": 0
+          }
+        }
+      }
+    }
+  },
+  "database": "/workspace/opharma-pr/pharma-commercial-lab/build/acceptance/tmpbtan2pol/model.sqlite",
+  "engine": "sqlite-python",
+  "odcs_version": "3.1.0",
+  "passed": true,
+  "release_id": "pharma-lab-0.2.0",
+  "snowflake": "NOT_EXECUTED"
+}
