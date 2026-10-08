@@ -1,0 +1,54 @@
+table 'S3 Customer Territory'
+	annotation ODCSContractId = pharma.commercial.consumption
+	annotation ODCSContractVersion = 0.2.0
+	annotation ODCSRegistrySHA256 = 27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe
+	annotation ODCSGrain = one active approved customer per reporting snapshot
+	annotation ODCSSourceObject = consumption_s03_customer_territory_current
+
+	column 'snapshot_id'
+		dataType: string
+		sourceColumn: snapshot_id
+		summarizeBy: none
+
+	column 'as_of'
+		dataType: dateTime
+		sourceColumn: as_of
+		summarizeBy: none
+		formatString: yyyy-MM-dd HH:mm:ss
+
+	column 'customer_key'
+		dataType: string
+		sourceColumn: customer_key
+		summarizeBy: none
+
+	column 'territory_code'
+		dataType: string
+		sourceColumn: territory_code
+		summarizeBy: none
+
+	column 'assignment_status'
+		dataType: string
+		sourceColumn: assignment_status
+		summarizeBy: none
+
+	measure 'Territory Customers' = DISTINCTCOUNT('S3 Customer Territory'[customer_key])
+		formatString: #,0
+		displayFolder: Scenario Measures
+
+	partition 'S3 Customer Territory' = m
+		mode: import
+		source =
+			let
+			    Raw = if DataSourceMode = "CSV" then
+			        Table.PromoteHeaders(Csv.Document(File.Contents(DailyCsvFolder & "/consumption_s03_customer_territory.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), [PromoteAllScalars=true])
+			    else if DataSourceMode = "Snowflake" then
+			        let
+			            Connection = Snowflake.Databases(SnowflakeServer, SnowflakeWarehouse, [Implementation="2.0"]),
+			            Database = Connection{[Name=SnowflakeDatabase, Kind="Database"]}[Data],
+			            Schema = Database{[Name=SnowflakeSchema, Kind="Schema"]}[Data]
+			        in Schema{[Name="consumption_s03_customer_territory_current", Kind="View" if Text.EndsWith("consumption_s03_customer_territory_current", "_current") else "Table"]}[Data]
+			    else error "DataSourceMode must be CSV or Snowflake",
+			    Selected = Table.SelectColumns(Raw, {"snapshot_id", "as_of", "customer_key", "territory_code", "assignment_status"}, MissingField.Error),
+			    Typed = Table.TransformColumns(Selected, {{"snapshot_id", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"as_of", each if _ = null or _ = "" then null else let v = _ in if Value.Is(v, type text) then DateTimeZone.RemoveZone(DateTimeZone.ToUtc(DateTimeZone.FromText(v))) else DateTime.From(v), type datetime}, {"customer_key", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"territory_code", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"assignment_status", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}})
+			in
+			    Typed

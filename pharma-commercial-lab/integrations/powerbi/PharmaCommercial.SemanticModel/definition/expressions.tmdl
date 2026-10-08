@@ -1,0 +1,15 @@
+expression DataSourceMode = "CSV" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression DailyCsvFolder = "CONFIGURE_ABSOLUTE_PATH/model_export/b014" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression WeeklyCsvFolder = "CONFIGURE_ABSOLUTE_PATH/model_export/b012" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression HistoryCsvFile = "CONFIGURE_ABSOLUTE_PATH/model_export/history/visualization_scenario_scorecard.csv" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression SnowflakeServer = "CONFIGURE_ACCOUNT.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression SnowflakeWarehouse = "CONFIGURE_WAREHOUSE" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression SnowflakeDatabase = "PHARMA_LAB" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression SnowflakeSchema = "PHARMA_MODEL" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]

@@ -1,0 +1,70 @@
+table 'S2 Product Activity'
+	annotation ODCSContractId = pharma.commercial.consumption
+	annotation ODCSContractVersion = 0.2.0
+	annotation ODCSRegistrySHA256 = 27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe
+	annotation ODCSGrain = one customer/product/activity date per reporting snapshot
+	annotation ODCSSourceObject = consumption_s02_product_activity_current
+
+	column 'snapshot_id'
+		dataType: string
+		sourceColumn: snapshot_id
+		summarizeBy: none
+
+	column 'as_of'
+		dataType: dateTime
+		sourceColumn: as_of
+		summarizeBy: none
+		formatString: yyyy-MM-dd HH:mm:ss
+
+	column 'customer_key'
+		dataType: string
+		sourceColumn: customer_key
+		summarizeBy: none
+
+	column 'product_code'
+		dataType: string
+		sourceColumn: product_code
+		summarizeBy: none
+
+	column 'activity_date'
+		dataType: dateTime
+		sourceColumn: activity_date
+		summarizeBy: none
+		formatString: yyyy-MM-dd
+
+	column 'brand'
+		dataType: string
+		sourceColumn: brand
+		summarizeBy: none
+
+	column 'therapy'
+		dataType: string
+		sourceColumn: therapy
+		summarizeBy: none
+
+	column 'interaction_count'
+		dataType: int64
+		sourceColumn: interaction_count
+		summarizeBy: none
+
+	measure 'Product Interactions' = SUM('S2 Product Activity'[interaction_count])
+		formatString: #,0
+		displayFolder: Scenario Measures
+
+	partition 'S2 Product Activity' = m
+		mode: import
+		source =
+			let
+			    Raw = if DataSourceMode = "CSV" then
+			        Table.PromoteHeaders(Csv.Document(File.Contents(DailyCsvFolder & "/consumption_s02_product_activity.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), [PromoteAllScalars=true])
+			    else if DataSourceMode = "Snowflake" then
+			        let
+			            Connection = Snowflake.Databases(SnowflakeServer, SnowflakeWarehouse, [Implementation="2.0"]),
+			            Database = Connection{[Name=SnowflakeDatabase, Kind="Database"]}[Data],
+			            Schema = Database{[Name=SnowflakeSchema, Kind="Schema"]}[Data]
+			        in Schema{[Name="consumption_s02_product_activity_current", Kind="View" if Text.EndsWith("consumption_s02_product_activity_current", "_current") else "Table"]}[Data]
+			    else error "DataSourceMode must be CSV or Snowflake",
+			    Selected = Table.SelectColumns(Raw, {"snapshot_id", "as_of", "customer_key", "product_code", "activity_date", "brand", "therapy", "interaction_count"}, MissingField.Error),
+			    Typed = Table.TransformColumns(Selected, {{"snapshot_id", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"as_of", each if _ = null or _ = "" then null else let v = _ in if Value.Is(v, type text) then DateTimeZone.RemoveZone(DateTimeZone.ToUtc(DateTimeZone.FromText(v))) else DateTime.From(v), type datetime}, {"customer_key", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"product_code", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"activity_date", each if _ = null or _ = "" then null else let v = _ in Date.From(v), type date}, {"brand", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"therapy", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"interaction_count", each if _ = null or _ = "" then null else let v = _ in Int64.From(v), Int64.Type}})
+			in
+			    Typed

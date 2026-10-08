@@ -1,0 +1,247 @@
+{
+  "acceptance": [
+    "DeserializeDatabaseFromFolder with Microsoft TOM; compile DAX and refresh in Power BI Desktop or Analysis Services.",
+    "Compare imported row counts and measures against the snapshot exports; validate blank diagnostic rates and threshold units.",
+    "Bind Snowflake credentials outside source control; accept workspace access and Power BI RLS for imported data.",
+    "Published reports and service refresh schedules are separate deployment assets."
+  ],
+  "contract_id": "pharma.commercial.visualization",
+  "contract_registry_sha256": "27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe",
+  "import_status": "NOT_IMPORTED",
+  "language": "Tabular Model Definition Language (TMDL)",
+  "local_validation": "STATIC_CONTRACT_BINDINGS_ONLY",
+  "model_path": "PharmaCommercial.SemanticModel/definition",
+  "parameters": {
+    "DailyCsvFolder": "CONFIGURE_ABSOLUTE_PATH/model_export/b014",
+    "DataSourceMode": "CSV",
+    "HistoryCsvFile": "CONFIGURE_ABSOLUTE_PATH/model_export/history/visualization_scenario_scorecard.csv",
+    "SnowflakeDatabase": "PHARMA_LAB",
+    "SnowflakeSchema": "PHARMA_MODEL",
+    "SnowflakeServer": "CONFIGURE_ACCOUNT.snowflakecomputing.com",
+    "SnowflakeWarehouse": "CONFIGURE_WAREHOUSE",
+    "WeeklyCsvFolder": "CONFIGURE_ABSOLUTE_PATH/model_export/b012"
+  },
+  "refresh": "Import mode: refresh after a complete daily publication; S5 reads latest Monday publication.",
+  "relationships": "Independent scenario fact tables; no cross-fact joins or automatic relationship detection.",
+  "sources": [
+    "https://learn.microsoft.com/en-us/analysis-services/tmdl/tmdl-overview",
+    "https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-dataset",
+    "https://learn.microsoft.com/en-us/power-query/connectors/snowflake"
+  ],
+  "tables": [
+    {
+      "columns": [
+        "snapshot_id",
+        "as_of",
+        "activity_key",
+        "customer_key",
+        "activity_date",
+        "consent_status"
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one currently consented approved interaction per reporting snapshot",
+      "measures": [
+        {
+          "dax": "DISTINCTCOUNT('S1 Engagement'[activity_key])",
+          "format": "#,0",
+          "name": "Engagement Activities"
+        }
+      ],
+      "source_object": "consumption_s01_engagement_current",
+      "table": "S1 Engagement"
+    },
+    {
+      "columns": [
+        "snapshot_id",
+        "as_of",
+        "customer_key",
+        "product_code",
+        "activity_date",
+        "brand",
+        "therapy",
+        "interaction_count"
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one customer/product/activity date per reporting snapshot",
+      "measures": [
+        {
+          "dax": "SUM('S2 Product Activity'[interaction_count])",
+          "format": "#,0",
+          "name": "Product Interactions"
+        }
+      ],
+      "source_object": "consumption_s02_product_activity_current",
+      "table": "S2 Product Activity"
+    },
+    {
+      "columns": [
+        "snapshot_id",
+        "as_of",
+        "customer_key",
+        "territory_code",
+        "assignment_status"
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one active approved customer per reporting snapshot",
+      "measures": [
+        {
+          "dax": "DISTINCTCOUNT('S3 Customer Territory'[customer_key])",
+          "format": "#,0",
+          "name": "Territory Customers"
+        }
+      ],
+      "source_object": "consumption_s03_customer_territory_current",
+      "table": "S3 Customer Territory"
+    },
+    {
+      "columns": [
+        "snapshot_id",
+        "as_of",
+        "activity_key",
+        "customer_key",
+        "primary_product_code",
+        "occurred_at",
+        "channel",
+        "duration_minutes",
+        "source_version"
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one accepted latest nondeleted CRM activity per reporting snapshot",
+      "measures": [
+        {
+          "dax": "DISTINCTCOUNT('S4 Interaction'[activity_key])",
+          "format": "#,0",
+          "name": "Latest Interactions"
+        }
+      ],
+      "source_object": "consumption_s04_interaction_current",
+      "table": "S4 Interaction"
+    },
+    {
+      "columns": [
+        "snapshot_id",
+        "as_of",
+        "campaign_key",
+        "customer_key",
+        "product_code",
+        "contacted",
+        "qualifying_interactions"
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one enrolled customer/campaign; explicit zero contact retained per reporting snapshot",
+      "measures": [
+        {
+          "dax": "COUNTROWS('S5 Campaign')",
+          "format": "#,0",
+          "name": "Campaign Member Product Pairs"
+        },
+        {
+          "dax": "CALCULATE(COUNTROWS('S5 Campaign'), 'S5 Campaign'[contacted] = TRUE())",
+          "format": "#,0",
+          "name": "Contacted Campaign Pairs"
+        },
+        {
+          "dax": "DIVIDE([Contacted Campaign Pairs], [Campaign Member Product Pairs])",
+          "format": "0.00%",
+          "name": "Campaign Reach"
+        },
+        {
+          "dax": "SUM('S5 Campaign'[qualifying_interactions])",
+          "format": "#,0",
+          "name": "Qualifying Campaign Interactions"
+        }
+      ],
+      "source_object": "consumption_s05_campaign_current",
+      "table": "S5 Campaign"
+    },
+    {
+      "columns": [
+        "snapshot_id",
+        "as_of",
+        "scenario",
+        "scope",
+        "output_rows",
+        "exception_rows",
+        "numerator",
+        "denominator",
+        "threshold",
+        "status",
+        "scheduled"
+      ],
+      "contract_id": "pharma.commercial.visualization",
+      "contract_version": "0.2.1",
+      "grain": "one scenario/scope scorecard per logical checkpoint; ratio counts retained",
+      "measures": [
+        {
+          "dax": "IF(HASONEVALUE('Scenario Scorecard'[snapshot_id]) && HASONEVALUE('Scenario Scorecard'[scenario]) && HASONEVALUE('Scenario Scorecard'[scope]), SUM('Scenario Scorecard'[output_rows]))",
+          "format": "#,0",
+          "name": "Output Rows"
+        },
+        {
+          "dax": "IF(HASONEVALUE('Scenario Scorecard'[snapshot_id]) && HASONEVALUE('Scenario Scorecard'[scenario]) && HASONEVALUE('Scenario Scorecard'[scope]), SUM('Scenario Scorecard'[exception_rows]))",
+          "format": "#,0",
+          "name": "Exception Rows"
+        },
+        {
+          "dax": "IF(HASONEVALUE('Scenario Scorecard'[snapshot_id]) && HASONEVALUE('Scenario Scorecard'[scenario]) && HASONEVALUE('Scenario Scorecard'[scope]) && SELECTEDVALUE('Scenario Scorecard'[scenario]) IN {\"S01\", \"S02\", \"S05\"}, DIVIDE(SUM('Scenario Scorecard'[numerator]), SUM('Scenario Scorecard'[denominator])))",
+          "format": "0.00%",
+          "name": "Quality Rate"
+        },
+        {
+          "dax": "IF(HASONEVALUE('Scenario Scorecard'[snapshot_id]) && HASONEVALUE('Scenario Scorecard'[scenario]) && HASONEVALUE('Scenario Scorecard'[scope]) && SELECTEDVALUE('Scenario Scorecard'[scenario]) IN {\"S01\", \"S02\", \"S05\"}, SELECTEDVALUE('Scenario Scorecard'[threshold]))",
+          "format": "0.00%",
+          "name": "Quality Threshold"
+        }
+      ],
+      "source_object": "visualization_scenario_scorecard_current",
+      "table": "Scenario Scorecard"
+    },
+    {
+      "columns": [
+        "snapshot_id",
+        "as_of",
+        "scenario",
+        "scope",
+        "output_rows",
+        "exception_rows",
+        "numerator",
+        "denominator",
+        "threshold",
+        "status",
+        "scheduled"
+      ],
+      "contract_id": "pharma.commercial.visualization",
+      "contract_version": "0.2.1",
+      "grain": "one scenario/scope scorecard per logical checkpoint; ratio counts retained",
+      "measures": [
+        {
+          "dax": "IF(HASONEVALUE('Scenario Scorecard History'[snapshot_id]) && HASONEVALUE('Scenario Scorecard History'[scenario]) && HASONEVALUE('Scenario Scorecard History'[scope]), SUM('Scenario Scorecard History'[output_rows]))",
+          "format": "#,0",
+          "name": "Output Rows History"
+        },
+        {
+          "dax": "IF(HASONEVALUE('Scenario Scorecard History'[snapshot_id]) && HASONEVALUE('Scenario Scorecard History'[scenario]) && HASONEVALUE('Scenario Scorecard History'[scope]), SUM('Scenario Scorecard History'[exception_rows]))",
+          "format": "#,0",
+          "name": "Exception Rows History"
+        },
+        {
+          "dax": "IF(HASONEVALUE('Scenario Scorecard History'[snapshot_id]) && HASONEVALUE('Scenario Scorecard History'[scenario]) && HASONEVALUE('Scenario Scorecard History'[scope]) && SELECTEDVALUE('Scenario Scorecard History'[scenario]) IN {\"S01\", \"S02\", \"S05\"}, DIVIDE(SUM('Scenario Scorecard History'[numerator]), SUM('Scenario Scorecard History'[denominator])))",
+          "format": "0.00%",
+          "name": "Quality Rate History"
+        },
+        {
+          "dax": "IF(HASONEVALUE('Scenario Scorecard History'[snapshot_id]) && HASONEVALUE('Scenario Scorecard History'[scenario]) && HASONEVALUE('Scenario Scorecard History'[scope]) && SELECTEDVALUE('Scenario Scorecard History'[scenario]) IN {\"S01\", \"S02\", \"S05\"}, SELECTEDVALUE('Scenario Scorecard History'[threshold]))",
+          "format": "0.00%",
+          "name": "Quality Threshold History"
+        }
+      ],
+      "source_object": "visualization_scenario_scorecard",
+      "table": "Scenario Scorecard History"
+    }
+  ]
+}

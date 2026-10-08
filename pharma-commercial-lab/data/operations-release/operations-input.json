@@ -1,0 +1,10 @@
+{
+  "cutoff_utc": "06:00",
+  "daily_interactions": 24,
+  "delivery_count": 14,
+  "release_id": "pharma-lab-0.2.0",
+  "schedule_utc": "05:00",
+  "seed": 20261008,
+  "source_contract_version": "0.2.0",
+  "start_date": "2026-10-01"
+}
