@@ -1,0 +1,740 @@
+{
+  "apiVersion": "v3.1.0",
+  "customProperties": [
+    {
+      "property": "layer",
+      "value": "pipeline"
+    },
+    {
+      "property": "dependsOn",
+      "value": [
+        "pharma.commercial.source",
+        "pharma.commercial.canonical"
+      ]
+    },
+    {
+      "property": "runtime",
+      "value": {
+        "engine": "python-sqlite",
+        "majorVersionRequiredForBreakingChanges": true,
+        "qualityGate": "fail structural or reconciliation errors; record percentage alerts",
+        "schemaGate": "src/odcs.py",
+        "target": "snowflake-sql-python",
+        "timezone": "UTC"
+      }
+    },
+    {
+      "property": "scenarioSemantics",
+      "value": {
+        "S1": {
+          "consent": "current at cutoff",
+          "deadlineUtc": "07:00",
+          "matchAlertAbove": 0.02
+        },
+        "S2": {
+          "deadlineUtc": "06:30",
+          "hierarchy": "current at cutoff",
+          "unknownProductAlertAbove": 0.01
+        },
+        "S3": {
+          "interval": "half open; latest effective assignment wins; equal-date conflict fails"
+        },
+        "S4": {
+          "delete": "tombstone suppresses all downstream scenarios",
+          "lateArrivalCalendarDays": 7,
+          "latest": "highest accepted version"
+        },
+        "S5": {
+          "matchAlertAbove": 0.05,
+          "schedule": "Monday; daily diagnostic calculations",
+          "window": "campaign start inclusive/end exclusive"
+        }
+      }
+    }
+  ],
+  "dataProduct": "synthetic-pharma-commercial-lab",
+  "description": {
+    "limitations": "Synthetic data only. Vendor integrations require tenant configuration and acceptance.",
+    "purpose": "S1\u2013S5 business transformations plus exception and DQ evidence. Full snapshot reconciliation gates publication.",
+    "usage": "Local recurring investigations and Snowflake migration validation."
+  },
+  "domain": "pharma-commercial",
+  "id": "pharma.commercial.pipeline",
+  "kind": "DataContract",
+  "name": "Pharma commercial pipeline",
+  "roles": [
+    {
+      "access": "read public source; write isolated pipeline schemas",
+      "role": "PHARMA_BUILDER"
+    },
+    {
+      "access": "read consumption and visualization only",
+      "role": "PHARMA_ANALYST"
+    },
+    {
+      "access": "read private oracle; never grant to builder",
+      "role": "PHARMA_EVALUATOR"
+    }
+  ],
+  "schema": [
+    {
+      "dataGranularityDescription": "one currently consented approved interaction per reporting snapshot",
+      "description": "one currently consented approved interaction per reporting snapshot",
+      "logicalType": "object",
+      "name": "s01_engagement",
+      "physicalName": "pipeline_s01_engagement",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "activity date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "activity_date",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "consent status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "consent_status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one customer/product/activity date per reporting snapshot",
+      "description": "one customer/product/activity date per reporting snapshot",
+      "logicalType": "object",
+      "name": "s02_product_activity",
+      "physicalName": "pipeline_s02_product_activity",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "activity date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "activity_date",
+          "physicalType": "DATE",
+          "primaryKey": true,
+          "primaryKeyPosition": 4,
+          "required": true
+        },
+        {
+          "businessName": "brand",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "brand",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "therapy",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "therapy",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "interaction count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "interaction_count",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"customer_key\",\"product_code\",\"activity_date\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"customer_key\",\"product_code\",\"activity_date\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one active approved customer per reporting snapshot",
+      "description": "one active approved customer per reporting snapshot",
+      "logicalType": "object",
+      "name": "s03_customer_territory",
+      "physicalName": "pipeline_s03_customer_territory",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "assignment status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "assignment_status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"customer_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"customer_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one accepted latest nondeleted CRM activity per reporting snapshot",
+      "description": "one accepted latest nondeleted CRM activity per reporting snapshot",
+      "logicalType": "object",
+      "name": "s04_interaction",
+      "physicalName": "pipeline_s04_interaction",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "primary product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "primary_product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "occurred at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "occurred_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "duration minutes",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "duration_minutes",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "source_version",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one enrolled customer/campaign; explicit zero contact retained per reporting snapshot",
+      "description": "one enrolled customer/campaign; explicit zero contact retained per reporting snapshot",
+      "logicalType": "object",
+      "name": "s05_campaign",
+      "physicalName": "pipeline_s05_campaign",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "contacted",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "contacted",
+          "physicalType": "BOOLEAN",
+          "required": true
+        },
+        {
+          "businessName": "qualifying interactions",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "qualifying_interactions",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"campaign_key\",\"customer_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"campaign_key\",\"customer_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one distinct scenario/record/reason per reporting snapshot",
+      "description": "one distinct scenario/record/reason per reporting snapshot",
+      "logicalType": "object",
+      "name": "exceptions",
+      "physicalName": "pipeline_exceptions",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "scenario",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scenario",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "record key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "record_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "reason",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "reason",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 4,
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"scenario\",\"record_key\",\"reason\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"scenario\",\"record_key\",\"reason\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one scenario/scope quality rate per reporting snapshot",
+      "description": "one scenario/scope quality rate per reporting snapshot",
+      "logicalType": "object",
+      "name": "dq",
+      "physicalName": "pipeline_dq",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "scenario",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scenario",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "scope",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scope",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "numerator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "numerator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "denominator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "denominator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "threshold",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "number",
+          "name": "threshold",
+          "physicalType": "NUMBER(18,6)",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"scenario\",\"scope\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"scenario\",\"scope\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "environment": "dev",
+      "format": "sqlite",
+      "path": "data/operations/model-v02.sqlite",
+      "server": "local",
+      "type": "local"
+    },
+    {
+      "account": "CONFIGURE_ACCOUNT",
+      "database": "PHARMA_LAB",
+      "environment": "target",
+      "schema": "PHARMA_MODEL",
+      "server": "snowflakeTarget",
+      "type": "snowflake"
+    }
+  ],
+  "slaProperties": [
+    {
+      "description": "Daily source availability and cutoffs are checked at the logical run time.",
+      "driver": "operational",
+      "property": "freshness",
+      "unit": "hours",
+      "value": 24
+    },
+    {
+      "property": "schedule",
+      "schedule": "0 6 * * *",
+      "scheduler": "airflow",
+      "value": "06:00 UTC daily"
+    }
+  ],
+  "status": "proposed",
+  "tags": [
+    "synthetic",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "pipeline"
+  ],
+  "team": {
+    "description": "Proposed accountable product owner; name the real steward before production approval.",
+    "name": "Pharma commercial data product"
+  },
+  "version": "0.2.0"
+}

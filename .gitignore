@@ -218,3 +218,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Generated pharma runtime and local Power BI state
+pharma-commercial-lab/data/operations/*.sqlite*
+**/.pbi/

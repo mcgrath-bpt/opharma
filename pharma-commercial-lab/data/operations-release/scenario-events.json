@@ -1,0 +1,84 @@
+[
+  {
+    "batch": "b004",
+    "event": "correction",
+    "interaction_id": "INTERACTION-000305"
+  },
+  {
+    "batch": "b004",
+    "effective_at": "2026-10-03T16:00:00Z",
+    "event": "consent_withdrawn"
+  },
+  {
+    "batch": "b005",
+    "event": "tombstone",
+    "interaction_id": "INTERACTION-000329"
+  },
+  {
+    "batch": "b005",
+    "event": "identical_product_redelivery"
+  },
+  {
+    "batch": "b006",
+    "event": "correction",
+    "interaction_id": "INTERACTION-000353"
+  },
+  {
+    "batch": "b007",
+    "event": "correction",
+    "interaction_id": "INTERACTION-000377"
+  },
+  {
+    "batch": "b007",
+    "effective_from": "2026-10-06",
+    "event": "late_territory_realignment"
+  },
+  {
+    "batch": "b008",
+    "event": "correction",
+    "interaction_id": "INTERACTION-000401"
+  },
+  {
+    "batch": "b008",
+    "effective_at": "2026-10-07T16:00:00Z",
+    "event": "consent_granted"
+  },
+  {
+    "batch": "b009",
+    "event": "tombstone",
+    "interaction_id": "INTERACTION-000425"
+  },
+  {
+    "batch": "b009",
+    "event": "hierarchy_restatement_and_eight_day_late_event"
+  },
+  {
+    "batch": "b010",
+    "event": "correction",
+    "interaction_id": "INTERACTION-000449"
+  },
+  {
+    "batch": "b010",
+    "event": "malformed_version_and_missing_date"
+  },
+  {
+    "batch": "b011",
+    "event": "correction",
+    "interaction_id": "INTERACTION-000474"
+  },
+  {
+    "batch": "b012",
+    "event": "correction",
+    "interaction_id": "INTERACTION-000500"
+  },
+  {
+    "batch": "b013",
+    "event": "tombstone",
+    "interaction_id": "INTERACTION-000524"
+  },
+  {
+    "batch": "b014",
+    "event": "correction",
+    "interaction_id": "INTERACTION-000548"
+  }
+]

@@ -1,0 +1,259 @@
+{
+  "as_of": "2026-10-14T06:00:00Z",
+  "contract_registry_sha256": "27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe",
+  "files": [
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "organisation",
+      "path": "canonical_organisation.csv",
+      "rows": 12,
+      "sha256": "4cf3bda46d970255b0de04dd9c3fe8acfc6e50f1419e6d0943fdf34b986b01fd"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "affiliation",
+      "path": "canonical_affiliation.csv",
+      "rows": 100,
+      "sha256": "87516d80843f17426ccd8e5d5ce948ef3d93838fa9c78ea1b52011a00ffb6592"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "representative",
+      "path": "canonical_representative.csv",
+      "rows": 8,
+      "sha256": "626758719b64950bc853770b57f80908700b4a486b758033ab38ba7fb96aa683"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "customer",
+      "path": "canonical_customer.csv",
+      "rows": 100,
+      "sha256": "2e30c29a8586331861cd0f4c49fb55ea5f53ca67f836be6c71bf430ca4f022d0"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "product_interval",
+      "path": "canonical_product_interval.csv",
+      "rows": 6,
+      "sha256": "3ba99ac3a160230d90f5a22fe7c216ea64379af8e8c388b1d986e3aa19a2a5f6"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "territory",
+      "path": "canonical_territory.csv",
+      "rows": 4,
+      "sha256": "e28ccd651c2b1263dd18f910269b5f3a4315b1b57fd17e065afb8b67b86f092a"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "interaction_version",
+      "path": "canonical_interaction_version.csv",
+      "rows": 603,
+      "sha256": "80988c1264c0d04ad9bace2e3ad3c068c8b7066c254c2548d43320aeadb35657"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "interaction_product",
+      "path": "canonical_interaction_product.csv",
+      "rows": 620,
+      "sha256": "1ee4d1c5be7e41518d121ccc4366ebc83f7dae4bf0d966bb0150d94d51b6b0a5"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "consent_event",
+      "path": "canonical_consent_event.csv",
+      "rows": 103,
+      "sha256": "54a45268d9f77d5fbc500be5564fddbcff9d242ce8f99cac071e1026739df1e7"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "customer_territory",
+      "path": "canonical_customer_territory.csv",
+      "rows": 102,
+      "sha256": "2fd9391fb93de7000ab1267f2c7aec97e3c401cce471a02b981bc50f04ee9a62"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "campaign",
+      "path": "canonical_campaign.csv",
+      "rows": 5,
+      "sha256": "dafe40e550da5de7af6ebbd3f8d7b9478ce089ccc5e6f3ba6e71da89548f41a8"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "campaign_member",
+      "path": "canonical_campaign_member.csv",
+      "rows": 101,
+      "sha256": "3c8673ca59fdd04a135e94e8f7d8dd3212d0375ceeef4a1d6ee45f0ef8d4a8c3"
+    },
+    {
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "layer": "canonical",
+      "object": "rx_version",
+      "path": "canonical_rx_version.csv",
+      "rows": 4003,
+      "sha256": "d012c1208e2a7723013fe2512a0fb26800b237dda59d038b6f0820034d36c952"
+    },
+    {
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "layer": "pipeline",
+      "object": "s01_engagement",
+      "path": "pipeline_s01_engagement.csv",
+      "rows": 549,
+      "sha256": "9ca37f85cd6478e61b1a016fb447e7b1b4c273142089d03ce341fbd2be99a213"
+    },
+    {
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "layer": "pipeline",
+      "object": "s02_product_activity",
+      "path": "pipeline_s02_product_activity.csv",
+      "rows": 576,
+      "sha256": "38935db00d5c04b8078e39132dd27e2f62489193a4eeb49f0354916ac1d1b83d"
+    },
+    {
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "layer": "pipeline",
+      "object": "s03_customer_territory",
+      "path": "pipeline_s03_customer_territory.csv",
+      "rows": 99,
+      "sha256": "b8bca40df1346c3488dc029a16a05d3046992327c2f1638ed429c64b4e763e6d"
+    },
+    {
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "layer": "pipeline",
+      "object": "s04_interaction",
+      "path": "pipeline_s04_interaction.csv",
+      "rows": 586,
+      "sha256": "2106718d8b9327bf77fbd0cf72c46f787f35751d23958d8c571f6af5cc98e13a"
+    },
+    {
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "layer": "pipeline",
+      "object": "s05_campaign",
+      "path": "pipeline_s05_campaign.csv",
+      "rows": 79,
+      "sha256": "4539ede002757c983045c970f7512e2045762eea6ba7756a4a49e436e29f113b"
+    },
+    {
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "layer": "pipeline",
+      "object": "exceptions",
+      "path": "pipeline_exceptions.csv",
+      "rows": 58,
+      "sha256": "01715984edc9d93bf5cf0002e1ab5f448b1fd4f60bbf3799ed655ae0520b56c2"
+    },
+    {
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "layer": "pipeline",
+      "object": "dq",
+      "path": "pipeline_dq.csv",
+      "rows": 6,
+      "sha256": "b60f584c8447640f5dd1bd3c911ae03367730a6a672210ca4555376eff863763"
+    },
+    {
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "layer": "consumption",
+      "object": "s01_engagement",
+      "path": "consumption_s01_engagement.csv",
+      "rows": 549,
+      "sha256": "9ca37f85cd6478e61b1a016fb447e7b1b4c273142089d03ce341fbd2be99a213"
+    },
+    {
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "layer": "consumption",
+      "object": "s02_product_activity",
+      "path": "consumption_s02_product_activity.csv",
+      "rows": 576,
+      "sha256": "38935db00d5c04b8078e39132dd27e2f62489193a4eeb49f0354916ac1d1b83d"
+    },
+    {
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "layer": "consumption",
+      "object": "s03_customer_territory",
+      "path": "consumption_s03_customer_territory.csv",
+      "rows": 99,
+      "sha256": "b8bca40df1346c3488dc029a16a05d3046992327c2f1638ed429c64b4e763e6d"
+    },
+    {
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "layer": "consumption",
+      "object": "s04_interaction",
+      "path": "consumption_s04_interaction.csv",
+      "rows": 586,
+      "sha256": "2106718d8b9327bf77fbd0cf72c46f787f35751d23958d8c571f6af5cc98e13a"
+    },
+    {
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "layer": "consumption",
+      "object": "s05_campaign",
+      "path": "consumption_s05_campaign.csv",
+      "rows": 0,
+      "sha256": "07a3c529d6a772876729d4d145db08f21aa1ca443a9806f5dc53edad9e083be5"
+    },
+    {
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "layer": "consumption",
+      "object": "exceptions",
+      "path": "consumption_exceptions.csv",
+      "rows": 58,
+      "sha256": "01715984edc9d93bf5cf0002e1ab5f448b1fd4f60bbf3799ed655ae0520b56c2"
+    },
+    {
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "layer": "consumption",
+      "object": "dq",
+      "path": "consumption_dq.csv",
+      "rows": 6,
+      "sha256": "b60f584c8447640f5dd1bd3c911ae03367730a6a672210ca4555376eff863763"
+    },
+    {
+      "contract_id": "pharma.commercial.visualization",
+      "contract_version": "0.2.1",
+      "layer": "visualization",
+      "object": "scenario_scorecard",
+      "path": "visualization_scenario_scorecard.csv",
+      "rows": 8,
+      "sha256": "c26830b55f75388a999d4b4415d46190bfe9338ff7a1278483edba07b0108a5f"
+    }
+  ],
+  "snapshot_id": "b014"
+}

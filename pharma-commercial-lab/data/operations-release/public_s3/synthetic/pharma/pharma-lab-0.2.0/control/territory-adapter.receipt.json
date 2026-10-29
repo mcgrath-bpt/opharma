@@ -1,0 +1,16 @@
+{
+  "adapter_version": "1.0",
+  "columns": [
+    "assignment_key",
+    "provider_key",
+    "territory_code",
+    "effective_from",
+    "effective_to"
+  ],
+  "input_key": "synthetic/pharma/pharma-lab-0.2.0/business_files/territory/territory_mapping_202610.xlsx",
+  "input_sha256": "e50c6e6217f297c10eebfeec5c4daae3f0fdcf7ab0472097bf8dabdc3d2d02c1",
+  "output_key": "synthetic/pharma/pharma-lab-0.2.0/sources/manual/territory_mapping/batch=b001/part-00001.csv",
+  "output_sha256": "018f05cf432e2109bbe408ca4bb8611445fa61387bb283acb1caeebbdbdc605a",
+  "row_count": 101,
+  "sheet": "Territory"
+}

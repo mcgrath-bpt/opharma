@@ -82,6 +82,7 @@ Run this query to build a performance dashboard directly in DuckDB:
 
 CREATE OR REPLACE VIEW v_rep_territory_performance AS
 SELECT 
+    r.rep_id,
     r.full_name AS rep_name,
     r.territory_code,
     COUNT(DISTINCT i.interaction_id) AS total_visits,
@@ -124,3 +125,4 @@ Use code with caution.
 1. Compliance Tracking: To adapt this for local regulatory requirements (such as Sunshine Act or EFPIA reporting), link sample_distributions data alongside monetary expenditures (e.g., promotional meals) directly into the interactions table.
 2. AI-Ready Analytics: If you link DuckDB to Python (via tools like Streamlit, Marimo, or scikit-learn), this relational structure maps cleanly into graph analytics for tracking doctor referral paths or prescription intent modeling.
 Would you like help adapting this template to a specific stack—such as a Python Streamlit dashboard, a dbt-core layer, or implementing a master patient-blinded registry layer? Let me know what your end-user architecture looks like!
+

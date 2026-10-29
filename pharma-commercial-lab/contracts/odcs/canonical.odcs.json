@@ -1,0 +1,1429 @@
+{
+  "apiVersion": "v3.1.0",
+  "customProperties": [
+    {
+      "property": "layer",
+      "value": "canonical"
+    },
+    {
+      "property": "dependsOn",
+      "value": [
+        "pharma.commercial.source"
+      ]
+    },
+    {
+      "property": "runtime",
+      "value": {
+        "engine": "python-sqlite",
+        "majorVersionRequiredForBreakingChanges": true,
+        "qualityGate": "fail structural or reconciliation errors; record percentage alerts",
+        "schemaGate": "src/odcs.py",
+        "target": "snowflake-sql-python",
+        "timezone": "UTC"
+      }
+    }
+  ],
+  "dataProduct": "synthetic-pharma-commercial-lab",
+  "description": {
+    "limitations": "Synthetic data only. Vendor integrations require tenant configuration and acceptance.",
+    "purpose": "Typed public-source model with accepted interaction versions, effective intervals, explicit nullable unresolved identity and complete product replacement.",
+    "usage": "Local recurring investigations and Snowflake migration validation."
+  },
+  "domain": "pharma-commercial",
+  "id": "pharma.commercial.canonical",
+  "kind": "DataContract",
+  "name": "Pharma commercial canonical",
+  "roles": [
+    {
+      "access": "read public source; write isolated pipeline schemas",
+      "role": "PHARMA_BUILDER"
+    },
+    {
+      "access": "read consumption and visualization only",
+      "role": "PHARMA_ANALYST"
+    },
+    {
+      "access": "read private oracle; never grant to builder",
+      "role": "PHARMA_EVALUATOR"
+    }
+  ],
+  "schema": [
+    {
+      "dataGranularityDescription": "one public-source-derived organisation version or interval per snapshot",
+      "description": "one public-source-derived organisation version or interval per snapshot",
+      "logicalType": "object",
+      "name": "organisation",
+      "physicalName": "canonical_organisation",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "organisation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "organisation_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "organisation name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "organisation_name",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "country",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "country",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"organisation_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"organisation_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived affiliation version or interval per snapshot",
+      "description": "one public-source-derived affiliation version or interval per snapshot",
+      "logicalType": "object",
+      "name": "affiliation",
+      "physicalName": "canonical_affiliation",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "affiliation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "affiliation_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "organisation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "organisation_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "relationship type",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "relationship_type",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "is primary",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "is_primary",
+          "physicalType": "BOOLEAN",
+          "required": true
+        },
+        {
+          "businessName": "effective from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "effective_from",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "effective to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "effective_to",
+          "physicalType": "DATE",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"affiliation_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"affiliation_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey1",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey2",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_organisation\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"organisation_key\"=p.\"organisation_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"organisation_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        }
+      ],
+      "relationships": [
+        {
+          "from": [
+            "affiliation.snapshot_id",
+            "affiliation.customer_key"
+          ],
+          "to": [
+            "customer.snapshot_id",
+            "customer.customer_key"
+          ],
+          "type": "foreignKey"
+        },
+        {
+          "from": [
+            "affiliation.snapshot_id",
+            "affiliation.organisation_key"
+          ],
+          "to": [
+            "organisation.snapshot_id",
+            "organisation.organisation_key"
+          ],
+          "type": "foreignKey"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived representative version or interval per snapshot",
+      "description": "one public-source-derived representative version or interval per snapshot",
+      "logicalType": "object",
+      "name": "representative",
+      "physicalName": "canonical_representative",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "staff key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "staff_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "staff name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "staff_name",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"staff_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"staff_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived customer version or interval per snapshot",
+      "description": "one public-source-derived customer version or interval per snapshot",
+      "logicalType": "object",
+      "name": "customer",
+      "physicalName": "canonical_customer",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "label",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "label",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "speciality",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "speciality",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "country",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "country",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "postal sector",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "postal_sector",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "active",
+          "physicalType": "BOOLEAN",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"customer_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"customer_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived product interval version or interval per snapshot",
+      "description": "one public-source-derived product interval version or interval per snapshot",
+      "logicalType": "object",
+      "name": "product_interval",
+      "physicalName": "canonical_product_interval",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "valid from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "valid_from",
+          "physicalType": "DATE",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "valid to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "valid_to",
+          "physicalType": "DATE",
+          "required": false
+        },
+        {
+          "businessName": "brand",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "brand",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "therapy",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "therapy",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "active",
+          "physicalType": "BOOLEAN",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"product_code\",\"valid_from\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"product_code\",\"valid_from\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived territory version or interval per snapshot",
+      "description": "one public-source-derived territory version or interval per snapshot",
+      "logicalType": "object",
+      "name": "territory",
+      "physicalName": "canonical_territory",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "territory name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_name",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"territory_code\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"territory_code\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived interaction version version or interval per snapshot",
+      "description": "one public-source-derived interaction version version or interval per snapshot",
+      "logicalType": "object",
+      "name": "interaction_version",
+      "physicalName": "canonical_interaction_version",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "source_version",
+          "physicalType": "NUMBER(38,0)",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "crm customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "crm_customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "staff key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "staff_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "primary product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "primary_product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "occurred at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "occurred_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "approval",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "approval",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "duration minutes",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "duration_minutes",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "modified at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "modified_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "operation",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "operation",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "delivery batch",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "delivery_batch",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\",\"source_version\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\",\"source_version\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey1",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey2",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_representative\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"staff_key\"=p.\"staff_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"staff_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        }
+      ],
+      "relationships": [
+        {
+          "from": [
+            "interaction_version.snapshot_id",
+            "interaction_version.customer_key"
+          ],
+          "to": [
+            "customer.snapshot_id",
+            "customer.customer_key"
+          ],
+          "type": "foreignKey"
+        },
+        {
+          "from": [
+            "interaction_version.snapshot_id",
+            "interaction_version.staff_key"
+          ],
+          "to": [
+            "representative.snapshot_id",
+            "representative.staff_key"
+          ],
+          "type": "foreignKey"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived interaction product version or interval per snapshot",
+      "description": "one public-source-derived interaction product version or interval per snapshot",
+      "logicalType": "object",
+      "name": "interaction_product",
+      "physicalName": "canonical_interaction_product",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "source_version",
+          "physicalType": "NUMBER(38,0)",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 4,
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\",\"source_version\",\"product_code\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\",\"source_version\",\"product_code\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey1",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_interaction_version\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"activity_key\"=p.\"activity_key\" AND c.\"source_version\"=p.\"source_version\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"activity_key\" IS NOT NULL AND c.\"source_version\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        }
+      ],
+      "relationships": [
+        {
+          "from": [
+            "interaction_product.snapshot_id",
+            "interaction_product.activity_key",
+            "interaction_product.source_version"
+          ],
+          "to": [
+            "interaction_version.snapshot_id",
+            "interaction_version.activity_key",
+            "interaction_version.source_version"
+          ],
+          "type": "foreignKey"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived consent event version or interval per snapshot",
+      "description": "one public-source-derived consent event version or interval per snapshot",
+      "logicalType": "object",
+      "name": "consent_event",
+      "physicalName": "canonical_consent_event",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "preference key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "preference_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "purpose",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "purpose",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "effective at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "effective_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "sequence no",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "sequence_no",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "delivery batch",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "delivery_batch",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"preference_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"preference_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey1",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        }
+      ],
+      "relationships": [
+        {
+          "from": [
+            "consent_event.snapshot_id",
+            "consent_event.customer_key"
+          ],
+          "to": [
+            "customer.snapshot_id",
+            "customer.customer_key"
+          ],
+          "type": "foreignKey"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived customer territory version or interval per snapshot",
+      "description": "one public-source-derived customer territory version or interval per snapshot",
+      "logicalType": "object",
+      "name": "customer_territory",
+      "physicalName": "canonical_customer_territory",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "assignment key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "assignment_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "effective from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "effective_from",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "effective to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "effective_to",
+          "physicalType": "DATE",
+          "required": false
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"assignment_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"assignment_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey1",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey2",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_territory\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"territory_code\"=p.\"territory_code\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"territory_code\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        }
+      ],
+      "relationships": [
+        {
+          "from": [
+            "customer_territory.snapshot_id",
+            "customer_territory.customer_key"
+          ],
+          "to": [
+            "customer.snapshot_id",
+            "customer.customer_key"
+          ],
+          "type": "foreignKey"
+        },
+        {
+          "from": [
+            "customer_territory.snapshot_id",
+            "customer_territory.territory_code"
+          ],
+          "to": [
+            "territory.snapshot_id",
+            "territory.territory_code"
+          ],
+          "type": "foreignKey"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived campaign version or interval per snapshot",
+      "description": "one public-source-derived campaign version or interval per snapshot",
+      "logicalType": "object",
+      "name": "campaign",
+      "physicalName": "canonical_campaign",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "start date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "start_date",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "end date exclusive",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "end_date_exclusive",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"campaign_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"campaign_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived campaign member version or interval per snapshot",
+      "description": "one public-source-derived campaign member version or interval per snapshot",
+      "logicalType": "object",
+      "name": "campaign_member",
+      "physicalName": "canonical_campaign_member",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "membership key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "membership_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "member status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "member_status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"membership_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"membership_key\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey1",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_campaign\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"campaign_key\"=p.\"campaign_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"campaign_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey2",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        }
+      ],
+      "relationships": [
+        {
+          "from": [
+            "campaign_member.snapshot_id",
+            "campaign_member.campaign_key"
+          ],
+          "to": [
+            "campaign.snapshot_id",
+            "campaign.campaign_key"
+          ],
+          "type": "foreignKey"
+        },
+        {
+          "from": [
+            "campaign_member.snapshot_id",
+            "campaign_member.customer_key"
+          ],
+          "to": [
+            "customer.snapshot_id",
+            "customer.customer_key"
+          ],
+          "type": "foreignKey"
+        }
+      ]
+    },
+    {
+      "dataGranularityDescription": "one public-source-derived rx version version or interval per snapshot",
+      "description": "one public-source-derived rx version version or interval per snapshot",
+      "logicalType": "object",
+      "name": "rx_version",
+      "physicalName": "canonical_rx_version",
+      "physicalType": "table",
+      "properties": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "observation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "observation_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "version no",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "version_no",
+          "physicalType": "NUMBER(38,0)",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "week ending",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "week_ending",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "trx count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "trx_count",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "nrx count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "nrx_count",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "sales units",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "sales_units",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "quality": [
+        {
+          "dimension": "uniqueness",
+          "mustBe": 0,
+          "name": "uniqueGrain",
+          "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"observation_key\",\"version_no\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"observation_key\",\"version_no\" HAVING COUNT(*)>1)",
+          "severity": "error",
+          "type": "sql"
+        },
+        {
+          "dimension": "consistency",
+          "mustBe": 0,
+          "name": "foreignKey1",
+          "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+          "severity": "error",
+          "type": "sql"
+        }
+      ],
+      "relationships": [
+        {
+          "from": [
+            "rx_version.snapshot_id",
+            "rx_version.customer_key"
+          ],
+          "to": [
+            "customer.snapshot_id",
+            "customer.customer_key"
+          ],
+          "type": "foreignKey"
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "environment": "dev",
+      "format": "sqlite",
+      "path": "data/operations/model-v02.sqlite",
+      "server": "local",
+      "type": "local"
+    },
+    {
+      "account": "CONFIGURE_ACCOUNT",
+      "database": "PHARMA_LAB",
+      "environment": "target",
+      "schema": "PHARMA_MODEL",
+      "server": "snowflakeTarget",
+      "type": "snowflake"
+    }
+  ],
+  "slaProperties": [
+    {
+      "description": "Daily source availability and cutoffs are checked at the logical run time.",
+      "driver": "operational",
+      "property": "freshness",
+      "unit": "hours",
+      "value": 24
+    },
+    {
+      "property": "schedule",
+      "schedule": "0 6 * * *",
+      "scheduler": "airflow",
+      "value": "06:00 UTC daily"
+    }
+  ],
+  "status": "proposed",
+  "tags": [
+    "synthetic",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "canonical"
+  ],
+  "team": {
+    "description": "Proposed accountable product owner; name the real steward before production approval.",
+    "name": "Pharma commercial data product"
+  },
+  "version": "0.2.0"
+}

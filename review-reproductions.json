@@ -1,0 +1,19 @@
+{
+  "non_numeric_version": "ValueError: invalid literal for int() with base 10: 'oops'",
+  "blank_version": "ValueError: invalid literal for int() with base 10: ''",
+  "naive_timestamp": "TypeError: can't compare offset-naive and offset-aware datetimes",
+  "consent_historical_first": "ValueError: CONFLICTING_CONSENT",
+  "consent_latest_first": "accepted",
+  "extra_output_cell_reconciliation_passed": true,
+  "product_redelivery": "accepted",
+  "opharma_same_name_reps": [
+    [
+      "Alex Smith",
+      "T1",
+      2,
+      1,
+      1,
+      0
+    ]
+  ]
+}

@@ -1,0 +1,3602 @@
+{
+  "assets": [
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/affiliation",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "affiliation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "affiliation_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "provider key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "provider_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "organisation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "organisation_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "relationship type",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "relationship_type",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "is primary",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "is_primary",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_from",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_to",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "iqvia_like/affiliation",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_iqvia_like_affiliation",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/organisation",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "organisation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "organisation_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "organisation name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "organisation_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "country",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "country",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "iqvia_like/organisation",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_iqvia_like_organisation",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/product",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "brand",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "brand",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "therapy",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "therapy",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "valid from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "valid_from",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "valid to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "valid_to",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "active",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "iqvia_like/product",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_iqvia_like_product",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/provider",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "provider key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "provider_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "link token",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "link_token",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "label",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "label",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "speciality",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "speciality",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "active",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "country",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "country",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "postal sector",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "postal_sector",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "iqvia_like/provider",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_iqvia_like_provider",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/rx_weekly",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "observation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "observation_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "provider key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "provider_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "week ending",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "week_ending",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "trx count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "trx_count",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "nrx count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "nrx_count",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "sales units",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "sales_units",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "version no",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "version_no",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "versioned append",
+      "layer": "source",
+      "name": "iqvia_like/rx_weekly",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_iqvia_like_rx_weekly",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:manual/territory_mapping",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "assignment key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "assignment_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "provider key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "provider_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_from",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_to",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "manual/territory_mapping",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_manual_territory_mapping",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:salesforce_like/campaign",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "start date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "start_date",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "end date exclusive",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "end_date_exclusive",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "salesforce_like/campaign",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_salesforce_like_campaign",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:salesforce_like/campaign_member",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "membership key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "membership_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "member status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "member_status",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "salesforce_like/campaign_member",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_salesforce_like_campaign_member",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:salesforce_like/consent",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "preference key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "preference_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "purpose",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "purpose",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "effective at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "effective_at",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "sequence no",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "sequence_no",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "salesforce_like/consent",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_salesforce_like_consent",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:salesforce_like/contact",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "match token",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "match_token",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "display name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "display_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "salesforce_like/contact",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_salesforce_like_contact",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/activity",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "primary product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "primary_product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "occurred at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "occurred_at",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "approval",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "approval",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "duration minutes",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "duration_minutes",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "source_version",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "modified at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "modified_at",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "operation",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "operation",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "staff key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "staff_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "versioned append",
+      "layer": "source",
+      "name": "veeva_like/activity",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_veeva_like_activity",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/activity_product",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "source_version",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "detail rank",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "detail_rank",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "versioned append",
+      "layer": "source",
+      "name": "veeva_like/activity_product",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_veeva_like_activity_product",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/customer",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "match token",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "match_token",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "display name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "display_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "active",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "veeva_like/customer",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_veeva_like_customer",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/staff",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "staff key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "staff_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "staff name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "staff_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "veeva_like/staff",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_veeva_like_staff",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/territory",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "territory name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_name",
+          "physicalType": "VARCHAR",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "grain": "initial snapshot plus explicit event/interval history",
+      "layer": "source",
+      "name": "veeva_like/territory",
+      "owner": "Pharma commercial data product",
+      "physical_name": "raw_veeva_like_territory",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:organisation",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "organisation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "organisation_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "organisation name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "organisation_name",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "country",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "country",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived organisation version or interval per snapshot",
+      "layer": "canonical",
+      "name": "organisation",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_organisation",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:affiliation",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "affiliation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "affiliation_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "organisation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "organisation_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "relationship type",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "relationship_type",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "is primary",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "is_primary",
+          "physicalType": "BOOLEAN",
+          "required": true
+        },
+        {
+          "businessName": "effective from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "effective_from",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "effective to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "effective_to",
+          "physicalType": "DATE",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived affiliation version or interval per snapshot",
+      "layer": "canonical",
+      "name": "affiliation",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_affiliation",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:representative",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "staff key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "staff_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "staff name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "staff_name",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived representative version or interval per snapshot",
+      "layer": "canonical",
+      "name": "representative",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_representative",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:customer",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "label",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "label",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "speciality",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "speciality",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "country",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "country",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "postal sector",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "postal_sector",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "active",
+          "physicalType": "BOOLEAN",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived customer version or interval per snapshot",
+      "layer": "canonical",
+      "name": "customer",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_customer",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:product_interval",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "valid from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "valid_from",
+          "physicalType": "DATE",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "valid to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "valid_to",
+          "physicalType": "DATE",
+          "required": false
+        },
+        {
+          "businessName": "brand",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "brand",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "therapy",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "therapy",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "active",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "active",
+          "physicalType": "BOOLEAN",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived product interval version or interval per snapshot",
+      "layer": "canonical",
+      "name": "product_interval",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_product_interval",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:territory",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "territory name",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_name",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived territory version or interval per snapshot",
+      "layer": "canonical",
+      "name": "territory",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_territory",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:interaction_version",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "source_version",
+          "physicalType": "NUMBER(38,0)",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "crm customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "crm_customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "staff key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "staff_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "primary product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "primary_product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "occurred at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "occurred_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "approval",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "approval",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "duration minutes",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "duration_minutes",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "modified at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "modified_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "operation",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "operation",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "delivery batch",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "delivery_batch",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived interaction version version or interval per snapshot",
+      "layer": "canonical",
+      "name": "interaction_version",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_interaction_version",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:interaction_product",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "source_version",
+          "physicalType": "NUMBER(38,0)",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 4,
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived interaction product version or interval per snapshot",
+      "layer": "canonical",
+      "name": "interaction_product",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_interaction_product",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:consent_event",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "preference key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "preference_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "purpose",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "purpose",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "effective at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "effective_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "sequence no",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "sequence_no",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "delivery batch",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "delivery_batch",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived consent event version or interval per snapshot",
+      "layer": "canonical",
+      "name": "consent_event",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_consent_event",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:customer_territory",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "assignment key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "assignment_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "effective from",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "effective_from",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "effective to",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "effective_to",
+          "physicalType": "DATE",
+          "required": false
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived customer territory version or interval per snapshot",
+      "layer": "canonical",
+      "name": "customer_territory",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_customer_territory",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:campaign",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "start date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "start_date",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "end date exclusive",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "end_date_exclusive",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived campaign version or interval per snapshot",
+      "layer": "canonical",
+      "name": "campaign",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_campaign",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:campaign_member",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "membership key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "membership_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "contact key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "contact_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "member status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "member_status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived campaign member version or interval per snapshot",
+      "layer": "canonical",
+      "name": "campaign_member",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_campaign_member",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:canonical:rx_version",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "observation key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "observation_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "version no",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "version_no",
+          "physicalType": "NUMBER(38,0)",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "week ending",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "week_ending",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "trx count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "trx_count",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "nrx count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "nrx_count",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "sales units",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "sales_units",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "grain": "one public-source-derived rx version version or interval per snapshot",
+      "layer": "canonical",
+      "name": "rx_version",
+      "owner": "Pharma commercial data product",
+      "physical_name": "canonical_rx_version",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s01_engagement",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "activity date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "activity_date",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "consent status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "consent_status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "grain": "one currently consented approved interaction per reporting snapshot",
+      "layer": "pipeline",
+      "name": "s01_engagement",
+      "owner": "Pharma commercial data product",
+      "physical_name": "pipeline_s01_engagement",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s02_product_activity",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "activity date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "activity_date",
+          "physicalType": "DATE",
+          "primaryKey": true,
+          "primaryKeyPosition": 4,
+          "required": true
+        },
+        {
+          "businessName": "brand",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "brand",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "therapy",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "therapy",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "interaction count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "interaction_count",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "grain": "one customer/product/activity date per reporting snapshot",
+      "layer": "pipeline",
+      "name": "s02_product_activity",
+      "owner": "Pharma commercial data product",
+      "physical_name": "pipeline_s02_product_activity",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s03_customer_territory",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "assignment status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "assignment_status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "grain": "one active approved customer per reporting snapshot",
+      "layer": "pipeline",
+      "name": "s03_customer_territory",
+      "owner": "Pharma commercial data product",
+      "physical_name": "pipeline_s03_customer_territory",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s04_interaction",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "primary product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "primary_product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "occurred at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "occurred_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "duration minutes",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "duration_minutes",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "source_version",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "grain": "one accepted latest nondeleted CRM activity per reporting snapshot",
+      "layer": "pipeline",
+      "name": "s04_interaction",
+      "owner": "Pharma commercial data product",
+      "physical_name": "pipeline_s04_interaction",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s05_campaign",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "contacted",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "contacted",
+          "physicalType": "BOOLEAN",
+          "required": true
+        },
+        {
+          "businessName": "qualifying interactions",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "qualifying_interactions",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "grain": "one enrolled customer/campaign; explicit zero contact retained per reporting snapshot",
+      "layer": "pipeline",
+      "name": "s05_campaign",
+      "owner": "Pharma commercial data product",
+      "physical_name": "pipeline_s05_campaign",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:exceptions",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "scenario",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scenario",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "record key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "record_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "reason",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "reason",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 4,
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "grain": "one distinct scenario/record/reason per reporting snapshot",
+      "layer": "pipeline",
+      "name": "exceptions",
+      "owner": "Pharma commercial data product",
+      "physical_name": "pipeline_exceptions",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:dq",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "scenario",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scenario",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "scope",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scope",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "numerator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "numerator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "denominator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "denominator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "threshold",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "number",
+          "name": "threshold",
+          "physicalType": "NUMBER(18,6)",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "grain": "one scenario/scope quality rate per reporting snapshot",
+      "layer": "pipeline",
+      "name": "dq",
+      "owner": "Pharma commercial data product",
+      "physical_name": "pipeline_dq",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s01_engagement",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "activity date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "activity_date",
+          "physicalType": "DATE",
+          "required": true
+        },
+        {
+          "businessName": "consent status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "consent_status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one currently consented approved interaction per reporting snapshot",
+      "layer": "consumption",
+      "name": "s01_engagement",
+      "owner": "Pharma commercial data product",
+      "physical_name": "consumption_s01_engagement",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s02_product_activity",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "activity date",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "date",
+          "name": "activity_date",
+          "physicalType": "DATE",
+          "primaryKey": true,
+          "primaryKeyPosition": 4,
+          "required": true
+        },
+        {
+          "businessName": "brand",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "brand",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "therapy",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "therapy",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "interaction count",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "interaction_count",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one customer/product/activity date per reporting snapshot",
+      "layer": "consumption",
+      "name": "s02_product_activity",
+      "owner": "Pharma commercial data product",
+      "physical_name": "consumption_s02_product_activity",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s03_customer_territory",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "territory code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "territory_code",
+          "physicalType": "VARCHAR",
+          "required": false
+        },
+        {
+          "businessName": "assignment status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "assignment_status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one active approved customer per reporting snapshot",
+      "layer": "consumption",
+      "name": "s03_customer_territory",
+      "owner": "Pharma commercial data product",
+      "physical_name": "consumption_s03_customer_territory",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s04_interaction",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "activity key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "activity_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "primary product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "primary_product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "occurred at",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "occurred_at",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "channel",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "channel",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "duration minutes",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "duration_minutes",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "source version",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "source_version",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one accepted latest nondeleted CRM activity per reporting snapshot",
+      "layer": "consumption",
+      "name": "s04_interaction",
+      "owner": "Pharma commercial data product",
+      "physical_name": "consumption_s04_interaction",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s05_campaign",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "campaign key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "campaign_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "customer key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "customer_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "product code",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "product_code",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "contacted",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "contacted",
+          "physicalType": "BOOLEAN",
+          "required": true
+        },
+        {
+          "businessName": "qualifying interactions",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "qualifying_interactions",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one enrolled customer/campaign; explicit zero contact retained per reporting snapshot",
+      "layer": "consumption",
+      "name": "s05_campaign",
+      "owner": "Pharma commercial data product",
+      "physical_name": "consumption_s05_campaign",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:consumption:exceptions",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "scenario",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scenario",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "record key",
+          "classification": "synthetic",
+          "criticalDataElement": true,
+          "logicalType": "string",
+          "name": "record_key",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "reason",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "reason",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 4,
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one distinct scenario/record/reason per reporting snapshot",
+      "layer": "consumption",
+      "name": "exceptions",
+      "owner": "Pharma commercial data product",
+      "physical_name": "consumption_exceptions",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:consumption:dq",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "scenario",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scenario",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "scope",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scope",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "numerator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "numerator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "denominator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "denominator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "threshold",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "number",
+          "name": "threshold",
+          "physicalType": "NUMBER(18,6)",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "grain": "one scenario/scope quality rate per reporting snapshot",
+      "layer": "consumption",
+      "name": "dq",
+      "owner": "Pharma commercial data product",
+      "physical_name": "consumption_dq",
+      "status": "proposed"
+    },
+    {
+      "asset_id": "urn:pharma:visualization:scenario_scorecard",
+      "classification": "synthetic",
+      "columns": [
+        {
+          "businessName": "snapshot id",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "snapshot_id",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 1,
+          "required": true
+        },
+        {
+          "businessName": "as of",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "timestamp",
+          "name": "as_of",
+          "physicalType": "TIMESTAMP_NTZ",
+          "required": true
+        },
+        {
+          "businessName": "scenario",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scenario",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 2,
+          "required": true
+        },
+        {
+          "businessName": "scope",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "scope",
+          "physicalType": "VARCHAR",
+          "primaryKey": true,
+          "primaryKeyPosition": 3,
+          "required": true
+        },
+        {
+          "businessName": "output rows",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "output_rows",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "exception rows",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "exception_rows",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "numerator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "numerator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "denominator",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "integer",
+          "name": "denominator",
+          "physicalType": "NUMBER(38,0)",
+          "required": true
+        },
+        {
+          "businessName": "threshold",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "number",
+          "name": "threshold",
+          "physicalType": "NUMBER(18,6)",
+          "required": true
+        },
+        {
+          "businessName": "status",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "string",
+          "name": "status",
+          "physicalType": "VARCHAR",
+          "required": true
+        },
+        {
+          "businessName": "scheduled",
+          "classification": "synthetic",
+          "criticalDataElement": false,
+          "logicalType": "boolean",
+          "name": "scheduled",
+          "physicalType": "BOOLEAN",
+          "required": true
+        }
+      ],
+      "contract_id": "pharma.commercial.visualization",
+      "contract_version": "0.2.1",
+      "grain": "one scenario/scope scorecard per logical checkpoint; ratio counts retained",
+      "layer": "visualization",
+      "name": "scenario_scorecard",
+      "owner": "Pharma commercial data product",
+      "physical_name": "visualization_scenario_scorecard",
+      "status": "proposed"
+    }
+  ],
+  "contract_registry_sha256": "27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe",
+  "format": "pharma-vendor-neutral-handoff-v1",
+  "lineage": [
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:iqvia_like/organisation",
+      "target": "urn:pharma:canonical:organisation"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:iqvia_like/affiliation",
+      "target": "urn:pharma:canonical:affiliation"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:veeva_like/staff",
+      "target": "urn:pharma:canonical:representative"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:iqvia_like/provider",
+      "target": "urn:pharma:canonical:customer"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:iqvia_like/product",
+      "target": "urn:pharma:canonical:product_interval"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:veeva_like/territory",
+      "target": "urn:pharma:canonical:territory"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:veeva_like/activity",
+      "target": "urn:pharma:canonical:interaction_version"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:veeva_like/customer",
+      "target": "urn:pharma:canonical:interaction_version"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:iqvia_like/provider",
+      "target": "urn:pharma:canonical:interaction_version"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:veeva_like/staff",
+      "target": "urn:pharma:canonical:interaction_version"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:veeva_like/activity_product",
+      "target": "urn:pharma:canonical:interaction_product"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:veeva_like/activity",
+      "target": "urn:pharma:canonical:interaction_product"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:salesforce_like/consent",
+      "target": "urn:pharma:canonical:consent_event"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:salesforce_like/contact",
+      "target": "urn:pharma:canonical:consent_event"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:iqvia_like/provider",
+      "target": "urn:pharma:canonical:consent_event"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:manual/territory_mapping",
+      "target": "urn:pharma:canonical:customer_territory"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:salesforce_like/campaign",
+      "target": "urn:pharma:canonical:campaign"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:salesforce_like/campaign_member",
+      "target": "urn:pharma:canonical:campaign_member"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:salesforce_like/contact",
+      "target": "urn:pharma:canonical:campaign_member"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:iqvia_like/provider",
+      "target": "urn:pharma:canonical:campaign_member"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:source:iqvia_like/rx_weekly",
+      "target": "urn:pharma:canonical:rx_version"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_version",
+      "target": "urn:pharma:pipeline:s01_engagement"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer",
+      "target": "urn:pharma:pipeline:s01_engagement"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:consent_event",
+      "target": "urn:pharma:pipeline:s01_engagement"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_version",
+      "target": "urn:pharma:pipeline:s02_product_activity"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_product",
+      "target": "urn:pharma:pipeline:s02_product_activity"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer",
+      "target": "urn:pharma:pipeline:s02_product_activity"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:product_interval",
+      "target": "urn:pharma:pipeline:s02_product_activity"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer",
+      "target": "urn:pharma:pipeline:s03_customer_territory"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer_territory",
+      "target": "urn:pharma:pipeline:s03_customer_territory"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:territory",
+      "target": "urn:pharma:pipeline:s03_customer_territory"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_version",
+      "target": "urn:pharma:pipeline:s04_interaction"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_version",
+      "target": "urn:pharma:pipeline:s05_campaign"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_product",
+      "target": "urn:pharma:pipeline:s05_campaign"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:campaign",
+      "target": "urn:pharma:pipeline:s05_campaign"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:campaign_member",
+      "target": "urn:pharma:pipeline:s05_campaign"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer",
+      "target": "urn:pharma:pipeline:s05_campaign"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:product_interval",
+      "target": "urn:pharma:pipeline:s05_campaign"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:organisation",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:affiliation",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:representative",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:product_interval",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:territory",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_version",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_product",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:consent_event",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer_territory",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:campaign",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:campaign_member",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:rx_version",
+      "target": "urn:pharma:pipeline:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:organisation",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:affiliation",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:representative",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:product_interval",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:territory",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_version",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:interaction_product",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:consent_event",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:customer_territory",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:campaign",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:campaign_member",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:canonical:rx_version",
+      "target": "urn:pharma:pipeline:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:pipeline:s01_engagement",
+      "target": "urn:pharma:consumption:s01_engagement"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:pipeline:s02_product_activity",
+      "target": "urn:pharma:consumption:s02_product_activity"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:pipeline:s03_customer_territory",
+      "target": "urn:pharma:consumption:s03_customer_territory"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:pipeline:s04_interaction",
+      "target": "urn:pharma:consumption:s04_interaction"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:pipeline:s05_campaign",
+      "target": "urn:pharma:consumption:s05_campaign"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:pipeline:exceptions",
+      "target": "urn:pharma:consumption:exceptions"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:pipeline:dq",
+      "target": "urn:pharma:consumption:dq"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:consumption:s01_engagement",
+      "target": "urn:pharma:visualization:scenario_scorecard"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:consumption:s02_product_activity",
+      "target": "urn:pharma:visualization:scenario_scorecard"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:consumption:s03_customer_territory",
+      "target": "urn:pharma:visualization:scenario_scorecard"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:consumption:s04_interaction",
+      "target": "urn:pharma:visualization:scenario_scorecard"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:consumption:s05_campaign",
+      "target": "urn:pharma:visualization:scenario_scorecard"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:consumption:exceptions",
+      "target": "urn:pharma:visualization:scenario_scorecard"
+    },
+    {
+      "relation": "derivedFrom",
+      "source": "urn:pharma:consumption:dq",
+      "target": "urn:pharma:visualization:scenario_scorecard"
+    }
+  ],
+  "requires": [
+    "community/domain IDs",
+    "asset/relation type IDs",
+    "owner role assignments",
+    "tenant importer and access acceptance"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "license": "Apache-2.0",
+  "license_file": "ODCS-LICENSE",
+  "schema_sha256": "e38eb769baccdded5a4e4e82be754b5dd3bd8dd2fa0bd627d616f8fd04c5754a",
+  "source_url": "https://github.com/bitol-io/open-data-contract-standard/blob/d3e1cb3e69849e05c9a7522abed9b27fb9af50d7/schema/odcs-json-schema-v3.1.0.json",
+  "standard": "ODCS",
+  "upstream_commit": "d3e1cb3e69849e05c9a7522abed9b27fb9af50d7",
+  "validation": "offline jsonschema Draft202012Validator; no remote schema resolution",
+  "version": "3.1.0"
+}

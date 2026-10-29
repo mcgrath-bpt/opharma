@@ -1,0 +1,28 @@
+{
+  "contract_id": "pharma.commercial.visualization",
+  "contract_registry_sha256": "27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe",
+  "contract_version": "0.2.1",
+  "files": [
+    {
+      "path": "visualization_scenario_scorecard.csv",
+      "rows": 112,
+      "sha256": "0d93ec06597719dfbdd70e9dff7905c3f2e7b6b1a6179455e8be55a5018d90ea"
+    }
+  ],
+  "snapshots": [
+    "b001",
+    "b002",
+    "b003",
+    "b004",
+    "b005",
+    "b006",
+    "b007",
+    "b008",
+    "b009",
+    "b010",
+    "b011",
+    "b012",
+    "b013",
+    "b014"
+  ]
+}

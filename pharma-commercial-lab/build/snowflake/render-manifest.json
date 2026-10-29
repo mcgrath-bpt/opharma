@@ -1,0 +1,24 @@
+{
+  "batches": [
+    "b001",
+    "b002",
+    "b003",
+    "b004",
+    "b005",
+    "b006",
+    "b007",
+    "b008",
+    "b009",
+    "b010",
+    "b011",
+    "b012",
+    "b013",
+    "b014"
+  ],
+  "execution_status": "NOT_EXECUTED",
+  "registry_sha256": "27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe",
+  "release_id": "pharma-lab-0.2.0",
+  "run_order": "00_setup once; for each batch: 01_load, 02_gold, 03_publish; harness verifies replay identity",
+  "schema": "PHARMA_LAB.PHARMA_MODEL",
+  "stage": "PHARMA_LAB.INGEST.EXISTING_STAGE"
+}

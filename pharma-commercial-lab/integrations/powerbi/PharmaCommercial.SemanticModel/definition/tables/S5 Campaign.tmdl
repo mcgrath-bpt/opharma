@@ -1,0 +1,76 @@
+table 'S5 Campaign'
+	annotation ODCSContractId = pharma.commercial.consumption
+	annotation ODCSContractVersion = 0.2.0
+	annotation ODCSRegistrySHA256 = 27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe
+	annotation ODCSGrain = one enrolled customer/campaign; explicit zero contact retained per reporting snapshot
+	annotation ODCSSourceObject = consumption_s05_campaign_current
+
+	column 'snapshot_id'
+		dataType: string
+		sourceColumn: snapshot_id
+		summarizeBy: none
+
+	column 'as_of'
+		dataType: dateTime
+		sourceColumn: as_of
+		summarizeBy: none
+		formatString: yyyy-MM-dd HH:mm:ss
+
+	column 'campaign_key'
+		dataType: string
+		sourceColumn: campaign_key
+		summarizeBy: none
+
+	column 'customer_key'
+		dataType: string
+		sourceColumn: customer_key
+		summarizeBy: none
+
+	column 'product_code'
+		dataType: string
+		sourceColumn: product_code
+		summarizeBy: none
+
+	column 'contacted'
+		dataType: boolean
+		sourceColumn: contacted
+		summarizeBy: none
+
+	column 'qualifying_interactions'
+		dataType: int64
+		sourceColumn: qualifying_interactions
+		summarizeBy: none
+
+	measure 'Campaign Member Product Pairs' = COUNTROWS('S5 Campaign')
+		formatString: #,0
+		displayFolder: Scenario Measures
+
+	measure 'Contacted Campaign Pairs' = CALCULATE(COUNTROWS('S5 Campaign'), 'S5 Campaign'[contacted] = TRUE())
+		formatString: #,0
+		displayFolder: Scenario Measures
+
+	measure 'Campaign Reach' = DIVIDE([Contacted Campaign Pairs], [Campaign Member Product Pairs])
+		formatString: 0.00%
+		displayFolder: Scenario Measures
+
+	measure 'Qualifying Campaign Interactions' = SUM('S5 Campaign'[qualifying_interactions])
+		formatString: #,0
+		displayFolder: Scenario Measures
+
+	partition 'S5 Campaign' = m
+		mode: import
+		source =
+			let
+			    Raw = if DataSourceMode = "CSV" then
+			        Table.PromoteHeaders(Csv.Document(File.Contents(WeeklyCsvFolder & "/consumption_s05_campaign.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), [PromoteAllScalars=true])
+			    else if DataSourceMode = "Snowflake" then
+			        let
+			            Connection = Snowflake.Databases(SnowflakeServer, SnowflakeWarehouse, [Implementation="2.0"]),
+			            Database = Connection{[Name=SnowflakeDatabase, Kind="Database"]}[Data],
+			            Schema = Database{[Name=SnowflakeSchema, Kind="Schema"]}[Data]
+			        in Schema{[Name="consumption_s05_campaign_current", Kind="View" if Text.EndsWith("consumption_s05_campaign_current", "_current") else "Table"]}[Data]
+			    else error "DataSourceMode must be CSV or Snowflake",
+			    Selected = Table.SelectColumns(Raw, {"snapshot_id", "as_of", "campaign_key", "customer_key", "product_code", "contacted", "qualifying_interactions"}, MissingField.Error),
+			    Typed = Table.TransformColumns(Selected, {{"snapshot_id", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"as_of", each if _ = null or _ = "" then null else let v = _ in if Value.Is(v, type text) then DateTimeZone.RemoveZone(DateTimeZone.ToUtc(DateTimeZone.FromText(v))) else DateTime.From(v), type datetime}, {"campaign_key", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"customer_key", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"product_code", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"contacted", each if _ = null or _ = "" then null else let v = _ in if Value.Is(v, type logical) then v else Logical.FromText(v), type logical}, {"qualifying_interactions", each if _ = null or _ = "" then null else let v = _ in Int64.From(v), Int64.Type}})
+			in
+			    Typed

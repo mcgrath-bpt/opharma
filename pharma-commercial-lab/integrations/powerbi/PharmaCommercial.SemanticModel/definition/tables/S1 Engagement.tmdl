@@ -1,0 +1,60 @@
+table 'S1 Engagement'
+	annotation ODCSContractId = pharma.commercial.consumption
+	annotation ODCSContractVersion = 0.2.0
+	annotation ODCSRegistrySHA256 = 27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe
+	annotation ODCSGrain = one currently consented approved interaction per reporting snapshot
+	annotation ODCSSourceObject = consumption_s01_engagement_current
+
+	column 'snapshot_id'
+		dataType: string
+		sourceColumn: snapshot_id
+		summarizeBy: none
+
+	column 'as_of'
+		dataType: dateTime
+		sourceColumn: as_of
+		summarizeBy: none
+		formatString: yyyy-MM-dd HH:mm:ss
+
+	column 'activity_key'
+		dataType: string
+		sourceColumn: activity_key
+		summarizeBy: none
+
+	column 'customer_key'
+		dataType: string
+		sourceColumn: customer_key
+		summarizeBy: none
+
+	column 'activity_date'
+		dataType: dateTime
+		sourceColumn: activity_date
+		summarizeBy: none
+		formatString: yyyy-MM-dd
+
+	column 'consent_status'
+		dataType: string
+		sourceColumn: consent_status
+		summarizeBy: none
+
+	measure 'Engagement Activities' = DISTINCTCOUNT('S1 Engagement'[activity_key])
+		formatString: #,0
+		displayFolder: Scenario Measures
+
+	partition 'S1 Engagement' = m
+		mode: import
+		source =
+			let
+			    Raw = if DataSourceMode = "CSV" then
+			        Table.PromoteHeaders(Csv.Document(File.Contents(DailyCsvFolder & "/consumption_s01_engagement.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), [PromoteAllScalars=true])
+			    else if DataSourceMode = "Snowflake" then
+			        let
+			            Connection = Snowflake.Databases(SnowflakeServer, SnowflakeWarehouse, [Implementation="2.0"]),
+			            Database = Connection{[Name=SnowflakeDatabase, Kind="Database"]}[Data],
+			            Schema = Database{[Name=SnowflakeSchema, Kind="Schema"]}[Data]
+			        in Schema{[Name="consumption_s01_engagement_current", Kind="View" if Text.EndsWith("consumption_s01_engagement_current", "_current") else "Table"]}[Data]
+			    else error "DataSourceMode must be CSV or Snowflake",
+			    Selected = Table.SelectColumns(Raw, {"snapshot_id", "as_of", "activity_key", "customer_key", "activity_date", "consent_status"}, MissingField.Error),
+			    Typed = Table.TransformColumns(Selected, {{"snapshot_id", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"as_of", each if _ = null or _ = "" then null else let v = _ in if Value.Is(v, type text) then DateTimeZone.RemoveZone(DateTimeZone.ToUtc(DateTimeZone.FromText(v))) else DateTime.From(v), type datetime}, {"activity_key", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"customer_key", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"activity_date", each if _ = null or _ = "" then null else let v = _ in Date.From(v), type date}, {"consent_status", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}})
+			in
+			    Typed

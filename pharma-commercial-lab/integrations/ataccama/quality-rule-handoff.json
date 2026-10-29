@@ -1,0 +1,881 @@
+{
+  "format": "pharma-vendor-neutral-handoff-v1",
+  "requires": [
+    "ONE version-specific rule mappings",
+    "Snowflake connection",
+    "SQL parameter wrapper",
+    "notification routing and execution evidence"
+  ],
+  "rules": [
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/affiliation",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/organisation",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/product",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/provider",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:iqvia_like/rx_weekly",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:manual/territory_mapping",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:salesforce_like/campaign",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:salesforce_like/campaign_member",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:salesforce_like/consent",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:salesforce_like/contact",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/activity",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/activity_product",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/customer",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/staff",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:source:veeva_like/territory",
+      "contract_id": "pharma.commercial.source",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "conformity",
+        "engine": "pharma-local",
+        "implementation": {
+          "binding": "src/odcs.py:validate_binding",
+          "manifest": "src/validate.py:validate_public",
+          "types": "src/hydrate_operations.py:raw_semantic_gate"
+        },
+        "name": "manifestAndSemanticGate",
+        "severity": "error",
+        "type": "custom"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:organisation",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"organisation_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"organisation_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:affiliation",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"affiliation_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"affiliation_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:affiliation",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey1",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:affiliation",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey2",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_organisation\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"organisation_key\"=p.\"organisation_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"organisation_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:representative",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"staff_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"staff_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:customer",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"customer_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"customer_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:product_interval",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"product_code\",\"valid_from\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"product_code\",\"valid_from\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:territory",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"territory_code\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"territory_code\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:interaction_version",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\",\"source_version\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\",\"source_version\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:interaction_version",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey1",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:interaction_version",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey2",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_representative\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"staff_key\"=p.\"staff_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"staff_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:interaction_product",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\",\"source_version\",\"product_code\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\",\"source_version\",\"product_code\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:interaction_product",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey1",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_interaction_version\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"activity_key\"=p.\"activity_key\" AND c.\"source_version\"=p.\"source_version\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"activity_key\" IS NOT NULL AND c.\"source_version\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:consent_event",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"preference_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"preference_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:consent_event",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey1",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:customer_territory",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"assignment_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"assignment_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:customer_territory",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey1",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:customer_territory",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey2",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_territory\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"territory_code\"=p.\"territory_code\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"territory_code\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:campaign",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"campaign_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"campaign_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:campaign_member",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"membership_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"membership_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:campaign_member",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey1",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_campaign\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"campaign_key\"=p.\"campaign_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"campaign_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:campaign_member",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey2",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:rx_version",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"observation_key\",\"version_no\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"observation_key\",\"version_no\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:canonical:rx_version",
+      "contract_id": "pharma.commercial.canonical",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "consistency",
+        "mustBe": 0,
+        "name": "foreignKey1",
+        "query": "SELECT COUNT(*) FROM ${table} c LEFT JOIN \"canonical_customer\" p ON c.\"snapshot_id\"=p.\"snapshot_id\" AND c.\"customer_key\"=p.\"customer_key\" WHERE c.\"snapshot_id\"=? AND c.\"snapshot_id\" IS NOT NULL AND c.\"customer_key\" IS NOT NULL AND p.\"snapshot_id\" IS NULL",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s01_engagement",
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s02_product_activity",
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"customer_key\",\"product_code\",\"activity_date\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"customer_key\",\"product_code\",\"activity_date\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s03_customer_territory",
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"customer_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"customer_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s04_interaction",
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:s05_campaign",
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"campaign_key\",\"customer_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"campaign_key\",\"customer_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:exceptions",
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"scenario\",\"record_key\",\"reason\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"scenario\",\"record_key\",\"reason\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:pipeline:dq",
+      "contract_id": "pharma.commercial.pipeline",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"scenario\",\"scope\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"scenario\",\"scope\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s01_engagement",
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s02_product_activity",
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"customer_key\",\"product_code\",\"activity_date\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"customer_key\",\"product_code\",\"activity_date\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s03_customer_territory",
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"customer_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"customer_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s04_interaction",
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"activity_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"activity_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:consumption:s05_campaign",
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"campaign_key\",\"customer_key\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"campaign_key\",\"customer_key\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:consumption:exceptions",
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"scenario\",\"record_key\",\"reason\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"scenario\",\"record_key\",\"reason\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:consumption:dq",
+      "contract_id": "pharma.commercial.consumption",
+      "contract_version": "0.2.0",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"scenario\",\"scope\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"scenario\",\"scope\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    },
+    {
+      "asset_id": "urn:pharma:visualization:scenario_scorecard",
+      "contract_id": "pharma.commercial.visualization",
+      "contract_version": "0.2.1",
+      "enforcement": "local gate executed",
+      "parameter": "snapshot_id",
+      "rule": {
+        "dimension": "uniqueness",
+        "mustBe": 0,
+        "name": "uniqueGrain",
+        "query": "SELECT COUNT(*) FROM (SELECT \"snapshot_id\",\"scenario\",\"scope\" FROM ${table} WHERE \"snapshot_id\"=? GROUP BY \"snapshot_id\",\"scenario\",\"scope\" HAVING COUNT(*)>1)",
+        "severity": "error",
+        "type": "sql"
+      }
+    }
+  ]
+}

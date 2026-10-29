@@ -1,0 +1,78 @@
+{
+  "execution_status": {
+    "airflow": "DAG_COMPILED_NOT_DEPLOYED",
+    "ataccama": "HANDOFF_GENERATED_NOT_IMPORTED",
+    "collibra": "HANDOFF_GENERATED_NOT_IMPORTED",
+    "immuta": "INTENT_GENERATED_NOT_ENFORCED",
+    "jenkins": "PIPELINE_NOT_EXECUTED",
+    "powerbi_analysis_services": "TMDL_STATIC_BINDINGS_AND_CSV_PARITY_VERIFIED_MICROSOFT_ENGINE_NOT_EXECUTED",
+    "s3": "DRY_RUN_VALIDATED",
+    "snowflake": "NOT_EXECUTED"
+  },
+  "integrations": {
+    "catalog_assets": 43,
+    "dax_measures": 16,
+    "lineage_edges": 78,
+    "quality_rules": 54,
+    "semantic_tables": 7,
+    "snowflake_checkpoints_rendered": 14,
+    "tmdl_files": 10
+  },
+  "local_acceptance": {
+    "executed_quality_checks": 756,
+    "invalid_version_shadow": "trusted state and required-field priority preserved",
+    "late_identical_activity_redelivery": "verified without extra diagnostics",
+    "model_exports_typed_and_fingerprinted": true,
+    "passed": true,
+    "passed_quality_checks": 756,
+    "reconciled_checkpoints": 14,
+    "sqlite_integrity": "ok",
+    "weekly_current_snapshot": "b012"
+  },
+  "odcs": {
+    "contract_versions": {
+      "canonical": "0.2.0",
+      "consumption": "0.2.0",
+      "pipeline": "0.2.0",
+      "source": "0.2.0",
+      "visualization": "0.2.1"
+    },
+    "contracts": 5,
+    "objects": {
+      "canonical": 13,
+      "consumption": 7,
+      "pipeline": 7,
+      "source": 15,
+      "visualization": 1
+    },
+    "registry_sha256": "27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe",
+    "version": "3.1.0"
+  },
+  "public_delivery": {
+    "batches": 14,
+    "files": 50,
+    "rows": 5979
+  },
+  "semantic_validation": {
+    "daily_snapshot": "b014",
+    "dax_compiler": "NOT_EXECUTED",
+    "history_rows": 112,
+    "history_snapshots": 14,
+    "power_query_refresh": "NOT_EXECUTED",
+    "scope": "Contract types/columns, DAX field references, scoped-rate guards and CSV row-count parity against published current/history tables.",
+    "tom_parser": "NOT_EXECUTED",
+    "weekly_snapshot": "b012"
+  },
+  "source_dataset_release_id": "pharma-lab-0.2.0",
+  "source_repositories": {
+    "opharma": "26b04c45f8ca8d5a61758beb6991872a572ed75d",
+    "pharma-commercial-lab": "912713205f7d738dff330db5d00c04121b099af1"
+  },
+  "tests": {
+    "passed": 34,
+    "skip_reason": "Original remote v0.1 workbook not retrieved; new deterministic v0.2 XLSX roundtrip is tested.",
+    "skipped": 1,
+    "total": 35
+  },
+  "version": "0.2.1"
+}

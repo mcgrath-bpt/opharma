@@ -1,0 +1,96 @@
+table 'Scenario Scorecard'
+	annotation ODCSContractId = pharma.commercial.visualization
+	annotation ODCSContractVersion = 0.2.1
+	annotation ODCSRegistrySHA256 = 27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe
+	annotation ODCSGrain = one scenario/scope scorecard per logical checkpoint; ratio counts retained
+	annotation ODCSSourceObject = visualization_scenario_scorecard_current
+
+	column 'snapshot_id'
+		dataType: string
+		sourceColumn: snapshot_id
+		summarizeBy: none
+
+	column 'as_of'
+		dataType: dateTime
+		sourceColumn: as_of
+		summarizeBy: none
+		formatString: yyyy-MM-dd HH:mm:ss
+
+	column 'scenario'
+		dataType: string
+		sourceColumn: scenario
+		summarizeBy: none
+
+	column 'scope'
+		dataType: string
+		sourceColumn: scope
+		summarizeBy: none
+
+	column 'output_rows'
+		dataType: int64
+		sourceColumn: output_rows
+		summarizeBy: none
+
+	column 'exception_rows'
+		dataType: int64
+		sourceColumn: exception_rows
+		summarizeBy: none
+
+	column 'numerator'
+		dataType: int64
+		sourceColumn: numerator
+		summarizeBy: none
+
+	column 'denominator'
+		dataType: int64
+		sourceColumn: denominator
+		summarizeBy: none
+
+	column 'threshold'
+		dataType: double
+		sourceColumn: threshold
+		summarizeBy: none
+
+	column 'status'
+		dataType: string
+		sourceColumn: status
+		summarizeBy: none
+
+	column 'scheduled'
+		dataType: boolean
+		sourceColumn: scheduled
+		summarizeBy: none
+
+	measure 'Output Rows' = IF(HASONEVALUE('Scenario Scorecard'[snapshot_id]) && HASONEVALUE('Scenario Scorecard'[scenario]) && HASONEVALUE('Scenario Scorecard'[scope]), SUM('Scenario Scorecard'[output_rows]))
+		formatString: #,0
+		displayFolder: Scenario Measures
+
+	measure 'Exception Rows' = IF(HASONEVALUE('Scenario Scorecard'[snapshot_id]) && HASONEVALUE('Scenario Scorecard'[scenario]) && HASONEVALUE('Scenario Scorecard'[scope]), SUM('Scenario Scorecard'[exception_rows]))
+		formatString: #,0
+		displayFolder: Scenario Measures
+
+	measure 'Quality Rate' = IF(HASONEVALUE('Scenario Scorecard'[snapshot_id]) && HASONEVALUE('Scenario Scorecard'[scenario]) && HASONEVALUE('Scenario Scorecard'[scope]) && SELECTEDVALUE('Scenario Scorecard'[scenario]) IN {"S01", "S02", "S05"}, DIVIDE(SUM('Scenario Scorecard'[numerator]), SUM('Scenario Scorecard'[denominator])))
+		formatString: 0.00%
+		displayFolder: Scenario Measures
+
+	measure 'Quality Threshold' = IF(HASONEVALUE('Scenario Scorecard'[snapshot_id]) && HASONEVALUE('Scenario Scorecard'[scenario]) && HASONEVALUE('Scenario Scorecard'[scope]) && SELECTEDVALUE('Scenario Scorecard'[scenario]) IN {"S01", "S02", "S05"}, SELECTEDVALUE('Scenario Scorecard'[threshold]))
+		formatString: 0.00%
+		displayFolder: Scenario Measures
+
+	partition 'Scenario Scorecard' = m
+		mode: import
+		source =
+			let
+			    Raw = if DataSourceMode = "CSV" then
+			        Table.PromoteHeaders(Csv.Document(File.Contents(DailyCsvFolder & "/visualization_scenario_scorecard.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), [PromoteAllScalars=true])
+			    else if DataSourceMode = "Snowflake" then
+			        let
+			            Connection = Snowflake.Databases(SnowflakeServer, SnowflakeWarehouse, [Implementation="2.0"]),
+			            Database = Connection{[Name=SnowflakeDatabase, Kind="Database"]}[Data],
+			            Schema = Database{[Name=SnowflakeSchema, Kind="Schema"]}[Data]
+			        in Schema{[Name="visualization_scenario_scorecard_current", Kind="View" if Text.EndsWith("visualization_scenario_scorecard_current", "_current") else "Table"]}[Data]
+			    else error "DataSourceMode must be CSV or Snowflake",
+			    Selected = Table.SelectColumns(Raw, {"snapshot_id", "as_of", "scenario", "scope", "output_rows", "exception_rows", "numerator", "denominator", "threshold", "status", "scheduled"}, MissingField.Error),
+			    Typed = Table.TransformColumns(Selected, {{"snapshot_id", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"as_of", each if _ = null or _ = "" then null else let v = _ in if Value.Is(v, type text) then DateTimeZone.RemoveZone(DateTimeZone.ToUtc(DateTimeZone.FromText(v))) else DateTime.From(v), type datetime}, {"scenario", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"scope", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"output_rows", each if _ = null or _ = "" then null else let v = _ in Int64.From(v), Int64.Type}, {"exception_rows", each if _ = null or _ = "" then null else let v = _ in Int64.From(v), Int64.Type}, {"numerator", each if _ = null or _ = "" then null else let v = _ in Int64.From(v), Int64.Type}, {"denominator", each if _ = null or _ = "" then null else let v = _ in Int64.From(v), Int64.Type}, {"threshold", each if _ = null or _ = "" then null else let v = _ in Number.From(v, "en-US"), type number}, {"status", each if _ = null or _ = "" then null else let v = _ in Text.From(v), type text}, {"scheduled", each if _ = null or _ = "" then null else let v = _ in if Value.Is(v, type logical) then v else Logical.FromText(v), type logical}})
+			in
+			    Typed
